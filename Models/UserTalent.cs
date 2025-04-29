@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-// PAS DE using CastFlow.Api.Enums;
-
+using CastFlow.Api.Models;
 namespace CastFlow.Api.Models
 {
     [Table("UserTalents")]
@@ -23,7 +22,6 @@ namespace CastFlow.Api.Models
         [Required]
         [EmailAddress]
         [StringLength(100)]
-        // ATTENTION: Unicité à vérifier manuellement vs UserAdmin
         public string Email { get; set; } = string.Empty;
 
         [Required]
@@ -33,8 +31,8 @@ namespace CastFlow.Api.Models
         public DateTime DateNaissance { get; set; }
 
         [Required]
-        [StringLength(20)] // Ajuster taille si besoin
-        public string Sex { get; set; } = string.Empty; // Ex: "Homme", "Femme"
+        [StringLength(20)] 
+        public string Sex { get; set; } = string.Empty; 
 
         [Phone]
         [StringLength(20)]
@@ -51,6 +49,6 @@ namespace CastFlow.Api.Models
         public DateTime CreeLe { get; set; } = DateTime.UtcNow;
         public DateTime ModifieLe { get; set; } = DateTime.UtcNow;
 
-        public virtual ICollection<Candidature> Candidatures { get; set; } = new List<Candidature>();
+       public virtual ICollection<Candidature> Candidatures { get; set; } = new List<Candidature>();
     }
 }
