@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using CastFlow.Api.Models; // Assure-toi que le namespace pointe vers tes modèles
+using CastFlow.Api.Models;
 
 namespace CastFlow.Api.Data
 {
@@ -10,7 +10,7 @@ namespace CastFlow.Api.Data
         }
 
         // DbSet pour chaque entité
-        public DbSet<UserAdmin> UserAdmins { get; set; } = null!; // Null-forgiving operator pour C# moderne
+        public DbSet<UserAdmin> UserAdmins { get; set; } = null!; 
         public DbSet<UserTalent> UserTalents { get; set; } = null!;
         public DbSet<Projet> Projets { get; set; } = null!;
         public DbSet<Role> Roles { get; set; } = null!;
