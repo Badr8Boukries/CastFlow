@@ -1,0 +1,387 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin ann\u00E9e\\CastFlow\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D647AABF-D151-2EA3-085C-71DA9BD77A33}|CastFlow.csproj|c:\\users\\badr4\\onedrive\\bureau\\projet fin ann\u00E9e\\castflow\\dtos\\responses\\candidatureresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D647AABF-D151-2EA3-085C-71DA9BD77A33}|CastFlow.csproj|solutionrelative:dtos\\responses\\candidatureresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D647AABF-D151-2EA3-085C-71DA9BD77A33}|CastFlow.csproj|c:\\users\\badr4\\onedrive\\bureau\\projet fin ann\u00E9e\\castflow\\dtos\\responses\\talentprofileresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D647AABF-D151-2EA3-085C-71DA9BD77A33}|CastFlow.csproj|solutionrelative:dtos\\responses\\talentprofileresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D647AABF-D151-2EA3-085C-71DA9BD77A33}|CastFlow.csproj|c:\\users\\badr4\\onedrive\\bureau\\projet fin ann\u00E9e\\castflow\\dtos\\requests\\candidatureupdatestatusrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D647AABF-D151-2EA3-085C-71DA9BD77A33}|CastFlow.csproj|solutionrelative:dtos\\requests\\candidatureupdatestatusrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D647AABF-D151-2EA3-085C-71DA9BD77A33}|CastFlow.csproj|c:\\users\\badr4\\onedrive\\bureau\\projet fin ann\u00E9e\\castflow\\dtos\\requests\\candidaturecreaterequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D647AABF-D151-2EA3-085C-71DA9BD77A33}|CastFlow.csproj|solutionrelative:dtos\\requests\\candidaturecreaterequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D647AABF-D151-2EA3-085C-71DA9BD77A33}|CastFlow.csproj|c:\\users\\badr4\\onedrive\\bureau\\projet fin ann\u00E9e\\castflow\\dtos\\responses\\roleresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D647AABF-D151-2EA3-085C-71DA9BD77A33}|CastFlow.csproj|solutionrelative:dtos\\responses\\roleresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D647AABF-D151-2EA3-085C-71DA9BD77A33}|CastFlow.csproj|c:\\users\\badr4\\onedrive\\bureau\\projet fin ann\u00E9e\\castflow\\dtos\\requests\\rolecreaterequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D647AABF-D151-2EA3-085C-71DA9BD77A33}|CastFlow.csproj|solutionrelative:dtos\\requests\\rolecreaterequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D647AABF-D151-2EA3-085C-71DA9BD77A33}|CastFlow.csproj|c:\\users\\badr4\\onedrive\\bureau\\projet fin ann\u00E9e\\castflow\\dtos\\responses\\projetresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D647AABF-D151-2EA3-085C-71DA9BD77A33}|CastFlow.csproj|solutionrelative:dtos\\responses\\projetresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D647AABF-D151-2EA3-085C-71DA9BD77A33}|CastFlow.csproj|c:\\users\\badr4\\onedrive\\bureau\\projet fin ann\u00E9e\\castflow\\dtos\\requests\\projetcreaterequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D647AABF-D151-2EA3-085C-71DA9BD77A33}|CastFlow.csproj|solutionrelative:dtos\\requests\\projetcreaterequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D647AABF-D151-2EA3-085C-71DA9BD77A33}|CastFlow.csproj|c:\\users\\badr4\\onedrive\\bureau\\projet fin ann\u00E9e\\castflow\\dtos\\responses\\rolesummaryresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D647AABF-D151-2EA3-085C-71DA9BD77A33}|CastFlow.csproj|solutionrelative:dtos\\responses\\rolesummaryresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D647AABF-D151-2EA3-085C-71DA9BD77A33}|CastFlow.csproj|c:\\users\\badr4\\onedrive\\bureau\\projet fin ann\u00E9e\\castflow\\dtos\\responses\\projetsummaryresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D647AABF-D151-2EA3-085C-71DA9BD77A33}|CastFlow.csproj|solutionrelative:dtos\\responses\\projetsummaryresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D647AABF-D151-2EA3-085C-71DA9BD77A33}|CastFlow.csproj|c:\\users\\badr4\\onedrive\\bureau\\projet fin ann\u00E9e\\castflow\\dtos\\requests\\loginrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D647AABF-D151-2EA3-085C-71DA9BD77A33}|CastFlow.csproj|solutionrelative:dtos\\requests\\loginrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D647AABF-D151-2EA3-085C-71DA9BD77A33}|CastFlow.csproj|c:\\users\\badr4\\onedrive\\bureau\\projet fin ann\u00E9e\\castflow\\dtos\\requests\\registertalentrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D647AABF-D151-2EA3-085C-71DA9BD77A33}|CastFlow.csproj|solutionrelative:dtos\\requests\\registertalentrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D647AABF-D151-2EA3-085C-71DA9BD77A33}|CastFlow.csproj|c:\\users\\badr4\\onedrive\\bureau\\projet fin ann\u00E9e\\castflow\\dtos\\requests\\setupadminaccountrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D647AABF-D151-2EA3-085C-71DA9BD77A33}|CastFlow.csproj|solutionrelative:dtos\\requests\\setupadminaccountrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D647AABF-D151-2EA3-085C-71DA9BD77A33}|CastFlow.csproj|c:\\users\\badr4\\onedrive\\bureau\\projet fin ann\u00E9e\\castflow\\castflow.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{D647AABF-D151-2EA3-085C-71DA9BD77A33}|CastFlow.csproj|solutionrelative:castflow.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D647AABF-D151-2EA3-085C-71DA9BD77A33}|CastFlow.csproj|c:\\users\\badr4\\onedrive\\bureau\\projet fin ann\u00E9e\\castflow\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{D647AABF-D151-2EA3-085C-71DA9BD77A33}|CastFlow.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D647AABF-D151-2EA3-085C-71DA9BD77A33}|CastFlow.csproj|c:\\users\\badr4\\onedrive\\bureau\\projet fin ann\u00E9e\\castflow\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D647AABF-D151-2EA3-085C-71DA9BD77A33}|CastFlow.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D647AABF-D151-2EA3-085C-71DA9BD77A33}|CastFlow.csproj|c:\\users\\badr4\\onedrive\\bureau\\projet fin ann\u00E9e\\castflow\\models\\candidature.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D647AABF-D151-2EA3-085C-71DA9BD77A33}|CastFlow.csproj|solutionrelative:models\\candidature.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D647AABF-D151-2EA3-085C-71DA9BD77A33}|CastFlow.csproj|c:\\users\\badr4\\onedrive\\bureau\\projet fin ann\u00E9e\\castflow\\models\\usertalent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D647AABF-D151-2EA3-085C-71DA9BD77A33}|CastFlow.csproj|solutionrelative:models\\usertalent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D647AABF-D151-2EA3-085C-71DA9BD77A33}|CastFlow.csproj|c:\\users\\badr4\\onedrive\\bureau\\projet fin ann\u00E9e\\castflow\\models\\useradmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D647AABF-D151-2EA3-085C-71DA9BD77A33}|CastFlow.csproj|solutionrelative:models\\useradmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D647AABF-D151-2EA3-085C-71DA9BD77A33}|CastFlow.csproj|c:\\users\\badr4\\onedrive\\bureau\\projet fin ann\u00E9e\\castflow\\models\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D647AABF-D151-2EA3-085C-71DA9BD77A33}|CastFlow.csproj|solutionrelative:models\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D647AABF-D151-2EA3-085C-71DA9BD77A33}|CastFlow.csproj|c:\\users\\badr4\\onedrive\\bureau\\projet fin ann\u00E9e\\castflow\\models\\projet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D647AABF-D151-2EA3-085C-71DA9BD77A33}|CastFlow.csproj|solutionrelative:models\\projet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D647AABF-D151-2EA3-085C-71DA9BD77A33}|CastFlow.csproj|c:\\users\\badr4\\onedrive\\bureau\\projet fin ann\u00E9e\\castflow\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D647AABF-D151-2EA3-085C-71DA9BD77A33}|CastFlow.csproj|solutionrelative:data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TalentProfileResponseDto.cs",
+              "DocumentMoniker": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin ann\u00E9e\\CastFlow\\DTOS\\responses\\TalentProfileResponseDto.cs",
+              "RelativeDocumentMoniker": "DTOS\\responses\\TalentProfileResponseDto.cs",
+              "ToolTip": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin ann\u00E9e\\CastFlow\\DTOS\\responses\\TalentProfileResponseDto.cs",
+              "RelativeToolTip": "DTOS\\responses\\TalentProfileResponseDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T17:39:58.71Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CandidatureResponseDto.cs",
+              "DocumentMoniker": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin ann\u00E9e\\CastFlow\\DTOS\\responses\\CandidatureResponseDto.cs",
+              "RelativeDocumentMoniker": "DTOS\\responses\\CandidatureResponseDto.cs",
+              "ToolTip": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin ann\u00E9e\\CastFlow\\DTOS\\responses\\CandidatureResponseDto.cs",
+              "RelativeToolTip": "DTOS\\responses\\CandidatureResponseDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T17:37:52.358Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CandidatureUpdateStatusRequestDto.cs",
+              "DocumentMoniker": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin ann\u00E9e\\CastFlow\\DTOS\\requests\\CandidatureUpdateStatusRequestDto.cs",
+              "RelativeDocumentMoniker": "DTOS\\requests\\CandidatureUpdateStatusRequestDto.cs",
+              "ToolTip": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin ann\u00E9e\\CastFlow\\DTOS\\requests\\CandidatureUpdateStatusRequestDto.cs",
+              "RelativeToolTip": "DTOS\\requests\\CandidatureUpdateStatusRequestDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T17:37:32.225Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CandidatureCreateRequestDto.cs",
+              "DocumentMoniker": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin ann\u00E9e\\CastFlow\\DTOS\\requests\\CandidatureCreateRequestDto.cs",
+              "RelativeDocumentMoniker": "DTOS\\requests\\CandidatureCreateRequestDto.cs",
+              "ToolTip": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin ann\u00E9e\\CastFlow\\DTOS\\requests\\CandidatureCreateRequestDto.cs",
+              "RelativeToolTip": "DTOS\\requests\\CandidatureCreateRequestDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T17:31:18.206Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "RoleResponseDto.cs",
+              "DocumentMoniker": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin ann\u00E9e\\CastFlow\\DTOS\\responses\\RoleResponseDto.cs",
+              "RelativeDocumentMoniker": "DTOS\\responses\\RoleResponseDto.cs",
+              "ToolTip": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin ann\u00E9e\\CastFlow\\DTOS\\responses\\RoleResponseDto.cs",
+              "RelativeToolTip": "DTOS\\responses\\RoleResponseDto.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAA5wBIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T17:30:39.161Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ProjetCreateRequestDto.cs",
+              "DocumentMoniker": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin ann\u00E9e\\CastFlow\\DTOS\\requests\\ProjetCreateRequestDto.cs",
+              "RelativeDocumentMoniker": "DTOS\\requests\\ProjetCreateRequestDto.cs",
+              "ToolTip": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin ann\u00E9e\\CastFlow\\DTOS\\requests\\ProjetCreateRequestDto.cs",
+              "RelativeToolTip": "DTOS\\requests\\ProjetCreateRequestDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T17:26:50.48Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ProjetResponseDto.cs",
+              "DocumentMoniker": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin ann\u00E9e\\CastFlow\\DTOS\\responses\\ProjetResponseDto.cs",
+              "RelativeDocumentMoniker": "DTOS\\responses\\ProjetResponseDto.cs",
+              "ToolTip": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin ann\u00E9e\\CastFlow\\DTOS\\responses\\ProjetResponseDto.cs",
+              "RelativeToolTip": "DTOS\\responses\\ProjetResponseDto.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAA3wAUAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T17:29:00.885Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "RoleCreateRequestDto.cs",
+              "DocumentMoniker": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin ann\u00E9e\\CastFlow\\DTOS\\requests\\RoleCreateRequestDto.cs",
+              "RelativeDocumentMoniker": "DTOS\\requests\\RoleCreateRequestDto.cs",
+              "ToolTip": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin ann\u00E9e\\CastFlow\\DTOS\\requests\\RoleCreateRequestDto.cs",
+              "RelativeToolTip": "DTOS\\requests\\RoleCreateRequestDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T17:29:29.971Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "RoleSummaryResponseDto.cs",
+              "DocumentMoniker": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin ann\u00E9e\\CastFlow\\DTOS\\responses\\RoleSummaryResponseDto.cs",
+              "RelativeDocumentMoniker": "DTOS\\responses\\RoleSummaryResponseDto.cs",
+              "ToolTip": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin ann\u00E9e\\CastFlow\\DTOS\\responses\\RoleSummaryResponseDto.cs",
+              "RelativeToolTip": "DTOS\\responses\\RoleSummaryResponseDto.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAwA4AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T17:30:09.376Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ProjetSummaryResponseDto.cs",
+              "DocumentMoniker": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin ann\u00E9e\\CastFlow\\DTOS\\responses\\ProjetSummaryResponseDto.cs",
+              "RelativeDocumentMoniker": "DTOS\\responses\\ProjetSummaryResponseDto.cs",
+              "ToolTip": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin ann\u00E9e\\CastFlow\\DTOS\\responses\\ProjetSummaryResponseDto.cs",
+              "RelativeToolTip": "DTOS\\responses\\ProjetSummaryResponseDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T17:27:50.631Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "LoginRequestDto.cs",
+              "DocumentMoniker": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin ann\u00E9e\\CastFlow\\DTOS\\requests\\LoginRequestDto.cs",
+              "RelativeDocumentMoniker": "DTOS\\requests\\LoginRequestDto.cs",
+              "ToolTip": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin ann\u00E9e\\CastFlow\\DTOS\\requests\\LoginRequestDto.cs",
+              "RelativeToolTip": "DTOS\\requests\\LoginRequestDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T17:11:45.391Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "SetupAdminAccountRequestDto.cs",
+              "DocumentMoniker": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin ann\u00E9e\\CastFlow\\DTOS\\requests\\SetupAdminAccountRequestDto.cs",
+              "RelativeDocumentMoniker": "DTOS\\requests\\SetupAdminAccountRequestDto.cs",
+              "ToolTip": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin ann\u00E9e\\CastFlow\\DTOS\\requests\\SetupAdminAccountRequestDto.cs",
+              "RelativeToolTip": "DTOS\\requests\\SetupAdminAccountRequestDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T17:10:39.927Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "RegisterTalentRequestDto.cs",
+              "DocumentMoniker": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin ann\u00E9e\\CastFlow\\DTOS\\requests\\RegisterTalentRequestDto.cs",
+              "RelativeDocumentMoniker": "DTOS\\requests\\RegisterTalentRequestDto.cs",
+              "ToolTip": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin ann\u00E9e\\CastFlow\\DTOS\\requests\\RegisterTalentRequestDto.cs",
+              "RelativeToolTip": "DTOS\\requests\\RegisterTalentRequestDto.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T17:06:23.156Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "CastFlow",
+              "DocumentMoniker": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin ann\u00E9e\\CastFlow\\CastFlow.csproj",
+              "RelativeDocumentMoniker": "CastFlow.csproj",
+              "ToolTip": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin ann\u00E9e\\CastFlow\\CastFlow.csproj",
+              "RelativeToolTip": "CastFlow.csproj",
+              "ViewState": "AgIAABEAAAAAEN4Inyy8vwAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-04-29T17:05:47.181Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin ann\u00E9e\\CastFlow\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin ann\u00E9e\\CastFlow\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-29T16:23:53.091Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin ann\u00E9e\\CastFlow\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin ann\u00E9e\\CastFlow\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T16:22:55.483Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin ann\u00E9e\\CastFlow\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin ann\u00E9e\\CastFlow\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T15:58:27.451Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Projet.cs",
+              "DocumentMoniker": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin ann\u00E9e\\CastFlow\\Models\\Projet.cs",
+              "RelativeDocumentMoniker": "Models\\Projet.cs",
+              "ToolTip": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin ann\u00E9e\\CastFlow\\Models\\Projet.cs",
+              "RelativeToolTip": "Models\\Projet.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T15:34:42.688Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Role.cs",
+              "DocumentMoniker": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin ann\u00E9e\\CastFlow\\Models\\Role.cs",
+              "RelativeDocumentMoniker": "Models\\Role.cs",
+              "ToolTip": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin ann\u00E9e\\CastFlow\\Models\\Role.cs",
+              "RelativeToolTip": "Models\\Role.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T15:28:01.594Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Candidature.cs",
+              "DocumentMoniker": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin ann\u00E9e\\CastFlow\\Models\\Candidature.cs",
+              "RelativeDocumentMoniker": "Models\\Candidature.cs",
+              "ToolTip": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin ann\u00E9e\\CastFlow\\Models\\Candidature.cs",
+              "RelativeToolTip": "Models\\Candidature.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwAcAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T15:25:34.621Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "UserAdmin.cs",
+              "DocumentMoniker": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin ann\u00E9e\\CastFlow\\Models\\UserAdmin.cs",
+              "RelativeDocumentMoniker": "Models\\UserAdmin.cs",
+              "ToolTip": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin ann\u00E9e\\CastFlow\\Models\\UserAdmin.cs",
+              "RelativeToolTip": "Models\\UserAdmin.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T15:15:19.804Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "UserTalent.cs",
+              "DocumentMoniker": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin ann\u00E9e\\CastFlow\\Models\\UserTalent.cs",
+              "RelativeDocumentMoniker": "Models\\UserTalent.cs",
+              "ToolTip": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin ann\u00E9e\\CastFlow\\Models\\UserTalent.cs",
+              "RelativeToolTip": "Models\\UserTalent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T15:00:50.387Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

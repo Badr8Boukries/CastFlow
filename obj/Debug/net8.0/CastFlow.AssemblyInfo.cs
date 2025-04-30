@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CastFlow")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1bb26d22c084276fd91913c6e5ec597106ee6bcc")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+13816d13e4eba96e0cf4b9f7c6704af0c8c636e3")]
 [assembly: System.Reflection.AssemblyProductAttribute("CastFlow")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CastFlow")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
