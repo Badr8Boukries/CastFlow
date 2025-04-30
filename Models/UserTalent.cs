@@ -1,8 +1,9 @@
-﻿using System;
+﻿// Models/UserTalent.cs
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using CastFlow.Api.Models;
+
 namespace CastFlow.Api.Models
 {
     [Table("UserTalents")]
@@ -31,8 +32,8 @@ namespace CastFlow.Api.Models
         public DateTime DateNaissance { get; set; }
 
         [Required]
-        [StringLength(20)] 
-        public string Sex { get; set; } = string.Empty; 
+        [StringLength(20)]
+        public string Sex { get; set; } = string.Empty;
 
         [Phone]
         [StringLength(20)]
@@ -46,9 +47,16 @@ namespace CastFlow.Api.Models
         [StringLength(2048)]
         public string? UrlCv { get; set; }
 
+        
+        [Required]
+        public bool IsEmailVerified { get; set; } = false; 
+       
+
         public DateTime CreeLe { get; set; } = DateTime.UtcNow;
         public DateTime ModifieLe { get; set; } = DateTime.UtcNow;
 
-       public virtual ICollection<Candidature> Candidatures { get; set; } = new List<Candidature>();
+      
+        public virtual ICollection<Candidature> Candidatures { get; set; } = new List<Candidature>();
+
     }
 }
