@@ -49,9 +49,10 @@ namespace CastFlow.Api.Models
 
         
         [Required]
-        public bool IsEmailVerified { get; set; } = false; 
-       
+        public bool IsEmailVerified { get; set; } = false;
 
+        [Required]
+        public bool IsDeleted { get; set; } = false;
         public DateTime CreeLe { get; set; } = DateTime.UtcNow;
         public DateTime ModifieLe { get; set; } = DateTime.UtcNow;
 

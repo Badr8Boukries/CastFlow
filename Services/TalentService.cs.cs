@@ -1,15 +1,15 @@
-﻿// Services/TalentService.cs
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System;
+using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
+using System.Linq;
 using System.Net;
 using System.Net.Mail;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
-// using CastFlow.Api.Data; // Normalement pas besoin du DbContext ici
 using CastFlow.Api.Dtos.Request;
 using CastFlow.Api.Dtos.Response;
 using CastFlow.Api.Models;
@@ -60,6 +60,7 @@ namespace CastFlow.Api.Services
                 Sex = registerDto.Sex,
                 Telephone = registerDto.Telephone,
                 IsEmailVerified = false,
+                IsDeleted = false,
                 CreeLe = DateTime.UtcNow,
                 ModifieLe = DateTime.UtcNow
             };
@@ -93,7 +94,6 @@ namespace CastFlow.Api.Services
             catch (Exception ex)
             {
                 _logger.LogError(ex, $"Erreur lors de l'initiation de l'inscription pour {registerDto.Email}");
-                // Envisager une suppression du UserTalent créé si l'envoi échoue (transaction)
                 return new AuthResponseDto(false, "Une erreur est survenue lors de l'inscription.");
             }
         }
@@ -101,17 +101,11 @@ namespace CastFlow.Api.Services
         public async Task<bool> VerifyTalentEmailAsync(VerificationRequestDto verificationDto)
         {
             var verification = await _userTalentRepo.GetValidEmailVerificationAsync(verificationDto.Email, verificationDto.Code);
-
-            if (verification == null)
-            {
-                _logger.LogWarning($"Échec de vérification pour {verificationDto.Email}. Code invalide ou expiré.");
-                return false;
-            }
+            if (verification == null) return false;
 
             var userTalent = await _userTalentRepo.GetByIdAsync(verification.UserId);
-            if (userTalent == null)
+            if (userTalent == null || userTalent.IsDeleted)
             {
-                _logger.LogError($"Utilisateur Talent non trouvé (ID: {verification.UserId}) pour une vérification valide ! Email: {verificationDto.Email}.");
                 _userTalentRepo.MarkEmailVerificationAsUsed(verification);
                 await _userTalentRepo.SaveChangesAsync();
                 return false;
@@ -119,30 +113,17 @@ namespace CastFlow.Api.Services
 
             if (userTalent.IsEmailVerified)
             {
-                _logger.LogInformation($"Tentative de re-vérification pour l'email {userTalent.Email} qui est déjà vérifié.");
-                _userTalentRepo.MarkEmailVerificationAsUsed(verification); // Marquer l'ancien code comme utilisé quand même
+                _userTalentRepo.MarkEmailVerificationAsUsed(verification);
                 await _userTalentRepo.SaveChangesAsync();
-                return true; // Déjà vérifié, c'est un succès fonctionnel
+                return true;
             }
 
             userTalent.IsEmailVerified = true;
             userTalent.ModifieLe = DateTime.UtcNow;
             _userTalentRepo.Update(userTalent);
-
             _userTalentRepo.MarkEmailVerificationAsUsed(verification);
-
             int changes = await _userTalentRepo.SaveChangesAsync();
-
-            if (changes > 0)
-            {
-                _logger.LogInformation($"Email vérifié avec succès pour {userTalent.Email}.");
-                return true;
-            }
-            else
-            {
-                _logger.LogError($"Aucun changement n'a été sauvegardé lors de la vérification de l'email pour {userTalent.Email}.");
-                return false;
-            }
+            return changes > 0;
         }
 
         public async Task<AuthResponseDto> LoginAsync(LoginRequestDto loginDto)
@@ -152,42 +133,119 @@ namespace CastFlow.Api.Services
             {
                 if (BCrypt.Net.BCrypt.Verify(loginDto.MotDePasse, admin.MotDePasseHash))
                 {
-                    _logger.LogInformation($"Connexion réussie pour l'Admin {admin.Email}");
                     string token = GenerateJwtToken(admin.AdminId, "Admin", admin.Email, admin.Prenom, admin.Nom);
                     return new AuthResponseDto("Connexion Admin réussie.", token, admin.AdminId, AuthenticatedUserType.Admin, admin.Prenom, admin.Nom, admin.Email);
                 }
-                else
-                {
-                    _logger.LogWarning($"Tentative de connexion échouée (mdp incorrect) pour l'Admin {loginDto.Email}");
-                    throw new UnauthorizedAccessException("Email ou mot de passe incorrect.");
-                }
+                else { throw new UnauthorizedAccessException("Email ou mot de passe incorrect."); }
             }
 
             var talent = await _userTalentRepo.GetByEmailAsync(loginDto.Email);
-            if (talent != null)
+            if (talent != null && !talent.IsDeleted)
             {
                 if (BCrypt.Net.BCrypt.Verify(loginDto.MotDePasse, talent.MotDePasseHash))
                 {
-                    if (!talent.IsEmailVerified)
-                    {
-                        _logger.LogWarning($"Tentative de connexion pour Talent non vérifié: {talent.Email}");
-                        throw new UnauthorizedAccessException("Votre compte existe mais votre email n'est pas vérifié. Veuillez entrer le code reçu par email.");
-                    }
-
-                    _logger.LogInformation($"Connexion réussie pour le Talent {talent.Email}");
+                    if (!talent.IsEmailVerified) { throw new UnauthorizedAccessException("Votre compte existe mais votre email n'est pas vérifié. Veuillez entrer le code reçu par email."); }
                     string token = GenerateJwtToken(talent.TalentId, "Talent", talent.Email, talent.Prenom, talent.Nom);
                     return new AuthResponseDto("Connexion Talent réussie.", token, talent.TalentId, AuthenticatedUserType.Talent, talent.Prenom, talent.Nom, talent.Email);
                 }
-                else
-                {
-                    _logger.LogWarning($"Tentative de connexion échouée (mdp incorrect) pour le Talent {loginDto.Email}");
-                    throw new UnauthorizedAccessException("Email ou mot de passe incorrect.");
-                }
+                else { throw new UnauthorizedAccessException("Email ou mot de passe incorrect."); }
             }
 
-            _logger.LogWarning($"Tentative de connexion échouée (utilisateur inconnu) pour {loginDto.Email}");
             throw new UnauthorizedAccessException("Email ou mot de passe incorrect.");
         }
+
+        public async Task<TalentProfileResponseDto?> GetTalentProfileByIdAsync(long talentId)
+        {
+            var userTalent = await _userTalentRepo.GetActiveByIdAsync(talentId); // Suppose que cette méthode filtre IsDeleted=false
+            if (userTalent == null) return null;
+
+            int age = DateTime.Today.Year - userTalent.DateNaissance.Year;
+            if (userTalent.DateNaissance.Date > DateTime.Today.AddYears(-age)) age--;
+
+            return new TalentProfileResponseDto
+            {
+                TalentId = userTalent.TalentId,
+                Prenom = userTalent.Prenom,
+                Nom = userTalent.Nom,
+                Email = userTalent.Email,
+                DateNaissance = userTalent.DateNaissance,
+                Age = age,
+                Sex = userTalent.Sex,
+                Telephone = userTalent.Telephone,
+                UrlPhoto = userTalent.UrlPhoto,
+                UrlCv = userTalent.UrlCv
+            };
+        }
+
+        public async Task<IEnumerable<TalentProfileResponseDto>> GetAllActiveTalentsAsync()
+        {
+            var activeTalents = await _userTalentRepo.GetAllActiveAsync(); 
+            return activeTalents.Select(userTalent => {
+                int age = DateTime.Today.Year - userTalent.DateNaissance.Year;
+                if (userTalent.DateNaissance.Date > DateTime.Today.AddYears(-age)) age--;
+                return new TalentProfileResponseDto
+                {
+                    TalentId = userTalent.TalentId,
+                    Prenom = userTalent.Prenom,
+                    Nom = userTalent.Nom,
+                    Email = userTalent.Email,
+                    DateNaissance = userTalent.DateNaissance,
+                    Age = age,
+                    Sex = userTalent.Sex,
+                    Telephone = userTalent.Telephone,
+                    UrlPhoto = userTalent.UrlPhoto,
+                    UrlCv = userTalent.UrlCv
+                };
+            }).ToList();
+        }
+
+        public async Task<TalentProfileResponseDto?> UpdateTalentProfileAsync(long talentId, RegisterTalentRequestDto updateDto) // Paramètre changé
+        {
+            _logger.LogInformation("Mise à jour du profil pour Talent ID {TalentId}", talentId);
+            var userTalent = await _userTalentRepo.GetActiveByIdAsync(talentId); // Suppose filtre IsDeleted
+
+            if (userTalent == null)
+            {
+                _logger.LogWarning("Profil Talent actif non trouvé pour mise à jour ID {TalentId}", talentId);
+                return null;
+            }
+
+           
+
+            userTalent.Prenom = updateDto.Prenom;
+            userTalent.Nom = updateDto.Nom;
+            userTalent.DateNaissance = updateDto.DateNaissance;
+            userTalent.Sex = updateDto.Sex;
+            userTalent.Telephone = updateDto.Telephone; 
+
+
+          
+
+            userTalent.ModifieLe = DateTime.UtcNow;
+
+            _userTalentRepo.Update(userTalent);
+            await _userTalentRepo.SaveChangesAsync();
+
+            _logger.LogInformation("Profil Talent ID {TalentId} mis à jour avec succès.", talentId);
+
+            return await GetTalentProfileByIdAsync(talentId);
+        }
+
+
+        public async Task<bool> DeactivateTalentAccountAsync(long talentId)
+        {
+            var userTalent = await _userTalentRepo.GetActiveByIdAsync(talentId); // Suppose que cette méthode filtre IsDeleted=false
+            if (userTalent == null) return false;
+
+            userTalent.IsDeleted = true;
+            userTalent.ModifieLe = DateTime.UtcNow;
+            // Envisager anonymisation si besoin (Email, Tel, etc.)
+            _userTalentRepo.Update(userTalent);
+            await _userTalentRepo.SaveChangesAsync();
+            _logger.LogInformation($"Compte Talent ID {talentId} désactivé (Soft Delete).");
+            return true;
+        }
+
 
         private string GenerateVerificationCode()
         {
@@ -205,46 +263,20 @@ namespace CastFlow.Api.Services
             string? senderPassword = smtpSettings["SenderPassword"];
             string? enableSslStr = smtpSettings["EnableSsl"];
 
-            if (string.IsNullOrWhiteSpace(server) || !int.TryParse(portStr, out int port) ||
-                string.IsNullOrWhiteSpace(senderEmail) || string.IsNullOrWhiteSpace(senderPassword) ||
-                !bool.TryParse(enableSslStr, out bool enableSsl))
-            {
-                _logger.LogCritical("Configuration SMTP incomplète ou invalide. Vérifiez Server, Port, SenderEmail, SenderPassword, EnableSsl.");
-                return;
-            }
+            if (string.IsNullOrWhiteSpace(server) || !int.TryParse(portStr, out int port) || string.IsNullOrWhiteSpace(senderEmail) || string.IsNullOrWhiteSpace(senderPassword) || !bool.TryParse(enableSslStr, out bool enableSsl)) { _logger.LogCritical("Configuration SMTP incomplète ou invalide."); return; }
             senderName ??= "CastFlow";
 
             try
             {
-                using var client = new SmtpClient(server)
-                {
-                    Port = port,
-                    Credentials = new NetworkCredential(senderEmail, senderPassword),
-                    EnableSsl = enableSsl
-                };
-                var mailMessage = new MailMessage
-                {
-                    From = new MailAddress(senderEmail, senderName),
-                    Subject = "Votre code de vérification CastFlow",
-                    Body = $"Utilisez ce code pour vérifier votre email : {code}\nCe code expire bientôt.",
-                    IsBodyHtml = false,
-                };
+                using var client = new SmtpClient(server) { Port = port, Credentials = new NetworkCredential(senderEmail, senderPassword), EnableSsl = enableSsl };
+                var mailMessage = new MailMessage { From = new MailAddress(senderEmail, senderName), Subject = "Votre code de vérification CastFlow", Body = $"Utilisez ce code pour vérifier votre email : {code}\nCe code expire bientôt.", IsBodyHtml = false, };
                 mailMessage.To.Add(email);
                 await client.SendMailAsync(mailMessage);
                 _logger.LogInformation($"Email de vérification envoyé à {email}.");
             }
-            catch (ArgumentNullException anex)
-            {
-                _logger.LogCritical(anex, "L'adresse email de l'expéditeur ({SenderEmail}) est invalide dans la configuration SMTP.", senderEmail);
-            }
-            catch (SmtpException smtpEx)
-            {
-                _logger.LogError(smtpEx, "Erreur SMTP lors de l'envoi de l'email de vérification à {Email}.", email);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Erreur inattendue lors de l'envoi de l'email de vérification à {Email}.", email);
-            }
+            catch (ArgumentNullException anex) { _logger.LogCritical(anex, "L'adresse email expéditeur ({SenderEmail}) est invalide.", senderEmail); }
+            catch (SmtpException smtpEx) { _logger.LogError(smtpEx, "Erreur SMTP lors de l'envoi à {Email}.", email); }
+            catch (Exception ex) { _logger.LogError(ex, "Erreur inattendue lors de l'envoi à {Email}.", email); }
         }
 
         private string GenerateJwtToken(long userId, string userType, string email, string firstName, string lastName)
@@ -256,22 +288,23 @@ namespace CastFlow.Api.Services
 
             if (string.IsNullOrEmpty(secret) || string.IsNullOrEmpty(issuer) || string.IsNullOrEmpty(audience))
             {
-                _logger.LogCritical("Configuration JWT incomplète dans appsettings/secrets. Vérifiez Jwt:Secret, Jwt:Issuer, Jwt:Audience.");
+                _logger.LogCritical("Configuration JWT incomplète.");
                 throw new InvalidOperationException("Configuration JWT incomplète.");
             }
 
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secret));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
-            var claims = new[]
-            {
-                new Claim(JwtRegisteredClaimNames.Sub, email),
+            var claims = new[] {
+                new Claim(JwtRegisteredClaimNames.Sub, email),           
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                new Claim(ClaimTypes.NameIdentifier, userId.ToString()),
-                new Claim(ClaimTypes.Email, email),
-                new Claim(ClaimTypes.GivenName, firstName),
-                new Claim(ClaimTypes.Surname, lastName),
-                new Claim("userType", userType)
+                // --- MODIFICATION ICI ---
+                new Claim("Id", userId.ToString()),                       
+                // --- FIN MODIFICATION ---
+                new Claim(ClaimTypes.Email, email),                       
+                new Claim(ClaimTypes.GivenName, firstName),                 
+                new Claim(ClaimTypes.Surname, lastName),                   
+                new Claim("userType", userType)                            
             };
 
             var expires = DateTime.UtcNow.AddHours(expireHours);

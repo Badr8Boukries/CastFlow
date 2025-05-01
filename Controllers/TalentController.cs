@@ -5,30 +5,29 @@ using CastFlow.Api.Dtos.Response;
 using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.Logging; 
-using Microsoft.AspNetCore.Authorization; 
-using System.Security.Claims; 
+using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
+using System.Collections.Generic;
 
 namespace CastFlow.Api.Controllers
 {
-    
-    
-    [Route("api/auth")]
+    [Route("api/talent")]
     [ApiController]
-    public class TalentController : ControllerBase 
+    public class TalentController : ControllerBase
     {
         private readonly ITalentService _talentService;
-        private readonly ILogger<TalentController> _logger; 
+        private readonly ILogger<TalentController> _logger;
 
-        // Constructeur mis à jour avec le nom du contrôleur pour le logger
         public TalentController(ITalentService talentService, ILogger<TalentController> logger)
         {
             _talentService = talentService ?? throw new ArgumentNullException(nameof(talentService));
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
-        
-        [HttpPost("register/talent")]
+        // --- Endpoints Publics ---
+
+        [HttpPost("register")]
         [ProducesResponseType(typeof(AuthResponseDto), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(AuthResponseDto), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(AuthResponseDto), StatusCodes.Status409Conflict)]
@@ -36,17 +35,14 @@ namespace CastFlow.Api.Controllers
         public async Task<IActionResult> RegisterTalent([FromBody] RegisterTalentRequestDto registerDto)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
-
             try
             {
                 var response = await _talentService.InitiateTalentRegistrationAsync(registerDto);
-                if (!response.IsSuccess && response.Message != null && response.Message.Contains("déjà utilisé"))
-                {
-                    return Conflict(response); // 409 si email existe
-                }
                 if (!response.IsSuccess)
                 {
-                    return BadRequest(response); // Autre erreur gérée par le service
+                    return response.Message != null && response.Message.Contains("déjà utilisé")
+                        ? Conflict(response)
+                        : BadRequest(response);
                 }
                 return Ok(response);
             }
@@ -57,22 +53,17 @@ namespace CastFlow.Api.Controllers
             }
         }
 
-     
-        [HttpPost("verify-email/talent")]
+        [HttpPost("verify-email")]
         [ProducesResponseType(typeof(object), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(object), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> VerifyTalentEmail([FromBody] VerificationRequestDto verificationDto)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
-
             try
             {
                 bool isVerified = await _talentService.VerifyTalentEmailAsync(verificationDto);
-                if (!isVerified)
-                {
-                    return BadRequest(new { message = "Code de vérification invalide ou expiré." });
-                }
+                if (!isVerified) { return BadRequest(new { message = "Code de vérification invalide ou expiré." }); }
                 return Ok(new { message = "Email vérifié avec succès. Vous pouvez maintenant vous connecter." });
             }
             catch (Exception ex)
@@ -82,9 +73,7 @@ namespace CastFlow.Api.Controllers
             }
         }
 
-
-      
-        [HttpPost("login")]
+        [HttpPost("~/api/auth/login")] // Garde la route spécifique pour le login
         [ProducesResponseType(typeof(AuthResponseDto), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(AuthResponseDto), StatusCodes.Status401Unauthorized)]
@@ -92,7 +81,6 @@ namespace CastFlow.Api.Controllers
         public async Task<IActionResult> Login([FromBody] LoginRequestDto loginDto)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
-
             try
             {
                 var authResponse = await _talentService.LoginAsync(loginDto);
@@ -110,6 +98,113 @@ namespace CastFlow.Api.Controllers
             }
         }
 
-       
+        // --- Endpoints Protégés (Nécessitent Connexion Talent) ---
+
+        [HttpGet("profile/me")]
+        [Authorize]
+        [ProducesResponseType(typeof(TalentProfileResponseDto), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> GetMyProfile()
+        {
+            // --- MODIFICATION ICI ---
+            var userIdClaim = User.FindFirstValue("Id"); // Recherche le claim personnalisé "Id"
+            // --- FIN MODIFICATION ---
+            var userTypeClaim = User.FindFirstValue("userType");
+
+            if (userTypeClaim != "Talent" || !long.TryParse(userIdClaim, out long talentId))
+            {
+                _logger.LogWarning("Tentative d'accès GetMyProfile par non-talent ou ID invalide. Type: {UserType}, IdClaim: {UserIdClaim}", userTypeClaim, userIdClaim);
+                return Forbid();
+            }
+
+            var profile = await _talentService.GetTalentProfileByIdAsync(talentId);
+            if (profile == null)
+            {
+                _logger.LogWarning("Profil non trouvé pour Talent ID {TalentId} lors de GetMyProfile", talentId);
+                return NotFound(new { message = "Profil non trouvé." });
+            }
+
+            return Ok(profile);
+        }
+
+        [HttpPut("profile/me")]
+        [Authorize]
+        [ProducesResponseType(typeof(TalentProfileResponseDto), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> UpdateMyProfile([FromBody] RegisterTalentRequestDto updateDto) // Utilise le DTO d'inscription comme demandé
+        {
+            if (!ModelState.IsValid) return BadRequest(ModelState);
+
+            // --- MODIFICATION ICI ---
+            var userIdClaim = User.FindFirstValue("Id"); // Recherche le claim personnalisé "Id"
+                                                         // --- FIN MODIFICATION ---
+            var userTypeClaim = User.FindFirstValue("userType");
+
+            if (userTypeClaim != "Talent" || !long.TryParse(userIdClaim, out long talentId))
+            {
+                _logger.LogWarning("Tentative d'accès UpdateMyProfile par non-talent ou ID invalide. Type: {UserType}, IdClaim: {UserIdClaim}", userTypeClaim, userIdClaim);
+                return Forbid();
+            }
+
+            try
+            {
+                var updatedProfile = await _talentService.UpdateTalentProfileAsync(talentId, updateDto);
+                if (updatedProfile == null)
+                {
+                    _logger.LogWarning("Profil non trouvé pour mise à jour Talent ID {TalentId}", talentId);
+                    return NotFound(new { message = "Profil non trouvé." });
+                }
+                return Ok(updatedProfile);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Erreur mise à jour profil pour Talent ID {TalentId}", talentId);
+                return StatusCode(StatusCodes.Status500InternalServerError, new { message = "Erreur interne serveur." });
+            }
+        }
+
+        [HttpDelete("profile/me")]
+        [Authorize]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> DeactivateMyAccount()
+        {
+            // --- MODIFICATION ICI ---
+            var userIdClaim = User.FindFirstValue("Id");
+                                                      
+            var userTypeClaim = User.FindFirstValue("userType");
+
+            if (userTypeClaim != "Talent" || !long.TryParse(userIdClaim, out long talentId))
+            {
+                _logger.LogWarning("Tentative d'accès DeactivateMyAccount par non-talent ou ID invalide. Type: {UserType}, IdClaim: {UserIdClaim}", userTypeClaim, userIdClaim);
+                return Forbid();
+            }
+
+            try
+            {
+                bool success = await _talentService.DeactivateTalentAccountAsync(talentId);
+                if (!success)
+                {
+                    _logger.LogWarning("Compte Talent non trouvé pour désactivation ID {TalentId}", talentId);
+                    return NotFound(new { message = "Compte non trouvé." });
+                }
+                _logger.LogInformation("Compte Talent ID {TalentId} désactivé par l'utilisateur.", talentId);
+                return NoContent(); // 204
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Erreur désactivation compte pour Talent ID {TalentId}", talentId);
+                return StatusCode(StatusCodes.Status500InternalServerError, new { message = "Erreur interne serveur." });
+            }
+        }
+
+     
     }
 }
