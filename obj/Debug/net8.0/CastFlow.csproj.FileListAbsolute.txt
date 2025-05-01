@@ -140,3 +140,4 @@ C:\Users\badr4\OneDrive\Bureau\projet fin année\CastFlow\obj\Debug\net8.0\refin
 C:\Users\badr4\OneDrive\Bureau\projet fin année\CastFlow\obj\Debug\net8.0\CastFlow.pdb
 C:\Users\badr4\OneDrive\Bureau\projet fin année\CastFlow\obj\Debug\net8.0\CastFlow.genruntimeconfig.cache
 C:\Users\badr4\OneDrive\Bureau\projet fin année\CastFlow\obj\Debug\net8.0\ref\CastFlow.dll
+C:\Users\badr4\OneDrive\Bureau\projet fin année\CastFlow\bin\Debug\net8.0\BCrypt.Net-Next.dll
