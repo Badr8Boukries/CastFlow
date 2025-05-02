@@ -5,7 +5,7 @@ namespace CastFlow.Api.Dtos.Request
     public class SetupAdminAccountRequestDto
     {
         [Required]
-        public string ActivationToken { get; set; } = string.Empty; // Le token reste requis
+        public string ActivationToken { get; set; } = string.Empty;
 
         [Required]
         [StringLength(50)]

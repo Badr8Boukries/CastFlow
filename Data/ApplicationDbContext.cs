@@ -15,8 +15,8 @@ namespace CastFlow.Api.Data
         public DbSet<Projet> Projets { get; set; } = null!;
         public DbSet<Role> Roles { get; set; } = null!;
         public DbSet<Candidature> Candidatures { get; set; } = null!;
-        public DbSet<EmailVerifier> EmailVerifiers { get; set; } = null!; // <-- AJOUT DU DBSET
-
+        public DbSet<EmailVerifier> EmailVerifiers { get; set; } = null!; 
+        public DbSet<AdminInvitationToken> AdminInvitationTokens { get; set; } = null!;
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -124,6 +124,35 @@ namespace CastFlow.Api.Data
                       .WithMany() 
                       .HasForeignKey(ev => ev.UserId)
                       .OnDelete(DeleteBehavior.Cascade); 
+
+            });
+
+            modelBuilder.Entity<AdminInvitationToken>(entity =>
+            {
+                entity.ToTable("AdminInvitationTokens");
+                entity.HasKey(t => t.Id);
+                entity.Property(t => t.Email).IsRequired().HasMaxLength(100);
+                entity.Property(t => t.ActivationToken).IsRequired().HasMaxLength(100);
+                entity.Property(t => t.ExpiresAt).IsRequired();
+                entity.Property(t => t.IsUsed).IsRequired();
+                entity.Property(t => t.InvitedByAdminId).IsRequired();
+                entity.Property(t => t.CreatedAt).IsRequired();
+                entity.Property(t => t.CreatedAdminId); 
+
+                entity.HasIndex(t => t.ActivationToken).IsUnique();
+                entity.HasIndex(t => t.Email);
+
+                // Relation vers l'admin qui invite (UserAdmin -> AdminInvitationToken : 1-N)
+                entity.HasOne(t => t.InvitedByAdmin)
+                      .WithMany() // UserAdmin n'a pas de collection d'invitations envoyées
+                      .HasForeignKey(t => t.InvitedByAdminId)
+                      .OnDelete(DeleteBehavior.Restrict); 
+
+                // Relation vers l'admin créé (UserAdmin -> AdminInvitationToken : 0..1-N)
+                entity.HasOne(t => t.CreatedAdmin)
+                      .WithMany() // UserAdmin n'a pas de collection liée à son token d'activation
+                      .HasForeignKey(t => t.CreatedAdminId)
+                      .OnDelete(DeleteBehavior.SetNull); 
 
             });
         }

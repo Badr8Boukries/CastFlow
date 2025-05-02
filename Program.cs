@@ -20,7 +20,10 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 
 builder.Services.AddControllers();
-
+builder.Services.AddScoped<IUserTalentRepository, UserTalentRepository>();
+builder.Services.AddScoped<IUserAdminRepository, UserAdminRepository>();
+builder.Services.AddScoped<ITalentService, TalentService>();
+builder.Services.AddScoped<IAdminManagementService, AdminManagementService>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
