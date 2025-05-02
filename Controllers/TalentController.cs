@@ -25,7 +25,6 @@ namespace CastFlow.Api.Controllers
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
-        // --- Endpoints Publics ---
 
         [HttpPost("register")]
         [ProducesResponseType(typeof(AuthResponseDto), StatusCodes.Status200OK)]
@@ -73,7 +72,7 @@ namespace CastFlow.Api.Controllers
             }
         }
 
-        [HttpPost("~/api/auth/login")] // Garde la route spécifique pour le login
+        [HttpPost("~/api/auth/login")] 
         [ProducesResponseType(typeof(AuthResponseDto), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(AuthResponseDto), StatusCodes.Status401Unauthorized)]
@@ -98,7 +97,6 @@ namespace CastFlow.Api.Controllers
             }
         }
 
-        // --- Endpoints Protégés (Nécessitent Connexion Talent) ---
 
         [HttpGet("profile/me")]
         [Authorize]
@@ -108,9 +106,7 @@ namespace CastFlow.Api.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetMyProfile()
         {
-            // --- MODIFICATION ICI ---
-            var userIdClaim = User.FindFirstValue("Id"); // Recherche le claim personnalisé "Id"
-            // --- FIN MODIFICATION ---
+            var userIdClaim = User.FindFirstValue("Id"); 
             var userTypeClaim = User.FindFirstValue("userType");
 
             if (userTypeClaim != "Talent" || !long.TryParse(userIdClaim, out long talentId))
@@ -136,18 +132,17 @@ namespace CastFlow.Api.Controllers
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<IActionResult> UpdateMyProfile([FromBody] RegisterTalentRequestDto updateDto) // Utilise le DTO d'inscription comme demandé
+        
+        public async Task<IActionResult> UpdateMyProfile([FromBody] TalentProfileUpdateRequestDto updateDto) // <<<--- CHANGEMENT ICI
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
 
-            // --- MODIFICATION ICI ---
-            var userIdClaim = User.FindFirstValue("Id"); // Recherche le claim personnalisé "Id"
-                                                         // --- FIN MODIFICATION ---
+            var userIdClaim = User.FindFirstValue("Id"); 
             var userTypeClaim = User.FindFirstValue("userType");
 
             if (userTypeClaim != "Talent" || !long.TryParse(userIdClaim, out long talentId))
             {
-                _logger.LogWarning("Tentative d'accès UpdateMyProfile par non-talent ou ID invalide. Type: {UserType}, IdClaim: {UserIdClaim}", userTypeClaim, userIdClaim);
+                _logger.LogWarning("Tentative d'accès UpdateMyProfile par non-talent ou ID invalide.");
                 return Forbid();
             }
 
@@ -176,7 +171,6 @@ namespace CastFlow.Api.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> DeactivateMyAccount()
         {
-            // --- MODIFICATION ICI ---
             var userIdClaim = User.FindFirstValue("Id");
                                                       
             var userTypeClaim = User.FindFirstValue("userType");
@@ -196,7 +190,7 @@ namespace CastFlow.Api.Controllers
                     return NotFound(new { message = "Compte non trouvé." });
                 }
                 _logger.LogInformation("Compte Talent ID {TalentId} désactivé par l'utilisateur.", talentId);
-                return NoContent(); // 204
+                return NoContent(); 
             }
             catch (Exception ex)
             {

@@ -199,10 +199,10 @@ namespace CastFlow.Api.Services
             }).ToList();
         }
 
-        public async Task<TalentProfileResponseDto?> UpdateTalentProfileAsync(long talentId, RegisterTalentRequestDto updateDto) // Paramètre changé
+        public async Task<TalentProfileResponseDto?> UpdateTalentProfileAsync(long talentId, TalentProfileUpdateRequestDto updateDto) // Utilise le bon DTO
         {
             _logger.LogInformation("Mise à jour du profil pour Talent ID {TalentId}", talentId);
-            var userTalent = await _userTalentRepo.GetActiveByIdAsync(talentId); // Suppose filtre IsDeleted
+            var userTalent = await _userTalentRepo.GetActiveByIdAsync(talentId);
 
             if (userTalent == null)
             {
@@ -210,8 +210,7 @@ namespace CastFlow.Api.Services
                 return null;
             }
 
-           
-
+            // On applique les mises à jour depuis le DTO spécifique
             userTalent.Prenom = updateDto.Prenom;
             userTalent.Nom = updateDto.Nom;
             userTalent.DateNaissance = updateDto.DateNaissance;
@@ -219,18 +218,14 @@ namespace CastFlow.Api.Services
             userTalent.Telephone = updateDto.Telephone; 
 
 
-          
-
             userTalent.ModifieLe = DateTime.UtcNow;
 
             _userTalentRepo.Update(userTalent);
             await _userTalentRepo.SaveChangesAsync();
 
             _logger.LogInformation("Profil Talent ID {TalentId} mis à jour avec succès.", talentId);
-
             return await GetTalentProfileByIdAsync(talentId);
         }
-
 
         public async Task<bool> DeactivateTalentAccountAsync(long talentId)
         {
