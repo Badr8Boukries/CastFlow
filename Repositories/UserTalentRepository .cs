@@ -1,13 +1,14 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using CastFlow.Api.Data;
 using CastFlow.Api.Models;
-using System.Collections.Generic; 
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System; 
 
 namespace CastFlow.Api.Repository
 {
-    public class UserTalentRepository : IUserTalentRepository
+    public class UserTalentRepository : IUserTalentRepository 
     {
         private readonly ApplicationDbContext _context;
 
@@ -25,8 +26,8 @@ namespace CastFlow.Api.Repository
 
         public async Task<UserTalent?> GetByIdAsync(long id)
         {
-           
             return await _context.UserTalents.FindAsync(id);
+           
         }
 
         public async Task<UserTalent?> GetActiveByIdAsync(long id)
@@ -39,15 +40,30 @@ namespace CastFlow.Api.Repository
         {
             if (string.IsNullOrWhiteSpace(email)) return null;
             return await _context.UserTalents
-                                 .FirstOrDefaultAsync(u => u.Email.ToLower() == email.ToLower() && !u.IsDeleted);
+                                 .FirstOrDefaultAsync(u => u.Email != null && u.Email.ToLower() == email.ToLower());
+        }
+
+        public async Task<UserTalent?> GetActiveByEmailAsync(string email)
+        {
+            if (string.IsNullOrWhiteSpace(email)) return null;
+            return await _context.UserTalents
+                                 .FirstOrDefaultAsync(u => u.Email != null && u.Email.ToLower() == email.ToLower() && !u.IsDeleted);
         }
 
         public async Task<bool> EmailExistsAsync(string email)
         {
             if (string.IsNullOrWhiteSpace(email)) return false;
             return await _context.UserTalents
-                                 .AnyAsync(u => u.Email.ToLower() == email.ToLower() && !u.IsDeleted);
+                                 .AnyAsync(u => u.Email != null && u.Email.ToLower() == email.ToLower());
         }
+
+        public async Task<bool> ActiveEmailExistsAsync(string email)
+        {
+            if (string.IsNullOrWhiteSpace(email)) return false;
+            return await _context.UserTalents
+                                 .AnyAsync(u => u.Email != null && u.Email.ToLower() == email.ToLower() && !u.IsDeleted);
+        }
+
 
         public async Task<IEnumerable<UserTalent>> GetAllActiveAsync()
         {
@@ -67,15 +83,19 @@ namespace CastFlow.Api.Repository
             if (userTalent == null) throw new ArgumentNullException(nameof(userTalent));
             userTalent.IsDeleted = true;
             userTalent.ModifieLe = DateTime.UtcNow;
-            _context.UserTalents.Update(userTalent); 
-        }
 
+            
+            _context.UserTalents.Update(userTalent);
+        }
 
         public async Task AddEmailVerificationAsync(EmailVerifier emailVerifier)
         {
             if (emailVerifier == null) throw new ArgumentNullException(nameof(emailVerifier));
             var oldVerifications = _context.EmailVerifiers.Where(e => e.Email == emailVerifier.Email && !e.IsVerified);
-            _context.EmailVerifiers.RemoveRange(oldVerifications);
+            if (await oldVerifications.AnyAsync()) 
+            {
+                _context.EmailVerifiers.RemoveRange(oldVerifications);
+            }
             await _context.EmailVerifiers.AddAsync(emailVerifier);
         }
 
@@ -84,7 +104,10 @@ namespace CastFlow.Api.Repository
             if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(code)) return null;
             var now = DateTime.UtcNow;
             return await _context.EmailVerifiers
-                .Where(e => e.Email.ToLower() == email.ToLower() && e.VerificationCode == code && e.ExpiresAt > now && !e.IsVerified)
+                .Where(e => e.Email.ToLower() == email.ToLower()
+                            && e.VerificationCode == code
+                            && e.ExpiresAt > now
+                            && !e.IsVerified)
                 .OrderByDescending(e => e.CreatedAt)
                 .FirstOrDefaultAsync();
         }
@@ -99,6 +122,11 @@ namespace CastFlow.Api.Repository
         public async Task<int> SaveChangesAsync()
         {
             return await _context.SaveChangesAsync();
+        }
+
+        public async Task<UserTalent?> GetByIdAsync_IncludeDeleted_TEMP(long id)
+        {
+            return await _context.UserTalents.FindAsync(id);
         }
     }
 }

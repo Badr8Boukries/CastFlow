@@ -38,26 +38,24 @@ namespace CastFlow.Api.Data
             {
                 entity.ToTable("UserTalents");
                 entity.HasKey(ut => ut.TalentId);
-                entity.HasIndex(ut => ut.Email).IsUnique();
-                entity.Property(ut => ut.Prenom).IsRequired().HasMaxLength(50);
-                entity.Property(ut => ut.Nom).IsRequired().HasMaxLength(50);
-                entity.Property(ut => ut.Email).IsRequired().HasMaxLength(100);
-                entity.Property(ut => ut.MotDePasseHash).IsRequired();
-                entity.Property(ut => ut.DateNaissance).IsRequired();
-                entity.Property(ut => ut.Sex).IsRequired().HasMaxLength(20);
+                entity.Property(ut => ut.Prenom).HasMaxLength(50); 
+                entity.Property(ut => ut.Nom).HasMaxLength(50);    
+                entity.Property(ut => ut.Email).HasMaxLength(100); 
+                entity.Property(ut => ut.MotDePasseHash);          
+                entity.Property(ut => ut.DateNaissance);          
+                entity.Property(ut => ut.Sex).HasMaxLength(20);    
                 entity.Property(ut => ut.Telephone).HasMaxLength(20);
                 entity.Property(ut => ut.UrlPhoto).HasMaxLength(2048);
                 entity.Property(ut => ut.UrlCv).HasMaxLength(2048);
+                entity.Property(ut => ut.IsEmailVerified).IsRequired();
+                entity.Property(ut => ut.IsDeleted).IsRequired().HasDefaultValue(false); 
                 entity.Property(ut => ut.CreeLe).IsRequired();
                 entity.Property(ut => ut.ModifieLe).IsRequired();
-                entity.Property(ut => ut.IsEmailVerified).IsRequired(); 
 
                 entity.HasMany(ut => ut.Candidatures)
                       .WithOne(c => c.Talent)
                       .HasForeignKey(c => c.TalentId)
-                      .OnDelete(DeleteBehavior.Restrict);
-
-              
+                      .OnDelete(DeleteBehavior.Restrict); 
             });
 
             modelBuilder.Entity<Projet>(entity =>
@@ -79,7 +77,6 @@ namespace CastFlow.Api.Data
 
             });
 
-            // Configuration pour Role (inchangée)
             modelBuilder.Entity<Role>(entity =>
             {
                 entity.ToTable("Roles");

@@ -9,9 +9,9 @@ namespace CastFlow.Api.Repository
         Task AddAsync(UserTalent userTalent);
         Task<UserTalent?> GetByIdAsync(long id); 
         Task<UserTalent?> GetByEmailAsync(string email);
-        Task<bool> EmailExistsAsync(string email); 
+        Task<bool> EmailExistsAsync(string email);
 
-      
+        Task<UserTalent?> GetByIdAsync_IncludeDeleted_TEMP(long id); // Pour recupere le user meme si IsDeleted=true
         Task<UserTalent?> GetActiveByIdAsync(long id);
 
       

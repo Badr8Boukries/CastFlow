@@ -229,15 +229,60 @@ namespace CastFlow.Api.Services
 
         public async Task<bool> DeactivateTalentAccountAsync(long talentId)
         {
-            var userTalent = await _userTalentRepo.GetActiveByIdAsync(talentId); // Suppose que cette méthode filtre IsDeleted=false
-            if (userTalent == null) return false;
+            _logger.LogWarning("Tentative de désactivation/anonymisation du compte Talent ID {TalentId}", talentId);
+           
+            var userTalent = await _userTalentRepo.GetByIdAsync_IncludeDeleted_TEMP(talentId); 
 
-            userTalent.IsDeleted = true;
+            if (userTalent == null)
+            {
+                _logger.LogWarning("Compte Talent ID {TalentId} non trouvé pour désactivation.", talentId);
+                return false;
+            }
+
+            if (userTalent.IsDeleted) 
+            {
+                _logger.LogInformation("Compte Talent ID {TalentId} est déjà désactivé.", talentId);
+                return true; 
+            }
+
+            
+            _logger.LogInformation("Anonymisation des données pour Talent ID {TalentId}", talentId);
+            string? photoUrlToDelete = userTalent.UrlPhoto; 
+            string? cvUrlToDelete = userTalent.UrlCv;       
+
+            userTalent.Prenom = "Utilisateur";
+            userTalent.Nom = "Supprimé";
+            userTalent.Email = null; 
+            userTalent.MotDePasseHash = $"DELETED_{Guid.NewGuid()}";
+            userTalent.DateNaissance = new DateTime(1900, 1, 1);
+            userTalent.Sex = null;           
+            userTalent.Telephone = null;
+            userTalent.UrlPhoto = null;
+            userTalent.UrlCv = null;
+            userTalent.IsEmailVerified = false; 
+            userTalent.IsDeleted = true;        
             userTalent.ModifieLe = DateTime.UtcNow;
-            // Envisager anonymisation si besoin (Email, Tel, etc.)
-            _userTalentRepo.Update(userTalent);
-            await _userTalentRepo.SaveChangesAsync();
-            _logger.LogInformation($"Compte Talent ID {talentId} désactivé (Soft Delete).");
+
+            _userTalentRepo.Update(userTalent); 
+
+            try
+            {
+                if (!string.IsNullOrWhiteSpace(photoUrlToDelete))
+                {
+                    _logger.LogInformation("Fichier photo pour Talent ID {TalentId} marqué pour suppression (URL: {Url})", talentId, photoUrlToDelete); // Log même si commenté
+                }
+                if (!string.IsNullOrWhiteSpace(cvUrlToDelete))
+                {
+                    _logger.LogInformation("Fichier CV pour Talent ID {TalentId} marqué pour suppression (URL: {Url})", talentId, cvUrlToDelete); // Log même si commenté
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Erreur lors de la suppression des fichiers associés au Talent ID {TalentId} lors de l'anonymisation.", talentId);
+            }
+
+            await _userTalentRepo.SaveChangesAsync(); 
+            _logger.LogInformation("Compte Talent ID {TalentId} désactivé et anonymisé avec succès.", talentId);
             return true;
         }
 
