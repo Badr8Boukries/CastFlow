@@ -22,10 +22,11 @@ namespace CastFlow.Api.Models
         [StringLength(100)]
         public string? Email { get; set; }
 
-        public string? MotDePasseHash { get; set; } 
+        public string? MotDePasseHash { get; set; }
 
-        
-        public DateTime DateNaissance { get; set; } 
+
+
+        public DateTime? DateNaissance { get; set; }
 
         [StringLength(20)]
         public string? Sex { get; set; } 

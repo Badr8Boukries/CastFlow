@@ -25,9 +25,8 @@ namespace CastFlow.Api.Repository
         void MarkEmailVerificationAsUsed(EmailVerifier emailVerifier);
 
       
-        void MarkAsDeleted(UserTalent userTalent); 
-
-
+        void MarkAsDeleted(UserTalent userTalent);
+        Task<UserTalent?> GetActiveByEmailAsync(string email);
         Task<int> SaveChangesAsync();
     }
 }

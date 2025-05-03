@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using AutoMapper; 
+using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System;
@@ -25,45 +26,39 @@ namespace CastFlow.Api.Services
         private readonly IUserAdminRepository _userAdminRepo;
         private readonly ILogger<TalentService> _logger;
         private readonly IConfiguration _configuration;
+        private readonly IMapper _mapper;
 
         public TalentService(
             IUserTalentRepository userTalentRepo,
             IUserAdminRepository userAdminRepo,
             ILogger<TalentService> logger,
-            IConfiguration configuration)
+            IConfiguration configuration,
+            IMapper mapper
+            )
         {
             _userTalentRepo = userTalentRepo ?? throw new ArgumentNullException(nameof(userTalentRepo));
             _userAdminRepo = userAdminRepo ?? throw new ArgumentNullException(nameof(userAdminRepo));
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
             _configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
+            _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
 
         public async Task<AuthResponseDto> InitiateTalentRegistrationAsync(RegisterTalentRequestDto registerDto)
         {
-            bool talentExists = await _userTalentRepo.EmailExistsAsync(registerDto.Email);
+            bool talentExists = await _userTalentRepo.ActiveEmailExistsAsync(registerDto.Email);
             bool adminExists = await _userAdminRepo.EmailExistsAsync(registerDto.Email);
-
-            if (talentExists || adminExists)
-            {
-                return new AuthResponseDto(false, "Cet email est déjà utilisé.");
-            }
+            if (talentExists || adminExists) { return new AuthResponseDto(false, "Cet email est déjà utilisé par un compte actif."); }
 
             string passwordHash = BCrypt.Net.BCrypt.HashPassword(registerDto.MotDePasse);
+            var newUserTalent = _mapper.Map<UserTalent>(registerDto);
 
-            var newUserTalent = new UserTalent
-            {
-                Prenom = registerDto.Prenom,
-                Nom = registerDto.Nom,
-                Email = registerDto.Email,
-                MotDePasseHash = passwordHash,
-                DateNaissance = registerDto.DateNaissance,
-                Sex = registerDto.Sex,
-                Telephone = registerDto.Telephone,
-                IsEmailVerified = false,
-                IsDeleted = false,
-                CreeLe = DateTime.UtcNow,
-                ModifieLe = DateTime.UtcNow
-            };
+            newUserTalent.MotDePasseHash = passwordHash;
+            newUserTalent.IsEmailVerified = false;
+            newUserTalent.IsDeleted = false;
+            newUserTalent.CreeLe = DateTime.UtcNow;
+            newUserTalent.ModifieLe = DateTime.UtcNow;
+            newUserTalent.DateNaissance = registerDto.DateNaissance;
+
 
             try
             {
@@ -72,58 +67,35 @@ namespace CastFlow.Api.Services
 
                 string verificationCode = GenerateVerificationCode();
                 DateTime expiresAt = DateTime.UtcNow.AddHours(1);
-
-                var emailVerifier = new EmailVerifier
-                {
-                    Email = newUserTalent.Email,
-                    VerificationCode = verificationCode,
-                    ExpiresAt = expiresAt,
-                    UserId = newUserTalent.TalentId,
-                    IsVerified = false,
-                    CreatedAt = DateTime.UtcNow
-                };
-
+                var emailVerifier = new EmailVerifier { Email = newUserTalent.Email!, VerificationCode = verificationCode, ExpiresAt = expiresAt, UserId = newUserTalent.TalentId, IsVerified = false, CreatedAt = DateTime.UtcNow };
                 await _userTalentRepo.AddEmailVerificationAsync(emailVerifier);
                 await _userTalentRepo.SaveChangesAsync();
-
-                await SendVerificationEmailAsync(newUserTalent.Email, verificationCode);
+                await SendVerificationEmailAsync(newUserTalent.Email!, verificationCode);
 
                 _logger.LogInformation($"Inscription initiée pour {newUserTalent.Email}. Code envoyé.");
                 return new AuthResponseDto(true, "Inscription initiée. Veuillez vérifier votre email pour le code de vérification.");
             }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, $"Erreur lors de l'initiation de l'inscription pour {registerDto.Email}");
-                return new AuthResponseDto(false, "Une erreur est survenue lors de l'inscription.");
-            }
+            catch (Exception ex) { _logger.LogError(ex, $"Erreur lors de l'initiation de l'inscription pour {registerDto.Email}"); return new AuthResponseDto(false, "Une erreur est survenue lors de l'inscription."); }
         }
 
         public async Task<bool> VerifyTalentEmailAsync(VerificationRequestDto verificationDto)
         {
             var verification = await _userTalentRepo.GetValidEmailVerificationAsync(verificationDto.Email, verificationDto.Code);
-            if (verification == null) return false;
+            if (verification == null) { _logger.LogWarning($"Échec vérification (Code Invalide/Expiré) pour {verificationDto.Email}."); return false; }
 
             var userTalent = await _userTalentRepo.GetByIdAsync(verification.UserId);
-            if (userTalent == null || userTalent.IsDeleted)
-            {
-                _userTalentRepo.MarkEmailVerificationAsUsed(verification);
-                await _userTalentRepo.SaveChangesAsync();
-                return false;
-            }
-
-            if (userTalent.IsEmailVerified)
-            {
-                _userTalentRepo.MarkEmailVerificationAsUsed(verification);
-                await _userTalentRepo.SaveChangesAsync();
-                return true;
-            }
+            if (userTalent == null) { _logger.LogError($"UserTalent non trouvé (ID:{verification.UserId}) pour vérification {verificationDto.Email}."); _userTalentRepo.MarkEmailVerificationAsUsed(verification); await _userTalentRepo.SaveChangesAsync(); return false; }
+            if (userTalent.IsDeleted) { _logger.LogWarning($"Tentative vérification pour compte désactivé: {verificationDto.Email}"); _userTalentRepo.MarkEmailVerificationAsUsed(verification); await _userTalentRepo.SaveChangesAsync(); return false; }
+            if (userTalent.IsEmailVerified) { _logger.LogInformation($"Email déjà vérifié pour {userTalent.Email}."); _userTalentRepo.MarkEmailVerificationAsUsed(verification); await _userTalentRepo.SaveChangesAsync(); return true; }
 
             userTalent.IsEmailVerified = true;
             userTalent.ModifieLe = DateTime.UtcNow;
             _userTalentRepo.Update(userTalent);
             _userTalentRepo.MarkEmailVerificationAsUsed(verification);
             int changes = await _userTalentRepo.SaveChangesAsync();
-            return changes > 0;
+
+            if (changes > 0) { _logger.LogInformation($"Email vérifié pour {userTalent.Email}."); return true; }
+            else { _logger.LogError($"Echec sauvegarde lors vérification email pour {verificationDto.Email}."); return false; }
         }
 
         public async Task<AuthResponseDto> LoginAsync(LoginRequestDto loginDto)
@@ -131,161 +103,71 @@ namespace CastFlow.Api.Services
             var admin = await _userAdminRepo.GetByEmailAsync(loginDto.Email);
             if (admin != null)
             {
-                if (BCrypt.Net.BCrypt.Verify(loginDto.MotDePasse, admin.MotDePasseHash))
-                {
-                    string token = GenerateJwtToken(admin.AdminId, "Admin", admin.Email, admin.Prenom, admin.Nom);
-                    return new AuthResponseDto("Connexion Admin réussie.", token, admin.AdminId, AuthenticatedUserType.Admin, admin.Prenom, admin.Nom, admin.Email);
-                }
-                else { throw new UnauthorizedAccessException("Email ou mot de passe incorrect."); }
+                if (BCrypt.Net.BCrypt.Verify(loginDto.MotDePasse, admin.MotDePasseHash)) { if (admin.Prenom == null || admin.Nom == null || admin.Email == null) { throw new InvalidOperationException("Données admin incomplètes."); } _logger.LogInformation($"Connexion réussie pour Admin {admin.Email}"); string token = GenerateJwtToken(admin.AdminId, "Admin", admin.Email, admin.Prenom, admin.Nom); return new AuthResponseDto("Connexion Admin réussie.", token, admin.AdminId, AuthenticatedUserType.Admin, admin.Prenom, admin.Nom, admin.Email); }
+                else { _logger.LogWarning($"Mdp incorrect pour Admin {loginDto.Email}"); throw new UnauthorizedAccessException("Email ou mot de passe incorrect."); }
             }
 
-            var talent = await _userTalentRepo.GetByEmailAsync(loginDto.Email);
-            if (talent != null && !talent.IsDeleted)
+            var talent = await _userTalentRepo.GetActiveByEmailAsync(loginDto.Email);
+            if (talent != null)
             {
-                if (BCrypt.Net.BCrypt.Verify(loginDto.MotDePasse, talent.MotDePasseHash))
-                {
-                    if (!talent.IsEmailVerified) { throw new UnauthorizedAccessException("Votre compte existe mais votre email n'est pas vérifié. Veuillez entrer le code reçu par email."); }
-                    string token = GenerateJwtToken(talent.TalentId, "Talent", talent.Email, talent.Prenom, talent.Nom);
-                    return new AuthResponseDto("Connexion Talent réussie.", token, talent.TalentId, AuthenticatedUserType.Talent, talent.Prenom, talent.Nom, talent.Email);
-                }
-                else { throw new UnauthorizedAccessException("Email ou mot de passe incorrect."); }
+                if (talent.MotDePasseHash == null) { _logger.LogError("Hash de mot de passe manquant pour Talent ID {TalentId}", talent.TalentId); throw new InvalidOperationException("Compte talent corrompu."); }
+                if (BCrypt.Net.BCrypt.Verify(loginDto.MotDePasse, talent.MotDePasseHash)) { if (!talent.IsEmailVerified) { _logger.LogWarning($"Connexion tentée pour Talent non vérifié: {talent.Email}"); throw new UnauthorizedAccessException("Votre compte existe mais votre email n'est pas vérifié. Veuillez entrer le code reçu par email."); } if (talent.Prenom == null || talent.Nom == null || talent.Email == null) { _logger.LogError("Données Talent incomplètes pour ID {TalentId}", talent.TalentId); throw new InvalidOperationException("Données talent incomplètes."); } _logger.LogInformation($"Connexion réussie pour Talent {talent.Email}."); string token = GenerateJwtToken(talent.TalentId, "Talent", talent.Email, talent.Prenom, talent.Nom); return new AuthResponseDto("Connexion Talent réussie.", token, talent.TalentId, AuthenticatedUserType.Talent, talent.Prenom, talent.Nom, talent.Email); }
+                else { _logger.LogWarning($"Mdp incorrect pour Talent {loginDto.Email}"); throw new UnauthorizedAccessException("Email ou mot de passe incorrect."); }
             }
 
-            throw new UnauthorizedAccessException("Email ou mot de passe incorrect.");
+            _logger.LogWarning($"Utilisateur inconnu ou inactif pour {loginDto.Email}"); throw new UnauthorizedAccessException("Email ou mot de passe incorrect.");
         }
 
         public async Task<TalentProfileResponseDto?> GetTalentProfileByIdAsync(long talentId)
         {
-            var userTalent = await _userTalentRepo.GetActiveByIdAsync(talentId); // Suppose que cette méthode filtre IsDeleted=false
+            var userTalent = await _userTalentRepo.GetActiveByIdAsync(talentId);
             if (userTalent == null) return null;
-
-            int age = DateTime.Today.Year - userTalent.DateNaissance.Year;
-            if (userTalent.DateNaissance.Date > DateTime.Today.AddYears(-age)) age--;
-
-            return new TalentProfileResponseDto
-            {
-                TalentId = userTalent.TalentId,
-                Prenom = userTalent.Prenom,
-                Nom = userTalent.Nom,
-                Email = userTalent.Email,
-                DateNaissance = userTalent.DateNaissance,
-                Age = age,
-                Sex = userTalent.Sex,
-                Telephone = userTalent.Telephone,
-                UrlPhoto = userTalent.UrlPhoto,
-                UrlCv = userTalent.UrlCv
-            };
+            return _mapper.Map<TalentProfileResponseDto>(userTalent);
         }
 
         public async Task<IEnumerable<TalentProfileResponseDto>> GetAllActiveTalentsAsync()
         {
-            var activeTalents = await _userTalentRepo.GetAllActiveAsync(); 
-            return activeTalents.Select(userTalent => {
-                int age = DateTime.Today.Year - userTalent.DateNaissance.Year;
-                if (userTalent.DateNaissance.Date > DateTime.Today.AddYears(-age)) age--;
-                return new TalentProfileResponseDto
-                {
-                    TalentId = userTalent.TalentId,
-                    Prenom = userTalent.Prenom,
-                    Nom = userTalent.Nom,
-                    Email = userTalent.Email,
-                    DateNaissance = userTalent.DateNaissance,
-                    Age = age,
-                    Sex = userTalent.Sex,
-                    Telephone = userTalent.Telephone,
-                    UrlPhoto = userTalent.UrlPhoto,
-                    UrlCv = userTalent.UrlCv
-                };
-            }).ToList();
+            var activeTalents = await _userTalentRepo.GetAllActiveAsync();
+            _logger.LogInformation("Récupération de {Count} talents actifs.", activeTalents.Count());
+            return _mapper.Map<List<TalentProfileResponseDto>>(activeTalents);
         }
 
-        public async Task<TalentProfileResponseDto?> UpdateTalentProfileAsync(long talentId, TalentProfileUpdateRequestDto updateDto) // Utilise le bon DTO
+        public async Task<TalentProfileResponseDto?> UpdateTalentProfileAsync(long talentId, TalentProfileUpdateRequestDto updateDto)
         {
-            _logger.LogInformation("Mise à jour du profil pour Talent ID {TalentId}", talentId);
             var userTalent = await _userTalentRepo.GetActiveByIdAsync(talentId);
+            if (userTalent == null) { _logger.LogWarning("Profil Talent actif non trouvé pour MàJ ID {TalentId}", talentId); return null; }
 
-            if (userTalent == null)
-            {
-                _logger.LogWarning("Profil Talent actif non trouvé pour mise à jour ID {TalentId}", talentId);
-                return null;
-            }
-
-            // On applique les mises à jour depuis le DTO spécifique
-            userTalent.Prenom = updateDto.Prenom;
-            userTalent.Nom = updateDto.Nom;
-            userTalent.DateNaissance = updateDto.DateNaissance;
-            userTalent.Sex = updateDto.Sex;
-            userTalent.Telephone = updateDto.Telephone; 
-
-
+            _mapper.Map(updateDto, userTalent);
             userTalent.ModifieLe = DateTime.UtcNow;
 
-            _userTalentRepo.Update(userTalent);
-            await _userTalentRepo.SaveChangesAsync();
 
-            _logger.LogInformation("Profil Talent ID {TalentId} mis à jour avec succès.", talentId);
-            return await GetTalentProfileByIdAsync(talentId);
+            await _userTalentRepo.SaveChangesAsync();
+            _logger.LogInformation("Profil Talent ID {TalentId} mis à jour.", talentId);
+            return _mapper.Map<TalentProfileResponseDto>(userTalent);
         }
 
         public async Task<bool> DeactivateTalentAccountAsync(long talentId)
         {
-            _logger.LogWarning("Tentative de désactivation/anonymisation du compte Talent ID {TalentId}", talentId);
-           
-            var userTalent = await _userTalentRepo.GetByIdAsync_IncludeDeleted_TEMP(talentId); 
+            var userTalent = await _userTalentRepo.GetByIdAsync_IncludeDeleted_TEMP(talentId);
+            if (userTalent == null) { _logger.LogWarning("Compte Talent ID {TalentId} non trouvé pour désactivation.", talentId); return false; }
+            if (userTalent.IsDeleted) { _logger.LogInformation("Compte Talent ID {TalentId} déjà désactivé.", talentId); return true; }
 
-            if (userTalent == null)
-            {
-                _logger.LogWarning("Compte Talent ID {TalentId} non trouvé pour désactivation.", talentId);
-                return false;
-            }
-
-            if (userTalent.IsDeleted) 
-            {
-                _logger.LogInformation("Compte Talent ID {TalentId} est déjà désactivé.", talentId);
-                return true; 
-            }
-
-            
             _logger.LogInformation("Anonymisation des données pour Talent ID {TalentId}", talentId);
-            string? photoUrlToDelete = userTalent.UrlPhoto; 
-            string? cvUrlToDelete = userTalent.UrlCv;       
+            string? photoUrlToDelete = userTalent.UrlPhoto; string? cvUrlToDelete = userTalent.UrlCv;
 
-            userTalent.Prenom = "Utilisateur";
-            userTalent.Nom = "Supprimé";
-            userTalent.Email = null; 
+            userTalent.Prenom = "Utilisateur"; userTalent.Nom = "Supprimé"; userTalent.Email = null;
             userTalent.MotDePasseHash = $"DELETED_{Guid.NewGuid()}";
-            userTalent.DateNaissance = new DateTime(1900, 1, 1);
-            userTalent.Sex = null;           
-            userTalent.Telephone = null;
-            userTalent.UrlPhoto = null;
-            userTalent.UrlCv = null;
-            userTalent.IsEmailVerified = false; 
-            userTalent.IsDeleted = true;        
-            userTalent.ModifieLe = DateTime.UtcNow;
+            userTalent.DateNaissance = default; 
+            userTalent.Sex = null; userTalent.Telephone = null; userTalent.UrlPhoto = null; userTalent.UrlCv = null;
+            userTalent.IsEmailVerified = false; userTalent.IsDeleted = true; userTalent.ModifieLe = DateTime.UtcNow;
 
-            _userTalentRepo.Update(userTalent); 
+            _userTalentRepo.Update(userTalent);
 
-            try
-            {
-                if (!string.IsNullOrWhiteSpace(photoUrlToDelete))
-                {
-                    _logger.LogInformation("Fichier photo pour Talent ID {TalentId} marqué pour suppression (URL: {Url})", talentId, photoUrlToDelete); // Log même si commenté
-                }
-                if (!string.IsNullOrWhiteSpace(cvUrlToDelete))
-                {
-                    _logger.LogInformation("Fichier CV pour Talent ID {TalentId} marqué pour suppression (URL: {Url})", talentId, cvUrlToDelete); // Log même si commenté
-                }
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Erreur lors de la suppression des fichiers associés au Talent ID {TalentId} lors de l'anonymisation.", talentId);
-            }
 
-            await _userTalentRepo.SaveChangesAsync(); 
-            _logger.LogInformation("Compte Talent ID {TalentId} désactivé et anonymisé avec succès.", talentId);
+            await _userTalentRepo.SaveChangesAsync();
+            _logger.LogInformation("Compte Talent ID {TalentId} désactivé et anonymisé.", talentId);
             return true;
         }
-
 
         private string GenerateVerificationCode()
         {
@@ -303,7 +185,11 @@ namespace CastFlow.Api.Services
             string? senderPassword = smtpSettings["SenderPassword"];
             string? enableSslStr = smtpSettings["EnableSsl"];
 
-            if (string.IsNullOrWhiteSpace(server) || !int.TryParse(portStr, out int port) || string.IsNullOrWhiteSpace(senderEmail) || string.IsNullOrWhiteSpace(senderPassword) || !bool.TryParse(enableSslStr, out bool enableSsl)) { _logger.LogCritical("Configuration SMTP incomplète ou invalide."); return; }
+            if (string.IsNullOrWhiteSpace(server) || !int.TryParse(portStr, out int port) || string.IsNullOrWhiteSpace(senderEmail) || string.IsNullOrWhiteSpace(senderPassword) || !bool.TryParse(enableSslStr, out bool enableSsl))
+            {
+                _logger.LogCritical("Configuration SMTP incomplète ou invalide. Vérifiez Server, Port, SenderEmail, SenderPassword, EnableSsl.");
+                return;
+            }
             senderName ??= "CastFlow";
 
             try
@@ -336,15 +222,13 @@ namespace CastFlow.Api.Services
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
             var claims = new[] {
-                new Claim(JwtRegisteredClaimNames.Sub, email),           
-                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                // --- MODIFICATION ICI ---
-                new Claim("Id", userId.ToString()),                       
-                // --- FIN MODIFICATION ---
-                new Claim(ClaimTypes.Email, email),                       
-                new Claim(ClaimTypes.GivenName, firstName),                 
-                new Claim(ClaimTypes.Surname, lastName),                   
-                new Claim("userType", userType)                            
+                new Claim("Id", userId.ToString()),
+                new Claim(ClaimTypes.Email, email),
+                new Claim(ClaimTypes.GivenName, firstName),
+                new Claim(ClaimTypes.Surname, lastName),
+                new Claim("userType", userType),
+                 new Claim(JwtRegisteredClaimNames.Sub, email),
+                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
             };
 
             var expires = DateTime.UtcNow.AddHours(expireHours);

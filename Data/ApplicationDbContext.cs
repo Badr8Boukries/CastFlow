@@ -41,8 +41,8 @@ namespace CastFlow.Api.Data
                 entity.Property(ut => ut.Prenom).HasMaxLength(50); 
                 entity.Property(ut => ut.Nom).HasMaxLength(50);    
                 entity.Property(ut => ut.Email).HasMaxLength(100); 
-                entity.Property(ut => ut.MotDePasseHash);          
-                entity.Property(ut => ut.DateNaissance);          
+                entity.Property(ut => ut.MotDePasseHash);
+                entity.Property(ut => ut.DateNaissance);
                 entity.Property(ut => ut.Sex).HasMaxLength(20);    
                 entity.Property(ut => ut.Telephone).HasMaxLength(20);
                 entity.Property(ut => ut.UrlPhoto).HasMaxLength(2048);

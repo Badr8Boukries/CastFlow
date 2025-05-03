@@ -13,17 +13,24 @@ var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 if (string.IsNullOrEmpty(connectionString))
 {
-    Console.WriteLine("Erreur: Chaîne de connexion 'DefaultConnection' non trouvée.");
+    Console.WriteLine("ERREUR: Chaîne de connexion 'DefaultConnection' non trouvée.");
 }
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(connectionString));
+    options.UseSqlServer(connectionString!)); 
 
 builder.Services.AddControllers();
+
 builder.Services.AddScoped<IUserTalentRepository, UserTalentRepository>();
 builder.Services.AddScoped<IUserAdminRepository, UserAdminRepository>();
+
+
 builder.Services.AddScoped<ITalentService, TalentService>();
 builder.Services.AddScoped<IAdminManagementService, AdminManagementService>();
+
+
+builder.Services.AddAutoMapper(typeof(Program).Assembly);
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
@@ -46,16 +53,13 @@ builder.Services.AddSwaggerGen(c =>
                     Type = Microsoft.OpenApi.Models.ReferenceType.SecurityScheme,
                     Id = "Bearer"
                 },
-                Scheme = "oauth2",
-                Name = "Bearer",
-                In = Microsoft.OpenApi.Models.ParameterLocation.Header,
+                Scheme = "oauth2", Name = "Bearer", In = Microsoft.OpenApi.Models.ParameterLocation.Header,
             },
             new List<string>()
         }
     });
 });
 
-// --- >>> AJOUTER CE BLOC DE CONFIGURATION JWT <<< ---
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -64,8 +68,8 @@ builder.Services.AddAuthentication(options =>
 })
 .AddJwtBearer(options =>
 {
-    options.SaveToken = true;
-    options.RequireHttpsMetadata = builder.Environment.IsProduction();
+    options.SaveToken = true; 
+    options.RequireHttpsMetadata = !builder.Environment.IsDevelopment(); 
     options.TokenValidationParameters = new TokenValidationParameters()
     {
         ValidateIssuer = true,
@@ -74,15 +78,13 @@ builder.Services.AddAuthentication(options =>
         ValidateIssuerSigningKey = true,
         ValidIssuer = builder.Configuration["Jwt:Issuer"],
         ValidAudience = builder.Configuration["Jwt:Audience"],
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Secret"]!)),
-        // ClockSkew = TimeSpan.Zero // Optionnel: être strict sur l'expiration
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Secret"]!)), // Lire depuis config/secrets
+        ClockSkew = TimeSpan.Zero 
     };
 });
 
+builder.Services.AddAuthorization(); 
 
-builder.Services.AddScoped<IUserTalentRepository, UserTalentRepository>();
-builder.Services.AddScoped<IUserAdminRepository, UserAdminRepository>();
-builder.Services.AddScoped<ITalentService, TalentService>();
 
 
 var app = builder.Build();
@@ -90,26 +92,29 @@ var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI(c =>
+    app.UseSwagger(); 
+    app.UseSwaggerUI(c => 
     {
         c.SwaggerEndpoint("/swagger/v1/swagger.json", "CastFlow API v1");
-        c.RoutePrefix = string.Empty;
+        c.RoutePrefix = string.Empty; 
     });
-    app.UseDeveloperExceptionPage();
+    app.UseDeveloperExceptionPage(); 
 }
-else
+else 
 {
-    app.UseExceptionHandler("/Error");
-    app.UseHsts();
+    app.UseExceptionHandler("/Error"); 
+    app.UseHsts(); 
 }
 
 app.UseHttpsRedirection();
 
+app.UseRouting(); 
+
 app.UseAuthentication();
 
-app.UseAuthorization(); 
+app.UseAuthorization();
 
 app.MapControllers();
+
 
 app.Run();

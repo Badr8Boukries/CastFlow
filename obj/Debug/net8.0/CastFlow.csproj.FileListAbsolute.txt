@@ -142,3 +142,5 @@ C:\Users\badr4\OneDrive\Bureau\projet fin année\CastFlow\obj\Debug\net8.0\CastF
 C:\Users\badr4\OneDrive\Bureau\projet fin année\CastFlow\obj\Debug\net8.0\ref\CastFlow.dll
 C:\Users\badr4\OneDrive\Bureau\projet fin année\CastFlow\bin\Debug\net8.0\BCrypt.Net-Next.dll
 C:\Users\badr4\OneDrive\Bureau\projet fin année\CastFlow\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\badr4\OneDrive\Bureau\projet fin année\CastFlow\bin\Debug\net8.0\AutoMapper.dll
+C:\Users\badr4\OneDrive\Bureau\projet fin année\CastFlow\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

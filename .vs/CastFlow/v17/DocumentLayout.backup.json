@@ -153,8 +153,7 @@
               "RelativeToolTip": "Data\\ApplicationDbContext.cs",
               "ViewState": "AgIAACEAAAAAAAAAAAAgwCQAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-29T15:58:27.451Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-29T15:58:27.451Z"
             },
             {
               "$type": "Document",
@@ -166,8 +165,7 @@
               "RelativeToolTip": "Repositories\\Interfaces\\IUserTalentRepository.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAAAoAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-30T15:48:48.797Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-30T15:48:48.797Z"
             },
             {
               "$type": "Document",
@@ -179,8 +177,7 @@
               "RelativeToolTip": "Repositories\\UserTalentRepository .cs",
               "ViewState": "AgIAAIMAAAAAAAAAAAAAAIMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-30T16:02:52.671Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-30T16:02:52.671Z"
             },
             {
               "$type": "Document",
@@ -192,8 +189,7 @@
               "RelativeToolTip": "Controllers\\TalentController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-02T14:11:34.298Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-02T14:11:34.298Z"
             },
             {
               "$type": "Document",
@@ -205,8 +201,7 @@
               "RelativeToolTip": "Models\\UserTalent.cs",
               "ViewState": "AgIAABYAAAAAAAAAAAA5wBsAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-29T15:00:50.387Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-29T15:00:50.387Z"
             },
             {
               "$type": "Document",
@@ -216,7 +211,7 @@
               "RelativeDocumentMoniker": "Services\\TalentService.cs.cs",
               "ToolTip": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin ann\u00E9e\\CastFlow\\Services\\TalentService.cs.cs",
               "RelativeToolTip": "Services\\TalentService.cs.cs",
-              "ViewState": "AgIAADQBAAAAAAAAAAAUwP4AAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAAP0AAAAAAAAAAAAAAP0AAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-30T16:57:04.647Z",
               "EditorCaption": ""
@@ -231,18 +226,16 @@
               "RelativeToolTip": "Repositories\\Interfaces\\IUserAdminRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-02T14:58:11.718Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-02T14:58:11.718Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "dbo.UserTalents [Data]",
+              "Title": "dbo.UserTalents.sql",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/CastFlowDb_Dev/True/SqlTable/dbo.UserTalents.sql",
-              "ToolTip": "dbo.UserTalents [Data]",
+              "ToolTip": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/CastFlowDb_Dev/True/SqlTable/dbo.UserTalents.sql",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2025-05-02T14:26:34.8Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-02T14:26:34.8Z"
             },
             {
               "$type": "Document",
@@ -254,8 +247,7 @@
               "RelativeToolTip": "Services\\Interfaces\\ITalentService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-30T16:54:57.078Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-30T16:54:57.078Z"
             },
             {
               "$type": "Document",
@@ -267,8 +259,7 @@
               "RelativeToolTip": "DTOS\\requests\\TalentProfileUpdateRequestDto.cs",
               "ViewState": "AgIAABQAAAAAAAAAAAAgwBwAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-02T14:08:55.323Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-02T14:08:55.323Z"
             },
             {
               "$type": "Document",
