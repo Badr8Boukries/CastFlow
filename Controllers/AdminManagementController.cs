@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Authorization;
 using System.Security.Claims;
+using CastFlow.Api.Services;
 
 namespace CastFlow.Api.Controllers
 {
@@ -18,12 +19,18 @@ namespace CastFlow.Api.Controllers
     {
         private readonly IAdminManagementService _adminMgmtService;
         private readonly ILogger<AdminManagementController> _logger;
+        private readonly ITalentService _talentService;
 
-        public AdminManagementController(IAdminManagementService adminMgmtService, ILogger<AdminManagementController> logger)
+        public AdminManagementController(
+            IAdminManagementService adminMgmtService,
+            ITalentService talentService,
+            ILogger<AdminManagementController> logger)
         {
             _adminMgmtService = adminMgmtService ?? throw new ArgumentNullException(nameof(adminMgmtService));
+            _talentService = talentService ?? throw new ArgumentNullException(nameof(talentService));
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
+
 
         [HttpPost("invite")]
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -91,6 +98,68 @@ namespace CastFlow.Api.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, new AuthResponseDto(false, "Erreur interne serveur."));
             }
         }
+        [HttpGet("talents")] 
+        //[Authorize(Roles = "Admin")] 
+        [ProducesResponseType(typeof(IEnumerable<TalentProfileResponseDto>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)] 
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> GetAllTalents()
+        {
+            
+            var userTypeClaim = User.FindFirstValue("userType");
+            if (userTypeClaim != "Admin")
+            {
+                _logger.LogWarning("Tentative d'accès à GetAllTalents par un non-admin. Type: {UserType}", userTypeClaim);
+                return Forbid(); // Seuls les admins peuvent lister tous les talents
+            }
 
+            try
+            {
+                var talents = await _talentService.GetAllActiveTalentsAsync();
+                return Ok(talents); // Retourne la liste des DTOs TalentProfileResponseDto
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Erreur lors de la récupération de la liste des talents.");
+                return StatusCode(StatusCodes.Status500InternalServerError, new { message = "Erreur interne serveur." });
+            }
+        }
+
+        [HttpGet("talents/{talentId}")] 
+       //[Authorize(Roles = "Admin")]
+        [ProducesResponseType(typeof(TalentProfileResponseDto), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)] 
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> GetTalentById(long talentId) 
+        {
+            
+            var userTypeClaim = User.FindFirstValue("userType");
+            if (userTypeClaim != "Admin")
+            {
+                _logger.LogWarning("Tentative d'accès GetTalentById par non-admin. Type: {UserType}", userTypeClaim);
+                return Forbid(); 
+            }
+
+            try
+            {
+                var profile = await _talentService.GetTalentProfileByIdAsync(talentId);
+
+                if (profile == null)
+                {
+                    _logger.LogWarning("Profil Talent non trouvé pour ID {TalentId} (demandé par Admin)", talentId);
+                    return NotFound(new { message = $"Aucun profil talent actif trouvé pour l'ID {talentId}." });
+                }
+
+                return Ok(profile); 
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Erreur lors de la récupération du profil talent ID {TalentId}", talentId);
+                return StatusCode(StatusCodes.Status500InternalServerError, new { message = "Erreur interne serveur." });
+            }
+        }
     }
 }

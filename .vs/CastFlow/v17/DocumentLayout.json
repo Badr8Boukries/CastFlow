@@ -3,25 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin ann\u00E9e\\CastFlow\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/CastFlowDb_Dev/True/SqlTable/dbo.UserAdmins.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|80813bf6-1f50-40d8-8d87-5de9ec2f7b36MSSQL__/_localdb__MSSQLLocalDB/CastFlowDb_Dev/True/SqlTable/Create dbo.AdminInvitationTokens.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/CastFlowDb_Dev/True/SqlTable/dbo.AdminInvitationTokens.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D647AABF-D151-2EA3-085C-71DA9BD77A33}|CastFlow.csproj|c:\\users\\badr4\\onedrive\\bureau\\projet fin ann\u00E9e\\castflow\\controllers\\adminmanagementcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D647AABF-D151-2EA3-085C-71DA9BD77A33}|CastFlow.csproj|solutionrelative:controllers\\adminmanagementcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D647AABF-D151-2EA3-085C-71DA9BD77A33}|CastFlow.csproj|c:\\users\\badr4\\onedrive\\bureau\\projet fin ann\u00E9e\\castflow\\services\\adminmanagementservice .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D647AABF-D151-2EA3-085C-71DA9BD77A33}|CastFlow.csproj|solutionrelative:services\\adminmanagementservice .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D647AABF-D151-2EA3-085C-71DA9BD77A33}|CastFlow.csproj|c:\\users\\badr4\\onedrive\\bureau\\projet fin ann\u00E9e\\castflow\\repositories\\interfaces\\iusertalentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D647AABF-D151-2EA3-085C-71DA9BD77A33}|CastFlow.csproj|solutionrelative:repositories\\interfaces\\iusertalentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D647AABF-D151-2EA3-085C-71DA9BD77A33}|CastFlow.csproj|c:\\users\\badr4\\onedrive\\bureau\\projet fin ann\u00E9e\\castflow\\services\\talentservice.cs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D647AABF-D151-2EA3-085C-71DA9BD77A33}|CastFlow.csproj|solutionrelative:services\\talentservice.cs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D647AABF-D151-2EA3-085C-71DA9BD77A33}|CastFlow.csproj|c:\\users\\badr4\\onedrive\\bureau\\projet fin ann\u00E9e\\castflow\\services\\interfaces\\italentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -32,8 +15,32 @@
       "RelativeMoniker": "D:0:0:{D647AABF-D151-2EA3-085C-71DA9BD77A33}|CastFlow.csproj|solutionrelative:repositories\\usertalentrepository .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D647AABF-D151-2EA3-085C-71DA9BD77A33}|CastFlow.csproj|c:\\users\\badr4\\onedrive\\bureau\\projet fin ann\u00E9e\\castflow\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D647AABF-D151-2EA3-085C-71DA9BD77A33}|CastFlow.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D647AABF-D151-2EA3-085C-71DA9BD77A33}|CastFlow.csproj|c:\\users\\badr4\\onedrive\\bureau\\projet fin ann\u00E9e\\castflow\\repositories\\interfaces\\iusertalentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D647AABF-D151-2EA3-085C-71DA9BD77A33}|CastFlow.csproj|solutionrelative:repositories\\interfaces\\iusertalentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/CastFlowDb_Dev/True/SqlTable/dbo.AdminInvitationTokens.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\badr4\\AppData\\Local\\Temp\\dbo.AdminInvitationTokens.data.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/CastFlowDb_Dev/True/SqlTable/dbo.UserAdmins.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D647AABF-D151-2EA3-085C-71DA9BD77A33}|CastFlow.csproj|c:\\users\\badr4\\onedrive\\bureau\\projet fin ann\u00E9e\\castflow\\services\\adminmanagementservice .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D647AABF-D151-2EA3-085C-71DA9BD77A33}|CastFlow.csproj|solutionrelative:services\\adminmanagementservice .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D647AABF-D151-2EA3-085C-71DA9BD77A33}|CastFlow.csproj|c:\\users\\badr4\\onedrive\\bureau\\projet fin ann\u00E9e\\castflow\\dtos\\requests\\inviteadminrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D647AABF-D151-2EA3-085C-71DA9BD77A33}|CastFlow.csproj|solutionrelative:dtos\\requests\\inviteadminrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D647AABF-D151-2EA3-085C-71DA9BD77A33}|CastFlow.csproj|c:\\users\\badr4\\onedrive\\bureau\\projet fin ann\u00E9e\\castflow\\castflow.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{D647AABF-D151-2EA3-085C-71DA9BD77A33}|CastFlow.csproj|solutionrelative:castflow.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|80813bf6-1f50-40d8-8d87-5de9ec2f7b36MSSQL__/_localdb__MSSQLLocalDB/CastFlowDb_Dev/True/SqlTable/Create dbo.AdminInvitationTokens.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D647AABF-D151-2EA3-085C-71DA9BD77A33}|CastFlow.csproj|c:\\users\\badr4\\onedrive\\bureau\\projet fin ann\u00E9e\\castflow\\services\\interfaces\\iadminmanagementservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -42,20 +49,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{D647AABF-D151-2EA3-085C-71DA9BD77A33}|CastFlow.csproj|c:\\users\\badr4\\onedrive\\bureau\\projet fin ann\u00E9e\\castflow\\dtos\\requests\\setupadminaccountrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D647AABF-D151-2EA3-085C-71DA9BD77A33}|CastFlow.csproj|solutionrelative:dtos\\requests\\setupadminaccountrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D647AABF-D151-2EA3-085C-71DA9BD77A33}|CastFlow.csproj|c:\\users\\badr4\\onedrive\\bureau\\projet fin ann\u00E9e\\castflow\\models\\admininvitationtoken.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D647AABF-D151-2EA3-085C-71DA9BD77A33}|CastFlow.csproj|solutionrelative:models\\admininvitationtoken.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D647AABF-D151-2EA3-085C-71DA9BD77A33}|CastFlow.csproj|c:\\users\\badr4\\onedrive\\bureau\\projet fin ann\u00E9e\\castflow\\dtos\\requests\\inviteadminrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D647AABF-D151-2EA3-085C-71DA9BD77A33}|CastFlow.csproj|solutionrelative:dtos\\requests\\inviteadminrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|80813bf6-1f50-40d8-8d87-5de9ec2f7b36MSSQL__/_localdb__MSSQLLocalDB/CastFlowDb_Dev/True/SqlTable/Create dbo.AdminInvitationTokens.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|80813bf6-1f50-40d8-8d87-5de9ec2f7b36MSSQL__/_localdb__MSSQLLocalDB/CastFlowDb_Dev/True/SqlTable/Create dbo.AdminInvitationTokens.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|ResultFrame"
     }
   ],
   "DocumentGroupContainers": [
@@ -65,109 +58,125 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 12,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Create dbo.AdminInvitationTokens ",
-              "DocumentMoniker": "80813bf6-1f50-40d8-8d87-5de9ec2f7b36MSSQL__/_localdb__MSSQLLocalDB/CastFlowDb_Dev/True/SqlTable/Create dbo.AdminInvitationTokens.sql",
-              "ToolTip": "Create dbo.AdminInvitationTokens *",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2025-05-02T17:30:21.974Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "dbo.AdminInvitationTokens [Data]",
-              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/CastFlowDb_Dev/True/SqlTable/dbo.AdminInvitationTokens.sql",
-              "ToolTip": "dbo.AdminInvitationTokens [Data]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2025-05-02T17:21:34.141Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AdminManagementController.cs",
-              "DocumentMoniker": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin ann\u00E9e\\CastFlow\\Controllers\\AdminManagementController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AdminManagementController.cs",
-              "ToolTip": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin ann\u00E9e\\CastFlow\\Controllers\\AdminManagementController.cs",
-              "RelativeToolTip": "Controllers\\AdminManagementController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAF8AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-02T17:00:35.525Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "IUserTalentRepository.cs",
-              "DocumentMoniker": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin ann\u00E9e\\CastFlow\\Repositories\\Interfaces\\IUserTalentRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\Interfaces\\IUserTalentRepository.cs",
-              "ToolTip": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin ann\u00E9e\\CastFlow\\Repositories\\Interfaces\\IUserTalentRepository.cs",
-              "RelativeToolTip": "Repositories\\Interfaces\\IUserTalentRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-02T16:58:22.355Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
               "Title": "ITalentService.cs",
               "DocumentMoniker": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin ann\u00E9e\\CastFlow\\Services\\Interfaces\\ITalentService.cs",
               "RelativeDocumentMoniker": "Services\\Interfaces\\ITalentService.cs",
               "ToolTip": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin ann\u00E9e\\CastFlow\\Services\\Interfaces\\ITalentService.cs",
               "RelativeToolTip": "Services\\Interfaces\\ITalentService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAcAAAAAAAAAAAA7wA0AAABMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-02T16:58:18.513Z",
+              "WhenOpened": "2025-05-04T13:20:35.44Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 2,
               "Title": "UserTalentRepository .cs",
               "DocumentMoniker": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin ann\u00E9e\\CastFlow\\Repositories\\UserTalentRepository .cs",
               "RelativeDocumentMoniker": "Repositories\\UserTalentRepository .cs",
               "ToolTip": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin ann\u00E9e\\CastFlow\\Repositories\\UserTalentRepository .cs",
               "RelativeToolTip": "Repositories\\UserTalentRepository .cs",
-              "ViewState": "AgIAADQAAAAAAAAAAAAowEAAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAADwAAAAAAAAAAAApwEMAAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-02T16:57:57.194Z",
+              "WhenOpened": "2025-05-04T13:20:01.151Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IUserTalentRepository.cs",
+              "DocumentMoniker": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin ann\u00E9e\\CastFlow\\Repositories\\Interfaces\\IUserTalentRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Interfaces\\IUserTalentRepository.cs",
+              "ToolTip": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin ann\u00E9e\\CastFlow\\Repositories\\Interfaces\\IUserTalentRepository.cs",
+              "RelativeToolTip": "Repositories\\Interfaces\\IUserTalentRepository.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAgwBIAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-04T13:19:44.372Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "dbo.AdminInvitationTokens.data.sql",
+              "DocumentMoniker": "C:\\Users\\badr4\\AppData\\Local\\Temp\\dbo.AdminInvitationTokens.data.sql",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\AppData\\Local\\Temp\\dbo.AdminInvitationTokens.data.sql",
+              "ToolTip": "C:\\Users\\badr4\\AppData\\Local\\Temp\\dbo.AdminInvitationTokens.data.sql",
+              "RelativeToolTip": "..\\..\\..\\..\\AppData\\Local\\Temp\\dbo.AdminInvitationTokens.data.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-05-03T17:25:46.084Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "dbo.AdminInvitationTokens.sql",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/CastFlowDb_Dev/True/SqlTable/dbo.AdminInvitationTokens.sql",
+              "ToolTip": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/CastFlowDb_Dev/True/SqlTable/dbo.AdminInvitationTokens.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-05-03T17:25:29.671Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "AdminManagementService .cs",
               "DocumentMoniker": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin ann\u00E9e\\CastFlow\\Services\\AdminManagementService .cs",
               "RelativeDocumentMoniker": "Services\\AdminManagementService .cs",
               "ToolTip": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin ann\u00E9e\\CastFlow\\Services\\AdminManagementService .cs",
               "RelativeToolTip": "Services\\AdminManagementService .cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAwwC8AAABJAAAAAAAAAA==",
+              "ViewState": "AgIAAEkAAAAAAAAAAAAmwMgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-02T16:53:41.373Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-03T17:15:30.849Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin ann\u00E9e\\CastFlow\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin ann\u00E9e\\CastFlow\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABkAAABOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-02T16:52:48.774Z",
-              "EditorCaption": ""
+              "DocumentIndex": 6,
+              "Title": "dbo.UserAdmins.sql",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/CastFlowDb_Dev/True/SqlTable/dbo.UserAdmins.sql",
+              "ToolTip": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/CastFlowDb_Dev/True/SqlTable/dbo.UserAdmins.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-05-03T17:11:44.404Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
+              "Title": "CastFlow.csproj",
+              "DocumentMoniker": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin ann\u00E9e\\CastFlow\\CastFlow.csproj",
+              "RelativeDocumentMoniker": "CastFlow.csproj",
+              "ToolTip": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin ann\u00E9e\\CastFlow\\CastFlow.csproj",
+              "RelativeToolTip": "CastFlow.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-05-03T12:05:46.037Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TalentService.cs.cs",
+              "DocumentMoniker": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin ann\u00E9e\\CastFlow\\Services\\TalentService.cs.cs",
+              "RelativeDocumentMoniker": "Services\\TalentService.cs.cs",
+              "ToolTip": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin ann\u00E9e\\CastFlow\\Services\\TalentService.cs.cs",
+              "RelativeToolTip": "Services\\TalentService.cs.cs",
+              "ViewState": "AgIAAO4AAAAAAAAAAAAcwPUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-03T11:29:44.1Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Create dbo.AdminInvitationTokens.sql",
+              "DocumentMoniker": "80813bf6-1f50-40d8-8d87-5de9ec2f7b36MSSQL__/_localdb__MSSQLLocalDB/CastFlowDb_Dev/True/SqlTable/Create dbo.AdminInvitationTokens.sql",
+              "ToolTip": "80813bf6-1f50-40d8-8d87-5de9ec2f7b36MSSQL__/_localdb__MSSQLLocalDB/CastFlowDb_Dev/True/SqlTable/Create dbo.AdminInvitationTokens.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-05-02T17:30:21.974Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "IAdminManagementService.cs",
               "DocumentMoniker": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin ann\u00E9e\\CastFlow\\Services\\Interfaces\\IAdminManagementService.cs",
               "RelativeDocumentMoniker": "Services\\Interfaces\\IAdminManagementService.cs",
@@ -175,12 +184,11 @@
               "RelativeToolTip": "Services\\Interfaces\\IAdminManagementService.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAAAwAsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-02T16:52:21.156Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-02T16:52:21.156Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "SetupAdminAccountRequestDto.cs",
               "DocumentMoniker": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin ann\u00E9e\\CastFlow\\DTOS\\requests\\SetupAdminAccountRequestDto.cs",
               "RelativeDocumentMoniker": "DTOS\\requests\\SetupAdminAccountRequestDto.cs",
@@ -188,12 +196,11 @@
               "RelativeToolTip": "DTOS\\requests\\SetupAdminAccountRequestDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-02T16:51:46.323Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-02T16:51:46.323Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 8,
               "Title": "InviteAdminRequestDto.cs",
               "DocumentMoniker": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin ann\u00E9e\\CastFlow\\DTOS\\requests\\InviteAdminRequestDto.cs",
               "RelativeDocumentMoniker": "DTOS\\requests\\InviteAdminRequestDto.cs",
@@ -201,31 +208,7 @@
               "RelativeToolTip": "DTOS\\requests\\InviteAdminRequestDto.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAAAwBMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-02T16:50:20.806Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "AdminInvitationToken.cs",
-              "DocumentMoniker": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin ann\u00E9e\\CastFlow\\Models\\AdminInvitationToken.cs",
-              "RelativeDocumentMoniker": "Models\\AdminInvitationToken.cs",
-              "ToolTip": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin ann\u00E9e\\CastFlow\\Models\\AdminInvitationToken.cs",
-              "RelativeToolTip": "Models\\AdminInvitationToken.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAA7wAoAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-02T16:45:37.165Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "dbo.UserAdmins [Data]",
-              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/CastFlowDb_Dev/True/SqlTable/dbo.UserAdmins.sql",
-              "ToolTip": "dbo.UserAdmins [Data]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2025-05-02T16:35:18.273Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-02T16:50:20.806Z"
             }
           ]
         }
