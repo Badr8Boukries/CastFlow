@@ -19,8 +19,9 @@ if (string.IsNullOrEmpty(connectionString))
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString!)); 
 
-builder.Services.AddControllers();
-
+builder.Services.AddControllers(); 
+builder.Services.AddScoped<IProjetRepository, ProjetRepository>();
+builder.Services.AddScoped<IProjetService, ProjetService>();
 builder.Services.AddScoped<IUserTalentRepository, UserTalentRepository>();
 builder.Services.AddScoped<IUserAdminRepository, UserAdminRepository>();
 

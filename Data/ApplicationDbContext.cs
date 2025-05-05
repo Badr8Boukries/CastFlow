@@ -62,19 +62,29 @@ namespace CastFlow.Api.Data
             {
                 entity.ToTable("Projets");
                 entity.HasKey(p => p.ProjetId);
+
                 entity.Property(p => p.Titre).IsRequired().HasMaxLength(150);
                 entity.Property(p => p.TypeProjet).IsRequired().HasMaxLength(50);
                 entity.Property(p => p.Statut).IsRequired().HasMaxLength(50);
-                entity.Property(p => p.realisateur).IsRequired().HasMaxLength(50);
+                entity.Property(p => p.Realisateur).IsRequired().HasMaxLength(100);
                 entity.Property(p => p.Logline).HasMaxLength(500);
                 entity.Property(p => p.Synopsis).HasColumnType("text");
+                entity.Property(p => p.IsDeleted).IsRequired().HasDefaultValue(false); 
                 entity.Property(p => p.CreeLe).IsRequired();
+                entity.Property(p => p.ModifieLe).IsRequired(); 
+
+                entity.HasQueryFilter(p => !p.IsDeleted);
 
                 entity.HasMany(p => p.Roles)
                       .WithOne(r => r.Projet)
                       .HasForeignKey(r => r.ProjetId)
-                      .OnDelete(DeleteBehavior.Cascade);
+                      .OnDelete(DeleteBehavior.Cascade); 
+            });
+           
 
+            modelBuilder.Entity<Role>(entity =>
+            {
+                entity.Property(r => r.ProjetId).IsRequired(); 
             });
 
             modelBuilder.Entity<Role>(entity =>
@@ -88,6 +98,8 @@ namespace CastFlow.Api.Data
                 entity.Property(r => r.DateLimiteCandidature).IsRequired();
                 entity.Property(r => r.EstPublie).IsRequired();
                 entity.Property(r => r.CreeLe).IsRequired();
+                entity.HasQueryFilter(r => r.Projet != null && !r.Projet.IsDeleted);
+
 
                 entity.HasMany(r => r.Candidatures)
                       .WithOne(c => c.Role)
@@ -142,15 +154,14 @@ namespace CastFlow.Api.Data
                 entity.HasIndex(t => t.ActivationToken).IsUnique();
                 entity.HasIndex(t => t.Email);
 
-                // Relation vers l'admin qui invite (UserAdmin -> AdminInvitationToken : 1-N)
                 entity.HasOne(t => t.InvitedByAdmin)
-                      .WithMany() // UserAdmin n'a pas de collection d'invitations envoyées
+                      .WithMany() 
                       .HasForeignKey(t => t.InvitedByAdminId)
                       .OnDelete(DeleteBehavior.Restrict); 
 
-                // Relation vers l'admin créé (UserAdmin -> AdminInvitationToken : 0..1-N)
+               
                 entity.HasOne(t => t.CreatedAdmin)
-                      .WithMany() // UserAdmin n'a pas de collection liée à son token d'activation
+                      .WithMany() 
                       .HasForeignKey(t => t.CreatedAdminId)
                       .OnDelete(DeleteBehavior.SetNull); 
 

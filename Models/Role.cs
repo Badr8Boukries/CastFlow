@@ -38,7 +38,8 @@ namespace CastFlow.Api.Models
         public bool EstPublie { get; set; }
 
         public DateTime CreeLe { get; set; } = DateTime.UtcNow;
-
+        [Required]
+        public bool IsDeleted { get; set; } = false;
         public virtual ICollection<Candidature> Candidatures { get; set; } = new List<Candidature>();
     }
 }

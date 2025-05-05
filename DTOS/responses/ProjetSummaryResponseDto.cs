@@ -1,5 +1,4 @@
 ﻿using System;
-
 namespace CastFlow.Api.Dtos.Response
 {
     public class ProjetSummaryResponseDto
@@ -9,7 +8,7 @@ namespace CastFlow.Api.Dtos.Response
         public string TypeProjet { get; set; } = string.Empty;
         public string Statut { get; set; } = string.Empty;
         public string Realisateur { get; set; } = string.Empty;
-        public int NombreRoles { get; set; } // Calculé
-        public int NombreCandidatures { get; set; } // Calculé
+        public int NombreRoles { get; set; } 
+        public int NombreCandidatures { get; set; } 
     }
 }
