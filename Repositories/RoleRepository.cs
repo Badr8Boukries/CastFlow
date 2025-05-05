@@ -69,6 +69,13 @@ namespace CastFlow.Api.Repository
             role.EstPublie = false; 
             role.ModifieLe = DateTime.UtcNow;
             _context.Roles.Update(role);
+
+
+        }
+
+        public async Task<int> CountActiveRolesForProjectAsync(long projetId)
+        {
+            return await _context.Roles.CountAsync(r => r.ProjetId == projetId);
         }
 
         public async Task<bool> ActiveExistsAsync(long id)

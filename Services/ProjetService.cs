@@ -17,12 +17,14 @@ namespace CastFlow.Api.Services
         private readonly IProjetRepository _projetRepo;
         private readonly IMapper _mapper;
         private readonly ILogger<ProjetService> _logger;
-
-        public ProjetService(IProjetRepository projetRepo, IMapper mapper, ILogger<ProjetService> logger)
+        private readonly IRoleRepository _roleRepo;
+        public ProjetService(IProjetRepository projetRepo, IMapper mapper, ILogger<ProjetService> logger, IRoleRepository roleRepo)
         {
             _projetRepo = projetRepo ?? throw new ArgumentNullException(nameof(projetRepo));
             _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+            _roleRepo = roleRepo;
+          _roleRepo = roleRepo;
         }
 
         public async Task<ProjetDetailResponseDto?> CreateProjetAsync(ProjetCreateRequestDto createDto)
@@ -38,9 +40,9 @@ namespace CastFlow.Api.Services
         public async Task<ProjetDetailResponseDto?> GetProjetByIdAsync(long projetId)
         {
             _logger.LogInformation("Récupération Projet ID {ProjetId}", projetId);
-            var projet = await _projetRepo.GetActiveByIdWithRolesAsync(projetId); 
+            var projet = await _projetRepo.GetActiveByIdWithRolesAsync(projetId);
             if (projet == null) return null;
-            return _mapper.Map<ProjetDetailResponseDto>(projet); 
+            return _mapper.Map<ProjetDetailResponseDto>(projet);
         }
 
         public async Task<IEnumerable<ProjetSummaryResponseDto>> GetAllProjetsAsync()
@@ -49,10 +51,14 @@ namespace CastFlow.Api.Services
             var projets = await _projetRepo.GetAllActiveAsync();
             var projetDtos = _mapper.Map<List<ProjetSummaryResponseDto>>(projets);
 
-           
-
+            foreach (var dto in projetDtos)
+            {
+                dto.NombreRoles = await _roleRepo.CountActiveRolesForProjectAsync(dto.ProjetId);
+            }
             return projetDtos;
         }
+
+
 
         public async Task<ProjetDetailResponseDto?> UpdateProjetAsync(long projetId, ProjetUpdateRequestDto updateDto)
         {

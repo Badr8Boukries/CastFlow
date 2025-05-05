@@ -13,6 +13,7 @@ namespace CastFlow.Api.Dtos.Response
         public string? Synopsis { get; set; }
         public DateTime CreeLe { get; set; }
         public DateTime ModifieLe { get; set; }
+        public int NombreRoles { get; set; }
         public List<RoleSummaryResponseDto> Roles { get; set; } = new List<RoleSummaryResponseDto>();
     }
 }

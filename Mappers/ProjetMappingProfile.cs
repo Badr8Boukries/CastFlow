@@ -33,11 +33,14 @@ namespace CastFlow.Api.Mappers
 
             CreateMap<Projet, ProjetSummaryResponseDto>()
                 .ForMember(dest => dest.NombreRoles, opt => opt.MapFrom(src => src.Roles == null ? 0 : src.Roles.Count(r => !r.IsDeleted))) 
-                .ForMember(dest => dest.NombreCandidatures, opt => opt.Ignore()); 
+                .ForMember(dest => dest.NombreCandidatures, opt => opt.Ignore());
+
           
             CreateMap<Projet, ProjetDetailResponseDto>()
                 
-                .ForMember(dest => dest.Roles, opt => opt.MapFrom(src => src.Roles.Where(r => !r.IsDeleted))); 
+                .ForMember(dest => dest.Roles, opt => opt.MapFrom(src => src.Roles.Where(r => !r.IsDeleted)))
+                   .ForMember(dest => dest.NombreRoles, opt => opt.MapFrom(src => src.Roles == null ? 0 : src.Roles.Count(r => !r.IsDeleted)));
+
         }
     }
 }

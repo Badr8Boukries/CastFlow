@@ -14,6 +14,8 @@ namespace CastFlow.Api.Repository
         void Update(Role role);
         void MarkAsDeleted(Role role); // Soft Delete
         Task<int> SaveChangesAsync();
+        Task<int> CountActiveRolesForProjectAsync(long projetId);
+
         Task<bool> ActiveExistsAsync(long id);
     }
 }
