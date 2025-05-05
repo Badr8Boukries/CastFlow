@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CastFlow")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ef610cf81e9a1d96764b005e3fe63547d835c104")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8abeded6d02a69d96f2a750053ac0c1c7bf4a339")]
 [assembly: System.Reflection.AssemblyProductAttribute("CastFlow")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CastFlow")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

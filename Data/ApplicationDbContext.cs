@@ -80,12 +80,7 @@ namespace CastFlow.Api.Data
                       .HasForeignKey(r => r.ProjetId)
                       .OnDelete(DeleteBehavior.Cascade); 
             });
-           
 
-            modelBuilder.Entity<Role>(entity =>
-            {
-                entity.Property(r => r.ProjetId).IsRequired(); 
-            });
 
             modelBuilder.Entity<Role>(entity =>
             {
@@ -98,25 +93,40 @@ namespace CastFlow.Api.Data
                 entity.Property(r => r.DateLimiteCandidature).IsRequired();
                 entity.Property(r => r.EstPublie).IsRequired();
                 entity.Property(r => r.CreeLe).IsRequired();
-                entity.HasQueryFilter(r => r.Projet != null && !r.Projet.IsDeleted);
+                entity.Property(r => r.ModifieLe).IsRequired();
 
+                entity.Property(r => r.IsDeleted).IsRequired().HasDefaultValue(false);
+                entity.Property(r => r.ModifieLe).IsRequired();
+
+                entity.HasQueryFilter(r => !r.IsDeleted);
+
+                entity.HasOne(r => r.Projet)
+                      .WithMany(p => p.Roles)
+                      .HasForeignKey(r => r.ProjetId);
 
                 entity.HasMany(r => r.Candidatures)
                       .WithOne(c => c.Role)
-                      .HasForeignKey(c => c.RoleId)
+                      .HasForeignKey(c => c.RoleId);
+            });
+
+            modelBuilder.Entity<Projet>(entity =>
+            {
+
+                entity.HasMany(p => p.Roles)
+                      .WithOne(r => r.Projet)
+                      .HasForeignKey(r => r.ProjetId)
                       .OnDelete(DeleteBehavior.Cascade);
+
             });
 
             modelBuilder.Entity<Candidature>(entity =>
             {
-                entity.ToTable("Candidatures");
-                entity.HasKey(c => c.CandidatureId);
-                entity.Property(c => c.TalentId).IsRequired();
                 entity.Property(c => c.RoleId).IsRequired();
-                entity.Property(c => c.DateCandidature).IsRequired();
-                entity.Property(c => c.CommentaireTalent).HasColumnType("text");
-                entity.Property(c => c.Statut).IsRequired().HasMaxLength(50);
-                entity.Property(c => c.CreeLe).IsRequired();
+                entity.HasOne(c => c.Role)
+                      .WithMany(r => r.Candidatures)
+                      .HasForeignKey(c => c.RoleId)
+                      .OnDelete(DeleteBehavior.Cascade); 
+                                                       
             });
 
             modelBuilder.Entity<EmailVerifier>(entity =>

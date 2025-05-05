@@ -24,7 +24,8 @@ builder.Services.AddScoped<IProjetRepository, ProjetRepository>();
 builder.Services.AddScoped<IProjetService, ProjetService>();
 builder.Services.AddScoped<IUserTalentRepository, UserTalentRepository>();
 builder.Services.AddScoped<IUserAdminRepository, UserAdminRepository>();
-
+builder.Services.AddScoped<IRoleRepository, RoleRepository>();
+builder.Services.AddScoped<IRoleService, RoleService>();
 
 builder.Services.AddScoped<ITalentService, TalentService>();
 builder.Services.AddScoped<IAdminManagementService, AdminManagementService>();
