@@ -2,17 +2,17 @@
 
 namespace CastFlow.Api.Dtos.Response
 {
-    public class CandidatureResponseDto // Un seul DTO pour l'instant
+    public class CandidatureResponseDto 
     {
         public long CandidatureId { get; set; }
         public long RoleId { get; set; }
-        public string RoleNom { get; set; } = string.Empty; // Contexte utile
+        public string RoleNom { get; set; } = string.Empty; 
         public long TalentId { get; set; }
-        public string TalentNomComplet { get; set; } = string.Empty; // Contexte utile
-        public string? TalentUrlPhoto { get; set; } // Pour la vue admin
+        public string TalentNomComplet { get; set; } = string.Empty; 
+        public string? TalentUrlPhoto { get; set; } 
         public DateTime DateCandidature { get; set; }
         public string Statut { get; set; } = string.Empty; 
-        public string? CommentaireTalent { get; set; } // Visible par l'admin
-        public DateTime? DateAssignation { get; set; } // Si statut = ASSIGNE
+        public string? CommentaireTalent { get; set; } 
+        public DateTime? DateAssignation { get; set; } 
     }
 }

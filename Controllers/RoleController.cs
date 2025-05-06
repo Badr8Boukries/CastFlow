@@ -62,7 +62,7 @@ namespace CastFlow.Api.Controllers
             }
             catch (Exception ex) { _logger.LogError(ex, "Erreur récupération rôle {RoleId}", roleId); return StatusCode(500, "Erreur interne serveur."); }
         }
-        // GET api/projets/{projetId}/roles
+       
         [HttpGet("projets/{projetId}/roles")]
         [ProducesResponseType(typeof(IEnumerable<RoleSummaryResponseDto>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]

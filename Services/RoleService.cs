@@ -80,6 +80,8 @@ namespace CastFlow.Api.Services
             return await GetRoleByIdAsync(roleId); 
         }
 
+
+
         public async Task<bool> DeleteRoleAsync(long roleId) 
         {
             _logger.LogWarning("Tentative de désactivation Rôle ID {RoleId}", roleId);

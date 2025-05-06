@@ -1,10 +1,21 @@
-﻿namespace CastFlow.Api.Dtos.Request
+﻿using System;
+using System.ComponentModel.DataAnnotations;
+
+namespace CastFlow.Api.Dtos.Request
 {
+
     public class CandidatureCreateRequestDto
     {
-        // RoleId sera dans l'URL
-        // TalentId sera pris du contexte d'authentification
+        [Required]
+        public long RoleId { get; set; } 
 
-        public string? CommentaireTalent { get; set; } // Le seul champ envoyé dans le corps
+        [DataType(DataType.Date)]
+        public DateTime? DispoDebut { get; set; } 
+
+        [DataType(DataType.Date)]
+        public DateTime? DispoFin { get; set; }   
+
+        [StringLength(1000, ErrorMessage = "Le commentaire ne peut pas dépasser 1000 caractères.")]
+        public string? CommentaireTalent { get; set; } 
     }
 }

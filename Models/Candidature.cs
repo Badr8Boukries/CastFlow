@@ -1,8 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Data;
-using CastFlow.Api.Models;
+
 namespace CastFlow.Api.Models
 {
     [Table("Candidatures")]
@@ -12,12 +11,12 @@ namespace CastFlow.Api.Models
         public long CandidatureId { get; set; }
 
         [Required]
-        public long TalentId { get; set; }
+        public long TalentId { get; set; } 
         [ForeignKey("TalentId")]
         public virtual UserTalent Talent { get; set; } = null!;
 
         [Required]
-        public long RoleId { get; set; }
+        public long RoleId { get; set; } 
         [ForeignKey("RoleId")]
         public virtual Role Role { get; set; } = null!;
 
@@ -25,14 +24,21 @@ namespace CastFlow.Api.Models
         public DateTime DateCandidature { get; set; } = DateTime.UtcNow;
 
         [Column(TypeName = "text")]
-        public string? CommentaireTalent { get; set; }
+        public string? CommentaireTalent { get; set; } 
 
         [Required]
-        [StringLength(50)] 
-        public string Statut { get; set; } = "RECUE"; // Ex: "RECUE", "VUE", "ASSIGNE", etc.
+        [StringLength(50)]
+        public string Statut { get; set; } = "RECUE"; 
 
         public DateTime? DateAssignation { get; set; }
 
+        [DataType(DataType.Date)]
+        public DateTime? DispoDebut { get; set; } 
+
+        [DataType(DataType.Date)]
+        public DateTime? DispoFin { get; set; }   
+
+        [Required]
         public DateTime CreeLe { get; set; } = DateTime.UtcNow;
     }
 }

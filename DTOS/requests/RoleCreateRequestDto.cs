@@ -5,8 +5,6 @@ namespace CastFlow.Api.Dtos.Request
 {
     public class RoleCreateRequestDto
     {
-        // ProjetId sera dans l'URL
-
         [Required]
         [StringLength(100)]
         public string Nom { get; set; } = string.Empty;
@@ -14,7 +12,10 @@ namespace CastFlow.Api.Dtos.Request
         [Required]
         public string Description { get; set; } = string.Empty;
 
+        [Range(0, 120)] 
         public int? AgeMin { get; set; }
+
+        [Range(0, 120)] 
         public int? AgeMax { get; set; }
 
         [Required]
@@ -26,6 +27,6 @@ namespace CastFlow.Api.Dtos.Request
         public DateTime DateLimiteCandidature { get; set; }
 
         [Required]
-        public bool EstPublie { get; set; }
+        public bool EstPublie { get; set; } = false;
     }
 }
