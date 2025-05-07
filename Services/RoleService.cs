@@ -73,11 +73,19 @@ namespace CastFlow.Api.Services
             _logger.LogInformation("Mise à jour Rôle ID {RoleId}", roleId);
             var role = await _roleRepo.GetActiveByIdAsync(roleId); 
 
+            
             _mapper.Map(updateDto, role); 
-                                          
-            await _roleRepo.SaveChangesAsync();
-            _logger.LogInformation("Rôle ID {RoleId} mis à jour", roleId);
-            return await GetRoleByIdAsync(roleId); 
+
+            role.ModifieLe = DateTime.UtcNow; 
+
+            
+
+            await _roleRepo.SaveChangesAsync(); 
+            _logger.LogInformation("Rôle ID {RoleId} mis à jour en BDD.", roleId);
+
+          
+            return _mapper.Map<RoleDetailResponseDto>(role); 
+                                                             
         }
 
 

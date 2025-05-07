@@ -89,7 +89,22 @@ namespace CastFlow.Api.Repository
             _context.Candidatures.Remove(candidature);
             _logger.LogInformation("Candidature ID {CandidatureId} marquée pour suppression physique.", candidature.CandidatureId);
         }
+        public async Task<int> CountActiveByStatusForRoleAsync(long roleId, string statut)
+        {
+            return await _context.Candidatures
+                .CountAsync(c => c.RoleId == roleId &&
+                                 c.Statut == statut &&
+                                 c.Talent != null && !c.Talent.IsDeleted);
+        }
 
+        public async Task<bool> IsRoleAlreadyAssignedToOtherAsync(long roleId, long currentCandidatureIdToExclude)
+        {
+            return await _context.Candidatures
+                .AnyAsync(c => c.RoleId == roleId &&
+                               c.CandidatureId != currentCandidatureIdToExclude && // Exclure la candidature actuelle
+                               c.Statut == "ASSIGNE" && 
+                               c.Talent != null && !c.Talent.IsDeleted);
+        }
         public async Task<int> SaveChangesAsync()
         {
             return await _context.SaveChangesAsync();

@@ -16,6 +16,9 @@ namespace CastFlow.Api.Services.Interfaces
 
         Task<RoleDetailResponseDto?> UpdateRoleAsync(long roleId, RoleUpdateRequestDto updateDto);
 
+
         Task<bool> DeleteRoleAsync(long roleId);
+
+
     }
 }

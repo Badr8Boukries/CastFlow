@@ -50,8 +50,9 @@ namespace CastFlow.Api.Repository
         public async Task<IEnumerable<Role>> GetActiveRolesForProjetAsync(long projetId)
         {
             return await _context.Roles
-                                 .Where(r => r.ProjetId == projetId) 
-                                 .OrderBy(r => r.CreeLe) 
+                                 .Where(r => r.ProjetId == projetId)
+                                 .Include(r => r.Projet) // Charger le projet pour le mapper
+                                 .OrderBy(r => r.CreeLe)
                                  .ToListAsync();
         }
 
@@ -61,7 +62,6 @@ namespace CastFlow.Api.Repository
             role.ModifieLe = DateTime.UtcNow;
             _context.Roles.Update(role);
         }
-
         public void MarkAsDeleted(Role role)
         {
             if (role == null) throw new ArgumentNullException(nameof(role));
@@ -86,6 +86,16 @@ namespace CastFlow.Api.Repository
         public async Task<int> SaveChangesAsync()
         {
             return await _context.SaveChangesAsync();
+        }
+
+        public async Task<IEnumerable<Role>> GetAllPublishedActiveRolesWithProjectAsync()
+        {
+            var now = DateTime.UtcNow;
+            return await _context.Roles
+                                 .Include(r => r.Projet) 
+                                 .Where(r => r.EstPublie && r.DateLimiteCandidature >= now && r.Projet != null && !r.Projet.IsDeleted)
+                                 .OrderByDescending(r => r.CreeLe) // Les plus récents d'abord
+                                 .ToListAsync();
         }
     }
 }

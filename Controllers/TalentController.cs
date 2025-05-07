@@ -199,6 +199,34 @@ namespace CastFlow.Api.Controllers
             }
         }
 
-     
+        [HttpGet("roles/published")] 
+        [Authorize] 
+        [ProducesResponseType(typeof(IEnumerable<RoleDetailResponseDto>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)] 
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> GetPublishedRoles()
+        {
+            var userTypeClaim = User.FindFirstValue("userType");
+            
+            if (userTypeClaim != "Talent")
+            {
+                _logger.LogWarning("Tentative d'accès GetPublishedRoles par un non-talent. Type: {UserType}", userTypeClaim);
+                return Forbid("Accès réservé aux talents.");
+            }
+
+            try
+            {
+                var roles = await _talentService.GetPublishedRolesAsync();
+                return Ok(roles);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Erreur lors de la récupération des rôles publiés.");
+                return StatusCode(StatusCodes.Status500InternalServerError, new { message = "Erreur interne du serveur." });
+            }
+        }
+
+
     }
 }

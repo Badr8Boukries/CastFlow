@@ -15,5 +15,7 @@ namespace CastFlow.Api.Services.Interfaces
         // Utilise RegisterTalentRequestDto pour la mise à jour, comme demandé
         Task<TalentProfileResponseDto?> UpdateTalentProfileAsync(long talentId, TalentProfileUpdateRequestDto updateDto);
         Task<bool> DeactivateTalentAccountAsync(long talentId);
+
+        Task<IEnumerable<RoleDetailResponseDto>> GetPublishedRolesAsync();
     }
 }

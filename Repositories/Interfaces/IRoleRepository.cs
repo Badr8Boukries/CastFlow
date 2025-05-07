@@ -17,5 +17,6 @@ namespace CastFlow.Api.Repository
         Task<int> CountActiveRolesForProjectAsync(long projetId);
 
         Task<bool> ActiveExistsAsync(long id);
+        Task<IEnumerable<Role>> GetAllPublishedActiveRolesWithProjectAsync();
     }
 }

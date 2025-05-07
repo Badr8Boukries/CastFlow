@@ -19,7 +19,10 @@ namespace CastFlow.Api.Repository
         void Update(Candidature candidature);
         Task<Candidature?> GetByIdWithTalentAsync(long id);
         void Delete(Candidature candidature);
+        Task<int> CountActiveByStatusForRoleAsync(long roleId, string statut);
 
+        Task<bool> IsRoleAlreadyAssignedToOtherAsync(long roleId, long currentCandidatureIdToExclude);
         Task<int> SaveChangesAsync();
+
     }
 }

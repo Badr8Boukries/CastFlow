@@ -30,7 +30,9 @@ builder.Services.AddScoped<ICandidatureRepository, CandidatureRepository>();
 builder.Services.AddScoped<ICandidatureService, CandidatureService>();
 builder.Services.AddScoped<ITalentService, TalentService>();
 builder.Services.AddScoped<IAdminManagementService, AdminManagementService>();
-
+builder.Services.AddScoped<ICandidatureRepository, CandidatureRepository>(); 
+builder.Services.AddScoped<ICandidatureService, CandidatureService>();   
+builder.Services.AddScoped<INotificationService, NotificationService>();
 
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
 

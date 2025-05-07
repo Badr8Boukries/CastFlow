@@ -17,6 +17,7 @@ namespace CastFlow.Api.Data
         public DbSet<Candidature> Candidatures { get; set; } = null!;
         public DbSet<EmailVerifier> EmailVerifiers { get; set; } = null!; 
         public DbSet<AdminInvitationToken> AdminInvitationTokens { get; set; } = null!;
+        public DbSet<Notification> Notifications { get; set; } = null!;
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -107,6 +108,24 @@ namespace CastFlow.Api.Data
                 entity.HasMany(r => r.Candidatures)
                       .WithOne(c => c.Role)
                       .HasForeignKey(c => c.RoleId);
+            });
+
+            modelBuilder.Entity<Notification>(entity =>
+            {
+                entity.ToTable("Notifications");
+                entity.HasKey(n => n.NotificationId);
+                entity.Property(n => n.DestinataireTalentId).IsRequired();
+                entity.Property(n => n.Message).IsRequired().HasMaxLength(1000);
+                entity.Property(n => n.EstLu).IsRequired().HasDefaultValue(false);
+                entity.Property(n => n.CreeLe).IsRequired();
+                entity.Property(n => n.TypeEntiteLiee).HasMaxLength(50);
+                entity.Property(n => n.LienNavigationFront).HasMaxLength(255);
+
+                
+                entity.HasOne(n => n.DestinataireTalent)
+                      .WithMany() 
+                      .HasForeignKey(n => n.DestinataireTalentId)
+                      .OnDelete(DeleteBehavior.Cascade); 
             });
 
             modelBuilder.Entity<Projet>(entity =>

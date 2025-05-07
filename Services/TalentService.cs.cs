@@ -27,13 +27,13 @@ namespace CastFlow.Api.Services
         private readonly ILogger<TalentService> _logger;
         private readonly IConfiguration _configuration;
         private readonly IMapper _mapper;
-
+        private readonly IRoleRepository _roleRepo;
         public TalentService(
             IUserTalentRepository userTalentRepo,
             IUserAdminRepository userAdminRepo,
             ILogger<TalentService> logger,
             IConfiguration configuration,
-            IMapper mapper
+            IMapper mapper, IRoleRepository roleRepo
             )
         {
             _userTalentRepo = userTalentRepo ?? throw new ArgumentNullException(nameof(userTalentRepo));
@@ -41,6 +41,7 @@ namespace CastFlow.Api.Services
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
             _configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
             _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
+            _roleRepo = roleRepo ?? throw new ArgumentNullException(nameof(roleRepo));
         }
 
         public async Task<AuthResponseDto> InitiateTalentRegistrationAsync(RegisterTalentRequestDto registerDto)
@@ -241,6 +242,14 @@ namespace CastFlow.Api.Services
                 signingCredentials: credentials);
 
             return new JwtSecurityTokenHandler().WriteToken(token);
+        }
+
+        public async Task<IEnumerable<RoleDetailResponseDto>> GetPublishedRolesAsync()
+        {
+            _logger.LogInformation("Récupération de tous les rôles publiés et actifs pour les talents.");
+            var publishedRoles = await _roleRepo.GetAllPublishedActiveRolesWithProjectAsync();
+           
+            return _mapper.Map<List<RoleDetailResponseDto>>(publishedRoles);
         }
     }
 }
