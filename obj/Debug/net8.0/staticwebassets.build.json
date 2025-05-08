@@ -1,12 +1,11 @@
 {
   "Version": 1,
-  "Hash": "Y0ZaKK4zA41dp/8FYuAnpk58o4JmRDpjqtaEqHLovug=",
+  "Hash": "LH3z2D6dAp3ZV7aCvNKpCATSh1/7s2h3g94A/N/BPUU=",
   "Source": "CastFlow",
   "BasePath": "_content/CastFlow",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": [],
-  "Endpoints": []
+  "Assets": []
 }

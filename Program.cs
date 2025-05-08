@@ -9,11 +9,10 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 if (string.IsNullOrEmpty(connectionString))
 {
-    Console.WriteLine("ERREUR: Chaîne de connexion 'DefaultConnection' non trouvée.");
+    Console.WriteLine("ERREUR: ChaÃ®ne de connexion 'DefaultConnection' non trouvÃ©e.");
 }
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
@@ -30,8 +29,6 @@ builder.Services.AddScoped<ICandidatureRepository, CandidatureRepository>();
 builder.Services.AddScoped<ICandidatureService, CandidatureService>();
 builder.Services.AddScoped<ITalentService, TalentService>();
 builder.Services.AddScoped<IAdminManagementService, AdminManagementService>();
-builder.Services.AddScoped<ICandidatureRepository, CandidatureRepository>(); 
-builder.Services.AddScoped<ICandidatureService, CandidatureService>();   
 builder.Services.AddScoped<INotificationService, NotificationService>();
 
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
@@ -90,10 +87,18 @@ builder.Services.AddAuthentication(options =>
 
 builder.Services.AddAuthorization(); 
 
-
+// Add CORS policy
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowFrontend", policy =>
+    {
+        policy.WithOrigins("http://localhost:5173") // Replace with your React app's URL
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
+});
 
 var app = builder.Build();
-
 
 if (app.Environment.IsDevelopment())
 {
@@ -115,11 +120,13 @@ app.UseHttpsRedirection();
 
 app.UseRouting(); 
 
+// Use CORS
+app.UseCors("AllowFrontend");
+
 app.UseAuthentication();
 
 app.UseAuthorization();
 
 app.MapControllers();
-
 
 app.Run();

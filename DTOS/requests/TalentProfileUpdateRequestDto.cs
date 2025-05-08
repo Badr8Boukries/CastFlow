@@ -18,7 +18,7 @@ namespace CastFlow.Api.Dtos.Request
         [DataType(DataType.Date)]
         public DateTime DateNaissance { get; set; }
 
-        [Required] 
+       
         [StringLength(20)]
         public string Sex { get; set; } = string.Empty;
 

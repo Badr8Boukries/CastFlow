@@ -1,0 +1,11 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Controllers",
+    "\\DTOS",
+    "\\DTOS\\requests",
+    "\\Services"
+  ],
+  "SelectedNode": "\\DTOS\\requests\\TalentProfileUpdateRequestDto.cs",
+  "PreviewInSolutionExplorer": false
+}
