@@ -27,8 +27,8 @@ namespace CastFlow.Api.Dtos.Request
         public string? Telephone { get; set; } 
 
        
-        // public IFormFile? PhotoFile { get; set; }
-        // public IFormFile? CvFile { get; set; }
+         public IFormFile? PhotoFile { get; set; }
+         public IFormFile? CvFile { get; set; }
         
     }
 }

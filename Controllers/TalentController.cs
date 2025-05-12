@@ -27,11 +27,12 @@ namespace CastFlow.Api.Controllers
 
 
         [HttpPost("register")]
+        [Consumes("multipart/form-data")]
         [ProducesResponseType(typeof(AuthResponseDto), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(AuthResponseDto), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(AuthResponseDto), StatusCodes.Status409Conflict)]
         [ProducesResponseType(typeof(AuthResponseDto), StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> RegisterTalent([FromBody] RegisterTalentRequestDto registerDto)
+        public async Task<IActionResult> RegisterTalent([FromForm] RegisterTalentRequestDto registerDto)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
             try
@@ -162,13 +163,14 @@ namespace CastFlow.Api.Controllers
 
         [HttpPut("profile/me")]
         [Authorize]
+        [Consumes("multipart/form-data")]
         [ProducesResponseType(typeof(TalentProfileResponseDto), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         
-        public async Task<IActionResult> UpdateMyProfile([FromBody] TalentProfileUpdateRequestDto updateDto) // <<<--- CHANGEMENT ICI
+        public async Task<IActionResult> UpdateMyProfile([FromForm] TalentProfileUpdateRequestDto updateDto) // <<<--- CHANGEMENT ICI
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
 

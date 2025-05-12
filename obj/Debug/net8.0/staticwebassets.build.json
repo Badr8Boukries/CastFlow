@@ -1,11 +1,846 @@
 {
   "Version": 1,
-  "Hash": "LH3z2D6dAp3ZV7aCvNKpCATSh1/7s2h3g94A/N/BPUU=",
+  "Hash": "hWuAc0ttbS8i9A7+zNjPeblL71W9PXdX8rdxZohIe/k=",
   "Source": "CastFlow",
   "BasePath": "_content/CastFlow",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "CastFlow\\wwwroot",
+      "Source": "CastFlow",
+      "ContentRoot": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\",
+      "BasePath": "_content/CastFlow",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\cvs\\talent_temp_38a0ca67-72a5-43f2-b699-6f1391dc94db_cv8791f111-60fb-4b9e-8ef8-f84183e38da6.pdf",
+      "SourceId": "CastFlow",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\",
+      "BasePath": "_content/CastFlow",
+      "RelativePath": "uploads/cvs/talent_temp_38a0ca67-72a5-43f2-b699-6f1391dc94db_cv8791f111-60fb-4b9e-8ef8-f84183e38da6#[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "m25ih4o6p8",
+      "Integrity": "0tSsNi8USg/qMhSzT9+dmwZrSiQXQ8mfqA7OdNvBydY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\cvs\\talent_temp_38a0ca67-72a5-43f2-b699-6f1391dc94db_cv8791f111-60fb-4b9e-8ef8-f84183e38da6.pdf"
+    },
+    {
+      "Identity": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\cvs\\talent_temp_5ad4692c-17cd-4472-bb40-8b2f3c77faa5_cv45756a3d-30ba-4d76-8c9b-a1fcd4964d06.pdf",
+      "SourceId": "CastFlow",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\",
+      "BasePath": "_content/CastFlow",
+      "RelativePath": "uploads/cvs/talent_temp_5ad4692c-17cd-4472-bb40-8b2f3c77faa5_cv45756a3d-30ba-4d76-8c9b-a1fcd4964d06#[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "m25ih4o6p8",
+      "Integrity": "0tSsNi8USg/qMhSzT9+dmwZrSiQXQ8mfqA7OdNvBydY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\cvs\\talent_temp_5ad4692c-17cd-4472-bb40-8b2f3c77faa5_cv45756a3d-30ba-4d76-8c9b-a1fcd4964d06.pdf"
+    },
+    {
+      "Identity": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\profile-photos\\talent_temp_1989102a-122d-44ea-bf03-636689333022_photodef43faf-1bda-44ad-b313-b4ea7ba3816c.png",
+      "SourceId": "CastFlow",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\",
+      "BasePath": "_content/CastFlow",
+      "RelativePath": "uploads/profile-photos/talent_temp_1989102a-122d-44ea-bf03-636689333022_photodef43faf-1bda-44ad-b313-b4ea7ba3816c#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "g5adevpgzt",
+      "Integrity": "pK6tkP86z6QMV73ovY3SkzCU36s5DzSgv29sUdEhhwY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\profile-photos\\talent_temp_1989102a-122d-44ea-bf03-636689333022_photodef43faf-1bda-44ad-b313-b4ea7ba3816c.png"
+    },
+    {
+      "Identity": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\profile-photos\\talent_temp_5a16c52b-4f35-47be-a1fe-4ff189667f2b_photo4ee34c16-354c-49c7-ab7d-77d109af202d.png",
+      "SourceId": "CastFlow",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\",
+      "BasePath": "_content/CastFlow",
+      "RelativePath": "uploads/profile-photos/talent_temp_5a16c52b-4f35-47be-a1fe-4ff189667f2b_photo4ee34c16-354c-49c7-ab7d-77d109af202d#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "mdvpn29b4p",
+      "Integrity": "5oVeHFpfjAOizzVg8IHmLkgEagSUyhgbCyuGrhoGY6I=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\profile-photos\\talent_temp_5a16c52b-4f35-47be-a1fe-4ff189667f2b_photo4ee34c16-354c-49c7-ab7d-77d109af202d.png"
+    },
+    {
+      "Identity": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\profile-photos\\talent_temp_86f6ae49-2535-4538-9a09-6a4bcffb621e_photo964841f5-7ea4-41bd-8ed2-609fcbd71c6e.png",
+      "SourceId": "CastFlow",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\",
+      "BasePath": "_content/CastFlow",
+      "RelativePath": "uploads/profile-photos/talent_temp_86f6ae49-2535-4538-9a09-6a4bcffb621e_photo964841f5-7ea4-41bd-8ed2-609fcbd71c6e#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "g5adevpgzt",
+      "Integrity": "pK6tkP86z6QMV73ovY3SkzCU36s5DzSgv29sUdEhhwY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\profile-photos\\talent_temp_86f6ae49-2535-4538-9a09-6a4bcffb621e_photo964841f5-7ea4-41bd-8ed2-609fcbd71c6e.png"
+    },
+    {
+      "Identity": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\profile-photos\\talent_temp_8e0b50f9-696b-4760-9e19-74c02ff5ee49_photob998d9b7-3a09-4e1d-98a9-e8f32d64124c.png",
+      "SourceId": "CastFlow",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\",
+      "BasePath": "_content/CastFlow",
+      "RelativePath": "uploads/profile-photos/talent_temp_8e0b50f9-696b-4760-9e19-74c02ff5ee49_photob998d9b7-3a09-4e1d-98a9-e8f32d64124c#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "g5adevpgzt",
+      "Integrity": "pK6tkP86z6QMV73ovY3SkzCU36s5DzSgv29sUdEhhwY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\profile-photos\\talent_temp_8e0b50f9-696b-4760-9e19-74c02ff5ee49_photob998d9b7-3a09-4e1d-98a9-e8f32d64124c.png"
+    },
+    {
+      "Identity": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\profile-photos\\talent_temp_9049ee02-b549-4a4a-b44d-8f356b97a59f_photo0f46b603-5129-4b9f-9d2e-c7b380751654.png",
+      "SourceId": "CastFlow",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\",
+      "BasePath": "_content/CastFlow",
+      "RelativePath": "uploads/profile-photos/talent_temp_9049ee02-b549-4a4a-b44d-8f356b97a59f_photo0f46b603-5129-4b9f-9d2e-c7b380751654#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "g5adevpgzt",
+      "Integrity": "pK6tkP86z6QMV73ovY3SkzCU36s5DzSgv29sUdEhhwY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\profile-photos\\talent_temp_9049ee02-b549-4a4a-b44d-8f356b97a59f_photo0f46b603-5129-4b9f-9d2e-c7b380751654.png"
+    },
+    {
+      "Identity": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\profile-photos\\talent_temp_9f5db868-64b3-4eea-b9ed-d065317f28e9_photoe31eea4c-0ccf-415d-a709-259c3b86860c.png",
+      "SourceId": "CastFlow",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\",
+      "BasePath": "_content/CastFlow",
+      "RelativePath": "uploads/profile-photos/talent_temp_9f5db868-64b3-4eea-b9ed-d065317f28e9_photoe31eea4c-0ccf-415d-a709-259c3b86860c#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "mdvpn29b4p",
+      "Integrity": "5oVeHFpfjAOizzVg8IHmLkgEagSUyhgbCyuGrhoGY6I=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\profile-photos\\talent_temp_9f5db868-64b3-4eea-b9ed-d065317f28e9_photoe31eea4c-0ccf-415d-a709-259c3b86860c.png"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "uploads/cvs/talent_temp_38a0ca67-72a5-43f2-b699-6f1391dc94db_cv8791f111-60fb-4b9e-8ef8-f84183e38da6.m25ih4o6p8.pdf",
+      "AssetFile": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\cvs\\talent_temp_38a0ca67-72a5-43f2-b699-6f1391dc94db_cv8791f111-60fb-4b9e-8ef8-f84183e38da6.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "111991"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0tSsNi8USg/qMhSzT9+dmwZrSiQXQ8mfqA7OdNvBydY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 12 May 2025 17:29:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "m25ih4o6p8"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/cvs/talent_temp_38a0ca67-72a5-43f2-b699-6f1391dc94db_cv8791f111-60fb-4b9e-8ef8-f84183e38da6.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-0tSsNi8USg/qMhSzT9+dmwZrSiQXQ8mfqA7OdNvBydY="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/cvs/talent_temp_38a0ca67-72a5-43f2-b699-6f1391dc94db_cv8791f111-60fb-4b9e-8ef8-f84183e38da6.pdf",
+      "AssetFile": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\cvs\\talent_temp_38a0ca67-72a5-43f2-b699-6f1391dc94db_cv8791f111-60fb-4b9e-8ef8-f84183e38da6.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "111991"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0tSsNi8USg/qMhSzT9+dmwZrSiQXQ8mfqA7OdNvBydY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 12 May 2025 17:29:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-0tSsNi8USg/qMhSzT9+dmwZrSiQXQ8mfqA7OdNvBydY="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/cvs/talent_temp_5ad4692c-17cd-4472-bb40-8b2f3c77faa5_cv45756a3d-30ba-4d76-8c9b-a1fcd4964d06.m25ih4o6p8.pdf",
+      "AssetFile": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\cvs\\talent_temp_5ad4692c-17cd-4472-bb40-8b2f3c77faa5_cv45756a3d-30ba-4d76-8c9b-a1fcd4964d06.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "111991"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0tSsNi8USg/qMhSzT9+dmwZrSiQXQ8mfqA7OdNvBydY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 12 May 2025 17:37:23 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "m25ih4o6p8"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/cvs/talent_temp_5ad4692c-17cd-4472-bb40-8b2f3c77faa5_cv45756a3d-30ba-4d76-8c9b-a1fcd4964d06.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-0tSsNi8USg/qMhSzT9+dmwZrSiQXQ8mfqA7OdNvBydY="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/cvs/talent_temp_5ad4692c-17cd-4472-bb40-8b2f3c77faa5_cv45756a3d-30ba-4d76-8c9b-a1fcd4964d06.pdf",
+      "AssetFile": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\cvs\\talent_temp_5ad4692c-17cd-4472-bb40-8b2f3c77faa5_cv45756a3d-30ba-4d76-8c9b-a1fcd4964d06.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "111991"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0tSsNi8USg/qMhSzT9+dmwZrSiQXQ8mfqA7OdNvBydY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 12 May 2025 17:37:23 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-0tSsNi8USg/qMhSzT9+dmwZrSiQXQ8mfqA7OdNvBydY="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/profile-photos/talent_temp_1989102a-122d-44ea-bf03-636689333022_photodef43faf-1bda-44ad-b313-b4ea7ba3816c.g5adevpgzt.png",
+      "AssetFile": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\profile-photos\\talent_temp_1989102a-122d-44ea-bf03-636689333022_photodef43faf-1bda-44ad-b313-b4ea7ba3816c.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "89869"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"pK6tkP86z6QMV73ovY3SkzCU36s5DzSgv29sUdEhhwY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 12 May 2025 17:24:12 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "g5adevpgzt"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/profile-photos/talent_temp_1989102a-122d-44ea-bf03-636689333022_photodef43faf-1bda-44ad-b313-b4ea7ba3816c.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-pK6tkP86z6QMV73ovY3SkzCU36s5DzSgv29sUdEhhwY="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/profile-photos/talent_temp_1989102a-122d-44ea-bf03-636689333022_photodef43faf-1bda-44ad-b313-b4ea7ba3816c.png",
+      "AssetFile": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\profile-photos\\talent_temp_1989102a-122d-44ea-bf03-636689333022_photodef43faf-1bda-44ad-b313-b4ea7ba3816c.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "89869"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"pK6tkP86z6QMV73ovY3SkzCU36s5DzSgv29sUdEhhwY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 12 May 2025 17:24:12 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-pK6tkP86z6QMV73ovY3SkzCU36s5DzSgv29sUdEhhwY="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/profile-photos/talent_temp_5a16c52b-4f35-47be-a1fe-4ff189667f2b_photo4ee34c16-354c-49c7-ab7d-77d109af202d.mdvpn29b4p.png",
+      "AssetFile": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\profile-photos\\talent_temp_5a16c52b-4f35-47be-a1fe-4ff189667f2b_photo4ee34c16-354c-49c7-ab7d-77d109af202d.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "26782"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"5oVeHFpfjAOizzVg8IHmLkgEagSUyhgbCyuGrhoGY6I=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 12 May 2025 17:11:10 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "mdvpn29b4p"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/profile-photos/talent_temp_5a16c52b-4f35-47be-a1fe-4ff189667f2b_photo4ee34c16-354c-49c7-ab7d-77d109af202d.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-5oVeHFpfjAOizzVg8IHmLkgEagSUyhgbCyuGrhoGY6I="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/profile-photos/talent_temp_5a16c52b-4f35-47be-a1fe-4ff189667f2b_photo4ee34c16-354c-49c7-ab7d-77d109af202d.png",
+      "AssetFile": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\profile-photos\\talent_temp_5a16c52b-4f35-47be-a1fe-4ff189667f2b_photo4ee34c16-354c-49c7-ab7d-77d109af202d.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "26782"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"5oVeHFpfjAOizzVg8IHmLkgEagSUyhgbCyuGrhoGY6I=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 12 May 2025 17:11:10 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-5oVeHFpfjAOizzVg8IHmLkgEagSUyhgbCyuGrhoGY6I="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/profile-photos/talent_temp_86f6ae49-2535-4538-9a09-6a4bcffb621e_photo964841f5-7ea4-41bd-8ed2-609fcbd71c6e.g5adevpgzt.png",
+      "AssetFile": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\profile-photos\\talent_temp_86f6ae49-2535-4538-9a09-6a4bcffb621e_photo964841f5-7ea4-41bd-8ed2-609fcbd71c6e.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "89869"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"pK6tkP86z6QMV73ovY3SkzCU36s5DzSgv29sUdEhhwY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 12 May 2025 17:25:43 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "g5adevpgzt"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/profile-photos/talent_temp_86f6ae49-2535-4538-9a09-6a4bcffb621e_photo964841f5-7ea4-41bd-8ed2-609fcbd71c6e.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-pK6tkP86z6QMV73ovY3SkzCU36s5DzSgv29sUdEhhwY="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/profile-photos/talent_temp_86f6ae49-2535-4538-9a09-6a4bcffb621e_photo964841f5-7ea4-41bd-8ed2-609fcbd71c6e.png",
+      "AssetFile": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\profile-photos\\talent_temp_86f6ae49-2535-4538-9a09-6a4bcffb621e_photo964841f5-7ea4-41bd-8ed2-609fcbd71c6e.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "89869"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"pK6tkP86z6QMV73ovY3SkzCU36s5DzSgv29sUdEhhwY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 12 May 2025 17:25:43 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-pK6tkP86z6QMV73ovY3SkzCU36s5DzSgv29sUdEhhwY="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/profile-photos/talent_temp_8e0b50f9-696b-4760-9e19-74c02ff5ee49_photob998d9b7-3a09-4e1d-98a9-e8f32d64124c.g5adevpgzt.png",
+      "AssetFile": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\profile-photos\\talent_temp_8e0b50f9-696b-4760-9e19-74c02ff5ee49_photob998d9b7-3a09-4e1d-98a9-e8f32d64124c.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "89869"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"pK6tkP86z6QMV73ovY3SkzCU36s5DzSgv29sUdEhhwY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 12 May 2025 17:29:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "g5adevpgzt"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/profile-photos/talent_temp_8e0b50f9-696b-4760-9e19-74c02ff5ee49_photob998d9b7-3a09-4e1d-98a9-e8f32d64124c.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-pK6tkP86z6QMV73ovY3SkzCU36s5DzSgv29sUdEhhwY="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/profile-photos/talent_temp_8e0b50f9-696b-4760-9e19-74c02ff5ee49_photob998d9b7-3a09-4e1d-98a9-e8f32d64124c.png",
+      "AssetFile": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\profile-photos\\talent_temp_8e0b50f9-696b-4760-9e19-74c02ff5ee49_photob998d9b7-3a09-4e1d-98a9-e8f32d64124c.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "89869"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"pK6tkP86z6QMV73ovY3SkzCU36s5DzSgv29sUdEhhwY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 12 May 2025 17:29:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-pK6tkP86z6QMV73ovY3SkzCU36s5DzSgv29sUdEhhwY="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/profile-photos/talent_temp_9049ee02-b549-4a4a-b44d-8f356b97a59f_photo0f46b603-5129-4b9f-9d2e-c7b380751654.g5adevpgzt.png",
+      "AssetFile": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\profile-photos\\talent_temp_9049ee02-b549-4a4a-b44d-8f356b97a59f_photo0f46b603-5129-4b9f-9d2e-c7b380751654.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "89869"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"pK6tkP86z6QMV73ovY3SkzCU36s5DzSgv29sUdEhhwY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 12 May 2025 17:37:23 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "g5adevpgzt"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/profile-photos/talent_temp_9049ee02-b549-4a4a-b44d-8f356b97a59f_photo0f46b603-5129-4b9f-9d2e-c7b380751654.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-pK6tkP86z6QMV73ovY3SkzCU36s5DzSgv29sUdEhhwY="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/profile-photos/talent_temp_9049ee02-b549-4a4a-b44d-8f356b97a59f_photo0f46b603-5129-4b9f-9d2e-c7b380751654.png",
+      "AssetFile": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\profile-photos\\talent_temp_9049ee02-b549-4a4a-b44d-8f356b97a59f_photo0f46b603-5129-4b9f-9d2e-c7b380751654.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "89869"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"pK6tkP86z6QMV73ovY3SkzCU36s5DzSgv29sUdEhhwY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 12 May 2025 17:37:23 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-pK6tkP86z6QMV73ovY3SkzCU36s5DzSgv29sUdEhhwY="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/profile-photos/talent_temp_9f5db868-64b3-4eea-b9ed-d065317f28e9_photoe31eea4c-0ccf-415d-a709-259c3b86860c.mdvpn29b4p.png",
+      "AssetFile": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\profile-photos\\talent_temp_9f5db868-64b3-4eea-b9ed-d065317f28e9_photoe31eea4c-0ccf-415d-a709-259c3b86860c.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "26782"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"5oVeHFpfjAOizzVg8IHmLkgEagSUyhgbCyuGrhoGY6I=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 12 May 2025 16:50:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "mdvpn29b4p"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/profile-photos/talent_temp_9f5db868-64b3-4eea-b9ed-d065317f28e9_photoe31eea4c-0ccf-415d-a709-259c3b86860c.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-5oVeHFpfjAOizzVg8IHmLkgEagSUyhgbCyuGrhoGY6I="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/profile-photos/talent_temp_9f5db868-64b3-4eea-b9ed-d065317f28e9_photoe31eea4c-0ccf-415d-a709-259c3b86860c.png",
+      "AssetFile": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\profile-photos\\talent_temp_9f5db868-64b3-4eea-b9ed-d065317f28e9_photoe31eea4c-0ccf-415d-a709-259c3b86860c.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "26782"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"5oVeHFpfjAOizzVg8IHmLkgEagSUyhgbCyuGrhoGY6I=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 12 May 2025 16:50:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-5oVeHFpfjAOizzVg8IHmLkgEagSUyhgbCyuGrhoGY6I="
+        }
+      ]
+    }
+  ]
 }

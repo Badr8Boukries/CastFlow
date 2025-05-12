@@ -36,6 +36,8 @@ namespace CastFlow.Api.Dtos.Request
 
         [Phone]
         [StringLength(20)]
-        public string? Telephone { get; set; } 
+        public string? Telephone { get; set; }
+        public IFormFile? PhotoFile { get; set; }
+        public IFormFile? CvFile { get; set; }
     }
 }
