@@ -8,6 +8,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
+using Microsoft.AspNetCore.Identity;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
@@ -168,6 +169,37 @@ namespace CastFlow.Api.Services
             await _userTalentRepo.SaveChangesAsync();
             _logger.LogInformation("Compte Talent ID {TalentId} désactivé et anonymisé.", talentId);
             return true;
+        }
+        public async Task<IdentityResult> ChangePasswordAsync(long talentId, string currentPassword, string newPassword)
+        {
+            var user = await _userTalentRepo.GetByIdAsync(talentId);
+            if (user == null)
+            {
+                _logger.LogWarning("User not found for password change. ID: {TalentId}", talentId);
+                // Return an appropriate IdentityResult for a not found user. 
+                return IdentityResult.Failed(new IdentityError { Description = "User not found." });
+            }
+
+            if (string.IsNullOrEmpty(user.MotDePasseHash))
+            {
+                _logger.LogWarning("User {TalentId} does not have a password hash.", talentId);
+                return IdentityResult.Failed(new IdentityError { Description = "User does not have a set password." });
+            }
+
+            if (!BCrypt.Net.BCrypt.Verify(currentPassword, user.MotDePasseHash))
+            {
+                _logger.LogWarning("Incorrect current password provided for user {TalentId}", talentId);
+                return IdentityResult.Failed(new IdentityError { Description = "Incorrect current password." });
+            }
+
+
+
+            user.MotDePasseHash = BCrypt.Net.BCrypt.HashPassword(newPassword);
+            user.ModifieLe = DateTime.UtcNow;
+            _userTalentRepo.Update(user);
+            await _userTalentRepo.SaveChangesAsync();
+
+            return IdentityResult.Success;
         }
 
         private string GenerateVerificationCode()

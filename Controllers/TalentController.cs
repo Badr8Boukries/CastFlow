@@ -124,6 +124,41 @@ namespace CastFlow.Api.Controllers
 
             return Ok(profile);
         }
+        [HttpPost("change-password")]
+        
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)] // Add for unauthorized
+        [ProducesResponseType(StatusCodes.Status404NotFound)]    // Add for not found
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+
+        public async Task<IActionResult> ChangePassword([FromBody] ChangePasswordDto dto)
+        {
+            if (!ModelState.IsValid) return BadRequest(ModelState); // Check ModelState
+
+            var userIdClaim = User.FindFirstValue("Id");
+
+            if (!long.TryParse(userIdClaim, out long userId))
+                return BadRequest("Invalid user ID.");
+
+            try
+            {
+                var result = await _talentService.ChangePasswordAsync(userId, dto.CurrentPassword, dto.NewPassword);
+
+                if (result.Succeeded)
+                    return Ok("Password changed successfully.");
+                else
+                    return BadRequest(result.Errors.Select(e => e.Description)); // Return detailed errors
+            }
+            catch (InvalidOperationException ex) // Catch specific exceptions for better handling
+            {
+                _logger.LogError(ex, "Invalid operation during password change for user {UserId}", userId);
+                return StatusCode(500, "An error occurred while processing the request."); // Consider more specific error messages.
+            }
+
+        }
+
+
 
         [HttpPut("profile/me")]
         [Authorize]
