@@ -5,3 +5,5 @@
 # Build output
 bin/
 obj/
+/obj
+/bin
