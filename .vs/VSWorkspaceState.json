@@ -4,8 +4,10 @@
     "\\Controllers",
     "\\DTOS",
     "\\DTOS\\requests",
+    "\\DTOS\\responses",
+    "\\Models",
     "\\Services"
   ],
-  "SelectedNode": "\\DTOS\\requests\\TalentProfileUpdateRequestDto.cs",
+  "SelectedNode": "\\Models\\Role.cs",
   "PreviewInSolutionExplorer": false
 }
