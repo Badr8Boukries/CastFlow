@@ -1,1 +1,9 @@
 *.vsidx
+# Visual Studio solution files
+.vs/
+
+# Build output
+bin/
+obj/
+/obj
+/bin
