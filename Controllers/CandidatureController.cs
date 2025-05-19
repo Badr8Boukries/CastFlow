@@ -28,11 +28,12 @@ namespace CastFlow.Api.Controllers
 
 
         [HttpPost]
+        [Consumes("multipart/form-data")]
         [ProducesResponseType(typeof(MyCandidatureResponseDto), StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)] 
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(StatusCodes.Status403Forbidden)] 
-        public async Task<IActionResult> ApplyToRole([FromBody] CandidatureCreateRequestDto createDto)
+        public async Task<IActionResult> ApplyToRole([FromForm] CandidatureCreateRequestDto createDto)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
 

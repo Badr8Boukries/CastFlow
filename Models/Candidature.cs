@@ -40,5 +40,10 @@ namespace CastFlow.Api.Models
 
         [Required]
         public DateTime CreeLe { get; set; } = DateTime.UtcNow;
+
+
+        [Url]
+        [StringLength(2048)] 
+        public string? UrlVideoAudition { get; set; }
     }
 }

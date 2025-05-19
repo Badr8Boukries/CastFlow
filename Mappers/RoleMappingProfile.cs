@@ -2,7 +2,7 @@
 using CastFlow.Api.Models;
 using CastFlow.Api.Dtos.Request;
 using CastFlow.Api.Dtos.Response;
-using System.Linq; 
+using System.Linq;
 
 namespace CastFlow.Api.Mappers
 {
@@ -21,10 +21,10 @@ namespace CastFlow.Api.Mappers
 
             CreateMap<RoleUpdateRequestDto, Role>()
                  .ForMember(dest => dest.RoleId, opt => opt.Ignore())
-                 .ForMember(dest => dest.ProjetId, opt => opt.Ignore()) 
+                 .ForMember(dest => dest.ProjetId, opt => opt.Ignore())
                  .ForMember(dest => dest.IsDeleted, opt => opt.Ignore())
                  .ForMember(dest => dest.CreeLe, opt => opt.Ignore())
-                 .ForMember(dest => dest.ModifieLe, opt => opt.Ignore()) 
+                 .ForMember(dest => dest.ModifieLe, opt => opt.Ignore())
                  .ForMember(dest => dest.Projet, opt => opt.Ignore())
                  .ForMember(dest => dest.Candidatures, opt => opt.Ignore())
                  .ForMember(dest => dest.Nom, opt => opt.Condition(src => src.Nom != null))
@@ -33,18 +33,17 @@ namespace CastFlow.Api.Mappers
                  .ForMember(dest => dest.AgeMax, opt => opt.Condition(src => src.AgeMax.HasValue))
                  .ForMember(dest => dest.ExigenceSex, opt => opt.Condition(src => src.ExigenceSex != null))
                  .ForMember(dest => dest.DateLimiteCandidature, opt => opt.Condition(src => src.DateLimiteCandidature.HasValue))
-                 .ForMember(dest => dest.EstPublie, opt => opt.Condition(src => src.EstPublie.HasValue));
-
+                 .ForMember(dest => dest.EstPublie, opt => opt.Condition(src => src.EstPublie.HasValue))
+                 .ForMember(dest => dest.InstructionsVideo, opt => opt.Condition(src => src.InstructionsVideo != null)); // Mappe seulement si fourni
 
             CreateMap<Role, RoleSummaryResponseDto>()
                  .ForMember(dest => dest.ProjetTitre, opt => opt.MapFrom(src => src.Projet != null ? src.Projet.Titre : "N/A"));
 
-
             CreateMap<Role, RoleDetailResponseDto>()
-        .ForMember(dest => dest.ProjetTitre, opt => opt.MapFrom(src => src.Projet != null ? src.Projet.Titre : "N/A"))
-        .ForMember(dest => dest.ProjetLogline, opt => opt.MapFrom(src => src.Projet != null ? src.Projet.Logline ?? string.Empty : string.Empty))
-        .ForMember(dest => dest.Candidatures, opt => opt.Ignore()) 
-        .ForMember(dest => dest.NombreTotalCandidatures, opt => opt.Ignore());
+                  .ForMember(dest => dest.ProjetTitre, opt => opt.MapFrom(src => src.Projet != null ? src.Projet.Titre : "N/A"))
+                  .ForMember(dest => dest.ProjetLogline, opt => opt.MapFrom(src => src.Projet != null ? src.Projet.Logline ?? string.Empty : string.Empty))
+                  .ForMember(dest => dest.Candidatures, opt => opt.MapFrom(src => src.Candidatures.Where(c => c.Talent != null && !c.Talent.IsDeleted)))
+                  .ForMember(dest => dest.NombreTotalCandidatures, opt => opt.MapFrom(src => src.Candidatures == null ? 0 : src.Candidatures.Count(c => c.Talent != null && !c.Talent.IsDeleted)));
         }
     }
 }

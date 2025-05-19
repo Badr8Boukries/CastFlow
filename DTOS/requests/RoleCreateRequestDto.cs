@@ -28,5 +28,9 @@ namespace CastFlow.Api.Dtos.Request
 
         [Required]
         public bool EstPublie { get; set; } = false;
+      
+        [StringLength(1000)]
+        public string? InstructionsVideo { get; set; }
+
     }
 }

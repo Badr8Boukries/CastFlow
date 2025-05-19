@@ -48,12 +48,11 @@ namespace CastFlow.Api.Repository
         {
             return await _context.Candidatures
                          .Include(c => c.Role) 
-                             .ThenInclude(r => r.Projet) 
-                         .Where(c => c.TalentId == talentId && c.Talent != null && !c.Talent.IsDeleted) 
+                         .ThenInclude(r => r!.Projet)                                     
+                         .Where(c => c.TalentId == talentId && c.Talent != null && !c.Talent.IsDeleted)
                          .OrderByDescending(c => c.DateCandidature)
                          .ToListAsync();
         }
-
         public async Task<bool> HasActiveApplicationAsync(long talentId, long roleId)
         {
             

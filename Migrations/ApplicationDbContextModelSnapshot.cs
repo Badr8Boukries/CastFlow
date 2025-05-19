@@ -106,6 +106,10 @@ namespace CastFlow.Migrations
                     b.Property<long>("TalentId")
                         .HasColumnType("bigint");
 
+                    b.Property<string>("UrlVideoAudition")
+                        .HasMaxLength(2048)
+                        .HasColumnType("nvarchar(2048)");
+
                     b.HasKey("CandidatureId");
 
                     b.HasIndex("RoleId");
@@ -278,6 +282,10 @@ namespace CastFlow.Migrations
                         .IsRequired()
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
+
+                    b.Property<string>("InstructionsVideo")
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(MAX)");
 
                     b.Property<bool>("IsDeleted")
                         .ValueGeneratedOnAdd()

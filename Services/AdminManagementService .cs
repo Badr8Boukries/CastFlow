@@ -114,7 +114,7 @@ namespace CastFlow.Api.Services
 
         private async Task SendAdminActivationEmailAsync(string email, string prenom, string activationToken)
         {
-            var frontendBaseUrl = _configuration["Urls:FrontendBaseUrl"] ?? "http://localhost:3000"; 
+            var frontendBaseUrl = _configuration["Urls:FrontendBaseUrl"] ?? "http://localhost:5173"; 
             var activationLink = $"{frontendBaseUrl}/activate-admin?token={activationToken}"; 
 
             var smtpSettings = _configuration.GetSection("SmtpSettings");

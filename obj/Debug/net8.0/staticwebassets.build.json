@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "hWuAc0ttbS8i9A7+zNjPeblL71W9PXdX8rdxZohIe/k=",
+  "Hash": "NfqrVNO3RTFW25FOSzqPeSo8WP6zDzOAW5UB+pesbio=",
   "Source": "CastFlow",
   "BasePath": "_content/CastFlow",
   "Mode": "Default",
@@ -16,6 +16,48 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\cvs\\talent_22_cv99ffed8b-de28-4587-aeb6-49a8dc88b2c4.pdf",
+      "SourceId": "CastFlow",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\",
+      "BasePath": "_content/CastFlow",
+      "RelativePath": "uploads/cvs/talent_22_cv99ffed8b-de28-4587-aeb6-49a8dc88b2c4#[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "n8whu0srnv",
+      "Integrity": "dxsHqzBvL2R3M/PzLppqm072npJec542yMCLXoBJLTc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\cvs\\talent_22_cv99ffed8b-de28-4587-aeb6-49a8dc88b2c4.pdf"
+    },
+    {
+      "Identity": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\cvs\\talent_inscription_cc29a51d-cbb8-457c-abb0-b6a70773df1a277229c2-6d9c-4d75-a7a0-4f9adf9b6d0e.pdf",
+      "SourceId": "CastFlow",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\",
+      "BasePath": "_content/CastFlow",
+      "RelativePath": "uploads/cvs/talent_inscription_cc29a51d-cbb8-457c-abb0-b6a70773df1a277229c2-6d9c-4d75-a7a0-4f9adf9b6d0e#[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "cr05ygy4od",
+      "Integrity": "6KoFYJvrP/LD3m4U6P1N51mbflQUQf5COpmBqmmGk3I=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\cvs\\talent_inscription_cc29a51d-cbb8-457c-abb0-b6a70773df1a277229c2-6d9c-4d75-a7a0-4f9adf9b6d0e.pdf"
+    },
     {
       "Identity": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\cvs\\talent_temp_38a0ca67-72a5-43f2-b699-6f1391dc94db_cv8791f111-60fb-4b9e-8ef8-f84183e38da6.pdf",
       "SourceId": "CastFlow",
@@ -57,6 +99,48 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\cvs\\talent_temp_5ad4692c-17cd-4472-bb40-8b2f3c77faa5_cv45756a3d-30ba-4d76-8c9b-a1fcd4964d06.pdf"
+    },
+    {
+      "Identity": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\profile-photos\\talent_22_photocd386736-8db8-4efa-aead-544103ba3a1e.jpg",
+      "SourceId": "CastFlow",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\",
+      "BasePath": "_content/CastFlow",
+      "RelativePath": "uploads/profile-photos/talent_22_photocd386736-8db8-4efa-aead-544103ba3a1e#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "9givpn9unn",
+      "Integrity": "KfTh3p4eGD1jwQnP9d/DsD63WGV+ddl4KnwYx/6Hsp0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\profile-photos\\talent_22_photocd386736-8db8-4efa-aead-544103ba3a1e.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\profile-photos\\talent_23_photo8f97f4d3-f758-412a-9679-4ec7494158f5.jpg",
+      "SourceId": "CastFlow",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\",
+      "BasePath": "_content/CastFlow",
+      "RelativePath": "uploads/profile-photos/talent_23_photo8f97f4d3-f758-412a-9679-4ec7494158f5#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "9givpn9unn",
+      "Integrity": "KfTh3p4eGD1jwQnP9d/DsD63WGV+ddl4KnwYx/6Hsp0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\profile-photos\\talent_23_photo8f97f4d3-f758-412a-9679-4ec7494158f5.jpg"
     },
     {
       "Identity": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\profile-photos\\talent_temp_1989102a-122d-44ea-bf03-636689333022_photodef43faf-1bda-44ad-b313-b4ea7ba3816c.png",
@@ -186,6 +270,170 @@
     }
   ],
   "Endpoints": [
+    {
+      "Route": "uploads/cvs/talent_22_cv99ffed8b-de28-4587-aeb6-49a8dc88b2c4.n8whu0srnv.pdf",
+      "AssetFile": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\cvs\\talent_22_cv99ffed8b-de28-4587-aeb6-49a8dc88b2c4.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "346475"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"dxsHqzBvL2R3M/PzLppqm072npJec542yMCLXoBJLTc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 12:03:54 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "n8whu0srnv"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/cvs/talent_22_cv99ffed8b-de28-4587-aeb6-49a8dc88b2c4.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-dxsHqzBvL2R3M/PzLppqm072npJec542yMCLXoBJLTc="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/cvs/talent_22_cv99ffed8b-de28-4587-aeb6-49a8dc88b2c4.pdf",
+      "AssetFile": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\cvs\\talent_22_cv99ffed8b-de28-4587-aeb6-49a8dc88b2c4.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "346475"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"dxsHqzBvL2R3M/PzLppqm072npJec542yMCLXoBJLTc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 12:03:54 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-dxsHqzBvL2R3M/PzLppqm072npJec542yMCLXoBJLTc="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/cvs/talent_inscription_cc29a51d-cbb8-457c-abb0-b6a70773df1a277229c2-6d9c-4d75-a7a0-4f9adf9b6d0e.cr05ygy4od.pdf",
+      "AssetFile": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\cvs\\talent_inscription_cc29a51d-cbb8-457c-abb0-b6a70773df1a277229c2-6d9c-4d75-a7a0-4f9adf9b6d0e.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2521111"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"6KoFYJvrP/LD3m4U6P1N51mbflQUQf5COpmBqmmGk3I=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 16 May 2025 12:51:12 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "cr05ygy4od"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/cvs/talent_inscription_cc29a51d-cbb8-457c-abb0-b6a70773df1a277229c2-6d9c-4d75-a7a0-4f9adf9b6d0e.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-6KoFYJvrP/LD3m4U6P1N51mbflQUQf5COpmBqmmGk3I="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/cvs/talent_inscription_cc29a51d-cbb8-457c-abb0-b6a70773df1a277229c2-6d9c-4d75-a7a0-4f9adf9b6d0e.pdf",
+      "AssetFile": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\cvs\\talent_inscription_cc29a51d-cbb8-457c-abb0-b6a70773df1a277229c2-6d9c-4d75-a7a0-4f9adf9b6d0e.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2521111"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"6KoFYJvrP/LD3m4U6P1N51mbflQUQf5COpmBqmmGk3I=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 16 May 2025 12:51:12 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-6KoFYJvrP/LD3m4U6P1N51mbflQUQf5COpmBqmmGk3I="
+        }
+      ]
+    },
     {
       "Route": "uploads/cvs/talent_temp_38a0ca67-72a5-43f2-b699-6f1391dc94db_cv8791f111-60fb-4b9e-8ef8-f84183e38da6.m25ih4o6p8.pdf",
       "AssetFile": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\cvs\\talent_temp_38a0ca67-72a5-43f2-b699-6f1391dc94db_cv8791f111-60fb-4b9e-8ef8-f84183e38da6.pdf",
@@ -347,6 +595,170 @@
         {
           "Name": "integrity",
           "Value": "sha256-0tSsNi8USg/qMhSzT9+dmwZrSiQXQ8mfqA7OdNvBydY="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/profile-photos/talent_22_photocd386736-8db8-4efa-aead-544103ba3a1e.9givpn9unn.jpg",
+      "AssetFile": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\profile-photos\\talent_22_photocd386736-8db8-4efa-aead-544103ba3a1e.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "172955"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"KfTh3p4eGD1jwQnP9d/DsD63WGV+ddl4KnwYx/6Hsp0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 13:50:09 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "9givpn9unn"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/profile-photos/talent_22_photocd386736-8db8-4efa-aead-544103ba3a1e.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-KfTh3p4eGD1jwQnP9d/DsD63WGV+ddl4KnwYx/6Hsp0="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/profile-photos/talent_22_photocd386736-8db8-4efa-aead-544103ba3a1e.jpg",
+      "AssetFile": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\profile-photos\\talent_22_photocd386736-8db8-4efa-aead-544103ba3a1e.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "172955"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"KfTh3p4eGD1jwQnP9d/DsD63WGV+ddl4KnwYx/6Hsp0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 13:50:09 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-KfTh3p4eGD1jwQnP9d/DsD63WGV+ddl4KnwYx/6Hsp0="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/profile-photos/talent_23_photo8f97f4d3-f758-412a-9679-4ec7494158f5.9givpn9unn.jpg",
+      "AssetFile": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\profile-photos\\talent_23_photo8f97f4d3-f758-412a-9679-4ec7494158f5.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "172955"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"KfTh3p4eGD1jwQnP9d/DsD63WGV+ddl4KnwYx/6Hsp0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 18 May 2025 12:38:53 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "9givpn9unn"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/profile-photos/talent_23_photo8f97f4d3-f758-412a-9679-4ec7494158f5.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-KfTh3p4eGD1jwQnP9d/DsD63WGV+ddl4KnwYx/6Hsp0="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/profile-photos/talent_23_photo8f97f4d3-f758-412a-9679-4ec7494158f5.jpg",
+      "AssetFile": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\profile-photos\\talent_23_photo8f97f4d3-f758-412a-9679-4ec7494158f5.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "172955"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"KfTh3p4eGD1jwQnP9d/DsD63WGV+ddl4KnwYx/6Hsp0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 18 May 2025 12:38:53 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-KfTh3p4eGD1jwQnP9d/DsD63WGV+ddl4KnwYx/6Hsp0="
         }
       ]
     },

@@ -95,7 +95,7 @@ namespace CastFlow.Api.Data
                 entity.Property(r => r.EstPublie).IsRequired();
                 entity.Property(r => r.CreeLe).IsRequired();
                 entity.Property(r => r.ModifieLe).IsRequired();
-
+                entity.Property(r => r.InstructionsVideo).HasMaxLength(1000);
                 entity.Property(r => r.IsDeleted).IsRequired().HasDefaultValue(false);
                 entity.Property(r => r.ModifieLe).IsRequired();
 
@@ -140,8 +140,10 @@ namespace CastFlow.Api.Data
 
             modelBuilder.Entity<Candidature>(entity =>
             {
+                entity.Property(c => c.UrlVideoAudition).HasMaxLength(2048);
                 entity.Property(c => c.RoleId).IsRequired();
                 entity.HasOne(c => c.Role)
+
                       .WithMany(r => r.Candidatures)
                       .HasForeignKey(c => c.RoleId)
                       .OnDelete(DeleteBehavior.Cascade); 

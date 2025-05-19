@@ -15,5 +15,7 @@ namespace CastFlow.Api.Dtos.Response
         public string? CommentaireTalent { get; set; } 
         public DateTime? DispoDebut { get; set; } 
         public DateTime? DispoFin { get; set; }
+        public bool RoleEstSupprime { get; set; }
+        public string? UrlVideoAudition { get; set; }
     }
 }

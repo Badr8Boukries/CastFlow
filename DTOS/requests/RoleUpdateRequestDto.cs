@@ -23,6 +23,9 @@ namespace CastFlow.Api.Dtos.Request
         [DataType(DataType.Date)]
         public DateTime? DateLimiteCandidature { get; set; } 
 
-        public bool? EstPublie { get; set; } 
+        public bool? EstPublie { get; set; }
+
+        [StringLength(1000)]
+        public string? InstructionsVideo { get; set; }
     }
 }

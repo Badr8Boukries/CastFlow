@@ -24,6 +24,10 @@ namespace CastFlow.Api.Models
         [Column(TypeName = "text")]
         public string Description { get; set; } = string.Empty;
 
+
+        [Column(TypeName = "nvarchar(MAX)")] 
+        public string? InstructionsVideo { get; set; }
+
         public int? AgeMin { get; set; }
         public int? AgeMax { get; set; }
 
@@ -45,7 +49,6 @@ namespace CastFlow.Api.Models
         public DateTime CreeLe { get; set; } = DateTime.UtcNow;
         [Required]
         public DateTime ModifieLe { get; set; } = DateTime.UtcNow;
-        // --- FIN AJOUTS ---
 
         public virtual ICollection<Candidature> Candidatures { get; set; } = new List<Candidature>();
     }

@@ -23,7 +23,8 @@ namespace CastFlow.Api.Services
         private readonly IMapper _mapper;
         private readonly ILogger<CandidatureService> _logger;
         private readonly INotificationService _notificationService; 
-        private readonly IConfiguration _configuration; 
+        private readonly IConfiguration _configuration;
+        private readonly IFileStorageService _fileStorageService;
 
         public CandidatureService(
             ICandidatureRepository candidatureRepo,
@@ -32,7 +33,8 @@ namespace CastFlow.Api.Services
             IMapper mapper,
             ILogger<CandidatureService> logger,
             INotificationService notificationService, 
-            IConfiguration configuration) 
+            IConfiguration configuration, IFileStorageService fileStorageService)
+            
         {
             _candidatureRepo = candidatureRepo ?? throw new ArgumentNullException(nameof(candidatureRepo));
             _roleRepo = roleRepo ?? throw new ArgumentNullException(nameof(roleRepo));
@@ -40,46 +42,74 @@ namespace CastFlow.Api.Services
             _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
             _notificationService = notificationService ?? throw new ArgumentNullException(nameof(notificationService)); 
-            _configuration = configuration ?? throw new ArgumentNullException(nameof(configuration)); 
+            _configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
+           _fileStorageService = fileStorageService;
+
         }
 
         public async Task<MyCandidatureResponseDto?> ApplyToRoleAsync(long talentId, CandidatureCreateRequestDto createDto)
         {
-            _logger.LogInformation("Talent ID {TalentId} postule pour Role ID {RoleId}", talentId, createDto.RoleId);
-            var talent = await _talentRepo.GetActiveByIdAsync(talentId);
-            if (talent == null) { _logger.LogWarning("Talent ID {TalentId} non trouvé ou inactif.", talentId); return null; }
-
-            var role = await _roleRepo.GetActiveByIdWithProjectAsync(createDto.RoleId); 
-            if (role == null || !role.EstPublie || role.DateLimiteCandidature < DateTime.UtcNow)
-            { _logger.LogWarning("Role ID {RoleId} invalide pour candidature Talent ID {TalentId}.", createDto.RoleId, talentId); return null; }
-
-            if (await _candidatureRepo.HasActiveApplicationAsync(talentId, createDto.RoleId))
-            { _logger.LogWarning("Talent ID {TalentId} a déjà postulé pour Role ID {RoleId}.", talentId, createDto.RoleId); return null; }
 
             var candidature = _mapper.Map<Candidature>(createDto);
-            candidature.TalentId = talentId; candidature.DateCandidature = DateTime.UtcNow;
-            candidature.Statut = "RECUE"; candidature.CreeLe = DateTime.UtcNow;
+            candidature.TalentId = talentId;
+            candidature.DateCandidature = DateTime.UtcNow;
+            candidature.Statut = "RECUE";
+            candidature.CreeLe = DateTime.UtcNow;
+
+            string? videoUrl = null;
+            if (createDto.VideoAuditionFile != null && createDto.VideoAuditionFile.Length > 0)
+            {
+                if (createDto.VideoAuditionFile.Length > 60 * 1024 * 1024) // Limite de 60MB (exemple)
+                {
+                    _logger.LogWarning("Fichier vidéo trop volumineux pour candidature Talent ID {TalentId} à Role ID {RoleId}", talentId, createDto.RoleId);
+                }
+                else
+                {
+                    try
+                    {
+                        string videoFileNamePrefix = $"talent_{talentId}_role_{createDto.RoleId}_audition_{Guid.NewGuid()}";
+                        videoUrl = await _fileStorageService.SaveFileAsync(createDto.VideoAuditionFile, "audition-videos", videoFileNamePrefix);
+                        if (!string.IsNullOrWhiteSpace(videoUrl))
+                        {
+                            candidature.UrlVideoAudition = videoUrl;
+                            _logger.LogInformation("Vidéo d'audition sauvegardée pour candidature Talent ID {TalentId} à Role ID {RoleId}: {VideoUrl}", talentId, createDto.RoleId, videoUrl);
+                        }
+                        else
+                        {
+                            _logger.LogWarning("Échec de la sauvegarde de la vidéo d'audition pour Talent ID {TalentId}", talentId);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        _logger.LogError(ex, "Erreur lors de la sauvegarde de la vidéo d'audition pour Talent ID {TalentId}", talentId);
+                    }
+                }
+            }
+
 
             try
             {
-                await _candidatureRepo.AddAsync(candidature); await _candidatureRepo.SaveChangesAsync();
-                _logger.LogInformation("Candidature ID {CandidatureId} créée pour Talent ID {TalentId} à Role ID {RoleId}", candidature.CandidatureId, talentId, createDto.RoleId);
+                await _candidatureRepo.AddAsync(candidature);
+                await _candidatureRepo.SaveChangesAsync();
+                _logger.LogInformation("Candidature ID {CandidatureId} créée.", candidature.CandidatureId);
 
+                var role = await _roleRepo.GetActiveByIdWithProjectAsync(createDto.RoleId); // Recharger pour infos projet
                 var responseDto = _mapper.Map<MyCandidatureResponseDto>(candidature);
-                responseDto.RoleNom = role.Nom;
-                if (role.Projet != null) { responseDto.ProjetTitre = role.Projet.Titre; responseDto.ProjetId = role.Projet.ProjetId; }
+                if (role?.Projet != null) { responseDto.ProjetTitre = role.Projet.Titre; responseDto.ProjetId = role.Projet.ProjetId; }
+                if (role != null) { responseDto.RoleNom = role.Nom; }
+
                 return responseDto;
             }
             catch (Exception ex) { _logger.LogError(ex, "Erreur création candidature Talent ID {TalentId} pour Role ID {RoleId}", talentId, createDto.RoleId); return null; }
-        }
 
+            // ... (catch existant) ...
+        }
         public async Task<IEnumerable<MyCandidatureResponseDto>> GetMyApplicationsAsync(long talentId)
         {
-            _logger.LogInformation("Récupération candidatures Talent ID {TalentId}", talentId);
+            _logger.LogInformation("Récupération des candidatures pour Talent ID {TalentId}", talentId);
             var applications = await _candidatureRepo.GetActiveApplicationsForTalentAsync(talentId);
             return _mapper.Map<List<MyCandidatureResponseDto>>(applications);
         }
-
         public async Task<bool> WithdrawApplicationAsync(long candidatureId, long talentId)
         {
             _logger.LogWarning("Retrait candidature ID {CandidatureId} par Talent ID {TalentId}", candidatureId, talentId);
