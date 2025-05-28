@@ -16,5 +16,7 @@ namespace CastFlow.Api.Dtos.Response
         public TalentProfileResponseDto Talent { get; set; } = null!;
         public RoleSummaryResponseDto Role { get; set; } = null!;
         public string? UrlVideoAudition { get; set; }
+        public decimal? NoteMoyenne { get; set; }
+        public List<AdminNoteResponseDto> NotesIndividuelles { get; set; } = new List<AdminNoteResponseDto>();
     }
 }

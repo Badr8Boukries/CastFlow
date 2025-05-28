@@ -22,7 +22,7 @@ namespace CastFlow.Api.Services.Interfaces
 
        
         Task<IEnumerable<CandidatureSummaryResponseDto>> GetApplicationsForRoleAsync(long roleId);
-
+        Task<CandidatureDetailResponseDto?> AddOrUpdateAdminNoteAsync(long candidatureId, long adminId, decimal noteValue);
         Task<CandidatureSummaryResponseDto?> UpdateApplicationStatusAsync(long candidatureId, CandidatureUpdateStatusRequestDto statusDto/*, long adminId*/);
     }
 }

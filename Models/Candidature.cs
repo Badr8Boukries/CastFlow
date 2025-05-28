@@ -45,5 +45,11 @@ namespace CastFlow.Api.Models
         [Url]
         [StringLength(2048)] 
         public string? UrlVideoAudition { get; set; }
+
+        [Column(TypeName = "decimal(2, 1)")] 
+        public decimal? NoteMoyenne { get; set; } 
+
+        
+        public virtual ICollection<AdminCandidatureNote> AdminNotes { get; set; } = new List<AdminCandidatureNote>();
     }
 }

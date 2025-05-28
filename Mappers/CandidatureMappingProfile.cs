@@ -30,11 +30,14 @@ namespace CastFlow.Api.Mappers
             CreateMap<Candidature, CandidatureSummaryResponseDto>()
                 .ForMember(dest => dest.TalentNomComplet, opt => opt.MapFrom(src => (src.Talent != null) ? $"{src.Talent.Prenom ?? ""} {src.Talent.Nom ?? ""}".Trim() : "Talent Inconnu"))
                 .ForMember(dest => dest.TalentUrlPhoto, opt => opt.MapFrom(src => (src.Talent != null) ? src.Talent.UrlPhoto : null))
+                 .ForMember(dest => dest.NoteMoyenne, opt => opt.MapFrom(src => src.NoteMoyenne))
                 .ForMember(dest => dest.TalentAge, opt => opt.MapFrom(src => (src.Talent != null) ? MappingProfileUtils.CalculateAge(src.Talent.DateNaissance) : 0));
 
             CreateMap<Candidature, CandidatureDetailResponseDto>()
                 .ForMember(dest => dest.Talent, opt => opt.MapFrom(src => src.Talent))
-                .ForMember(dest => dest.Role, opt => opt.MapFrom(src => src.Role));
+                .ForMember(dest => dest.NoteMoyenne, opt => opt.MapFrom(src => src.NoteMoyenne))
+                .ForMember(dest => dest.Role, opt => opt.MapFrom(src => src.Role))
+              .ForMember(dest => dest.NotesIndividuelles, opt => opt.MapFrom(src => src.AdminNotes));
         }
     }
 }

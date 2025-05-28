@@ -29,6 +29,7 @@ namespace CastFlow.Api.Mappers
                  .ForMember(dest => dest.Prenom, opt => opt.MapFrom(src => src.Prenom ?? string.Empty))
                  .ForMember(dest => dest.Nom, opt => opt.MapFrom(src => src.Nom ?? string.Empty))
                  .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Email ?? string.Empty))
+                  .ForMember(dest => dest.NomComplet, opt => opt.MapFrom(src => $"{src.Prenom} {src.Nom}"))
                  .ForMember(dest => dest.Sex, opt => opt.MapFrom(src => src.Sex ?? string.Empty));
 
 
@@ -43,6 +44,10 @@ namespace CastFlow.Api.Mappers
                 .ForMember(dest => dest.UrlCv, opt => opt.Ignore())
                 .ForMember(dest => dest.Candidatures, opt => opt.Ignore());
 
+            CreateMap<UserTalent, TalentSummaryForRoleDto>()
+            .ForMember(dest => dest.TalentId, opt => opt.MapFrom(src => src.TalentId))
+            .ForMember(dest => dest.Prenom, opt => opt.MapFrom(src => src.Prenom ?? string.Empty)) 
+            .ForMember(dest => dest.Nom, opt => opt.MapFrom(src => src.Nom ?? string.Empty));
 
             CreateMap<TalentProfileUpdateRequestDto, UserTalent>()
                .ForMember(dest => dest.TalentId, opt => opt.Ignore())

@@ -19,5 +19,7 @@ namespace CastFlow.Api.Dtos.Response
         public List<CandidatureSummaryResponseDto>? Candidatures { get; set; }
         public int? NombreTotalCandidatures { get; set; }
         public string? InstructionsVideo { get; set; }
+        public TalentSummaryForRoleDto? TalentAssigneInfo { get; set; }
+
     }
 }

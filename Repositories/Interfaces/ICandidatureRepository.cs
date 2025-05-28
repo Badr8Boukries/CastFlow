@@ -23,6 +23,10 @@ namespace CastFlow.Api.Repository
 
         Task<bool> IsRoleAlreadyAssignedToOtherAsync(long roleId, long currentCandidatureIdToExclude);
         Task<int> SaveChangesAsync();
+        Task<AdminCandidatureNote?> GetAdminNoteForCandidatureAsync(long candidatureId, long adminId);
+        Task AddOrUpdateAdminNoteAsync(AdminCandidatureNote note); 
+        Task<List<AdminCandidatureNote>> GetNotesForCandidatureAsync(long candidatureId); 
+        Task<Candidature?> GetByIdWithNotesAndTalentAsync(long candidatureId);
 
     }
 }

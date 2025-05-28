@@ -37,12 +37,14 @@ namespace CastFlow.Api.Mappers
                  .ForMember(dest => dest.InstructionsVideo, opt => opt.Condition(src => src.InstructionsVideo != null)); // Mappe seulement si fourni
 
             CreateMap<Role, RoleSummaryResponseDto>()
-                 .ForMember(dest => dest.ProjetTitre, opt => opt.MapFrom(src => src.Projet != null ? src.Projet.Titre : "N/A"));
+                 .ForMember(dest => dest.ProjetTitre, opt => opt.MapFrom(src => src.Projet != null ? src.Projet.Titre : "N/A"))
+                 .ForMember(dest => dest.TalentAssigneInfo, opt => opt.MapFrom(src => src.TalentAssigne));
 
             CreateMap<Role, RoleDetailResponseDto>()
                   .ForMember(dest => dest.ProjetTitre, opt => opt.MapFrom(src => src.Projet != null ? src.Projet.Titre : "N/A"))
                   .ForMember(dest => dest.ProjetLogline, opt => opt.MapFrom(src => src.Projet != null ? src.Projet.Logline ?? string.Empty : string.Empty))
                   .ForMember(dest => dest.Candidatures, opt => opt.MapFrom(src => src.Candidatures.Where(c => c.Talent != null && !c.Talent.IsDeleted)))
+                  .ForMember(dest => dest.TalentAssigneInfo, opt => opt.MapFrom(src => src.TalentAssigne))
                   .ForMember(dest => dest.NombreTotalCandidatures, opt => opt.MapFrom(src => src.Candidatures == null ? 0 : src.Candidatures.Count(c => c.Talent != null && !c.Talent.IsDeleted)));
         }
     }

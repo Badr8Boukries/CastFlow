@@ -141,45 +141,53 @@ namespace CastFlow.Api.Services
 
         public async Task<CandidatureSummaryResponseDto?> UpdateApplicationStatusAsync(long candidatureId, CandidatureUpdateStatusRequestDto statusDto)
         {
-            _logger.LogInformation("MàJ statut Candidature ID {CandidatureId} vers {NouveauStatut}", candidatureId, statusDto.NouveauStatut);
-            var candidature = await _candidatureRepo.GetByIdWithTalentAsync(candidatureId); 
-
-            if (candidature == null || candidature.Talent == null || candidature.Talent.IsDeleted)
-            { _logger.LogWarning("Candidature ID {CandidatureId} invalide pour MàJ statut.", candidatureId); return null; }
+            _logger.LogInformation("MàJ statut Candidature ID {CandidatureId} vers {NouveauStatut} par Admin.", candidatureId, statusDto.NouveauStatut);
+            var candidature = await _candidatureRepo.GetByIdWithTalentAsync(candidatureId); // Récupère avec Talent et Role (et Projet du Role)
+            if (candidature == null || candidature.Talent == null || candidature.Talent.IsDeleted || candidature.Role == null)
+            { /* ... log et return null ... */ }
 
             string nouveauStatutUpper = statusDto.NouveauStatut.ToUpperInvariant();
-            string messageNotificationPourTalent = statusDto.MessagePourTalent ?? string.Empty;
-            string lienFront = $"/mes-candidatures/{candidature.CandidatureId}"; // Exemple
 
             if (nouveauStatutUpper == "PRESELECTIONNE")
             {
                 int countPreselectionnes = await _candidatureRepo.CountActiveByStatusForRoleAsync(candidature.RoleId, "PRESELECTIONNE");
                 if (countPreselectionnes >= 5 && candidature.Statut != "PRESELECTIONNE")
-                { _logger.LogWarning("Limite présélection atteinte Role ID {RoleId}", candidature.RoleId); return _mapper.Map<CandidatureSummaryResponseDto>(candidature); }
-                messageNotificationPourTalent = string.IsNullOrWhiteSpace(statusDto.MessagePourTalent) ? $"Félicitations ! Vous avez été présélectionné(e) pour le rôle '{candidature.Role?.Nom ?? "N/A"}'. Plus d'infos à venir." : statusDto.MessagePourTalent;
+                {
+                    _logger.LogWarning("Limite de 5 présélectionnés atteinte pour Role ID {RoleId}.", candidature.RoleId);
+                    throw new InvalidOperationException("La limite de 5 candidats présélectionnés est atteinte.");
+                }
+                if (countPreselectionnes == 4 && candidature.Statut != "PRESELECTIONNE") // Sur le point d'atteindre 5
+                {
+                    var rolePourFermeture = await _roleRepo.GetActiveByIdAsync(candidature.RoleId);
+                    if (rolePourFermeture != null && rolePourFermeture.EstPublie)
+                    {
+                        rolePourFermeture.EstPublie = false;
+                        rolePourFermeture.ModifieLe = DateTime.UtcNow;
+                        _roleRepo.Update(rolePourFermeture);
+                        _logger.LogInformation("Casting pour Rôle ID {RoleId} fermé automatiquement (5 présélections atteintes).", candidature.RoleId);
+                    }
+                }
             }
+
             else if (nouveauStatutUpper == "ASSIGNE")
             {
                 bool dejaAssigne = await _candidatureRepo.IsRoleAlreadyAssignedToOtherAsync(candidature.RoleId, candidature.CandidatureId);
-                if (dejaAssigne) { _logger.LogWarning("Rôle ID {RoleId} déjà assigné.", candidature.RoleId); return _mapper.Map<CandidatureSummaryResponseDto>(candidature); }
-                candidature.DateAssignation = DateTime.UtcNow;
-                messageNotificationPourTalent = string.IsNullOrWhiteSpace(statusDto.MessagePourTalent) ? $"Excellente nouvelle ! Vous avez été retenu(e) pour le rôle '{candidature.Role?.Nom ?? "N/A"}' dans le projet '{candidature.Role?.Projet?.Titre ?? "N/A"}' !" : statusDto.MessagePourTalent;
+                if (dejaAssigne) { throw new InvalidOperationException("Un talent est déjà assigné à ce rôle."); }
 
-                if (candidature.Talent != null && !string.IsNullOrEmpty(candidature.Talent.Email) && candidature.Role != null && candidature.Role.Projet != null)
+                candidature.DateAssignation = DateTime.UtcNow;
+                var roleAAssigner = await _roleRepo.GetActiveByIdAsync(candidature.RoleId); // Recharger le rôle
+                if (roleAAssigner != null)
                 {
-                    await SendRoleAssignedEmailAsync(candidature.Talent.Email, candidature.Talent.Prenom ?? "Talent", candidature.Role.Nom, candidature.Role.Projet.Titre);
+                    roleAAssigner.TalentAssigneId = candidature.TalentId;
+                    roleAAssigner.EstPublie = false; 
+                    roleAAssigner.Statut = "POURVU"; 
+                    _roleRepo.Update(roleAAssigner);
                 }
             }
 
             candidature.Statut = nouveauStatutUpper;
             _candidatureRepo.Update(candidature);
-
-            if (!string.IsNullOrWhiteSpace(messageNotificationPourTalent) && (nouveauStatutUpper == "PRESELECTIONNE" || nouveauStatutUpper == "ASSIGNE" || nouveauStatutUpper == "NON_RETENU"))
-            {
-                await _notificationService.CreateNotificationForTalentAsync(candidature.TalentId, messageNotificationPourTalent, "CANDIDATURE", candidature.CandidatureId, lienFront);
-            }
-            await _candidatureRepo.SaveChangesAsync();
-            _logger.LogInformation("Statut Candidature ID {CandidatureId} mis à jour vers {NouveauStatut}.", candidatureId, nouveauStatutUpper);
+            await _candidatureRepo.SaveChangesAsync(); 
             return _mapper.Map<CandidatureSummaryResponseDto>(candidature);
         }
 
@@ -204,5 +212,36 @@ namespace CastFlow.Api.Services
             }
             catch (Exception ex) { _logger.LogError(ex, "Erreur envoi email d'assignation à {TalentEmail}.", talentEmail); }
         }
+
+        public async Task<CandidatureDetailResponseDto?> AddOrUpdateAdminNoteAsync(long candidatureId, long adminId, decimal noteValue)
+{
+    var candidature = await _candidatureRepo.GetByIdWithNotesAndTalentAsync(candidatureId); // Doit inclure AdminNotes
+    if (candidature == null) { _logger.LogWarning("Candidature non trouvée ID {CandidatureId} pour noter.", candidatureId); return null; }
+
+    var note = new AdminCandidatureNote
+    {
+        CandidatureId = candidatureId,
+        AdminId = adminId,
+        NoteValue = noteValue,
+        DateNote = DateTime.UtcNow
+    };
+    await _candidatureRepo.AddOrUpdateAdminNoteAsync(note);
+    await _candidatureRepo.SaveChangesAsync();
+
+    var allNotesForCandidature = await _candidatureRepo.GetNotesForCandidatureAsync(candidatureId);
+    if (allNotesForCandidature.Any())
+    {
+        candidature.NoteMoyenne = allNotesForCandidature.Average(n => n.NoteValue);
+        candidature.NoteMoyenne = Math.Round(candidature.NoteMoyenne.Value, 1); 
+    }
+    else { candidature.NoteMoyenne = null; }
+
+    _candidatureRepo.Update(candidature); 
+    await _candidatureRepo.SaveChangesAsync();
+
+    _logger.LogInformation("Note admin MàJ pour Candidature ID {CandidatureId}. Nouvelle moyenne: {Moyenne}", candidatureId, candidature.NoteMoyenne);
+    return _mapper.Map<CandidatureDetailResponseDto>(candidature);
+}
+
     }
 }

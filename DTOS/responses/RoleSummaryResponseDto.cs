@@ -12,5 +12,7 @@ namespace CastFlow.Api.Dtos.Response
         public int? AgeMax { get; set; }
         public DateTime DateLimiteCandidature { get; set; }
         public bool EstPublie { get; set; }
+        public TalentSummaryForRoleDto? TalentAssigneInfo { get; set; }
+
     }
 }

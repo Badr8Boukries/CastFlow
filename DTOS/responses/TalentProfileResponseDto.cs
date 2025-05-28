@@ -8,7 +8,7 @@ namespace CastFlow.Api.Dtos.Response
        
         public long TalentId { get; set; }
 
-       
+        public string NomComplet { get; set; } = string.Empty;
         public string Prenom { get; set; } = string.Empty;
 
        

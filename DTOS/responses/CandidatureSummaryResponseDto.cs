@@ -22,8 +22,8 @@ namespace CastFlow.Api.Dtos.Response
 
         
         public DateTime DateCandidature { get; set; }
+        public decimal? NoteMoyenne { get; set; }
 
-        
         public string Statut { get; set; } = string.Empty;
 
         

@@ -39,9 +39,11 @@ namespace CastFlow.Api.Models
         public DateTime DateLimiteCandidature { get; set; }
 
         [Required]
-        public bool EstPublie { get; set; } = false; 
+        public bool EstPublie { get; set; } = false;
+        [Required]
+        [StringLength(50)]
+        public string Statut { get; set; } = "OUVERT_AU_CASTING";
 
-      
         [Required]
         public bool IsDeleted { get; set; } = false; 
 
@@ -51,5 +53,8 @@ namespace CastFlow.Api.Models
         public DateTime ModifieLe { get; set; } = DateTime.UtcNow;
 
         public virtual ICollection<Candidature> Candidatures { get; set; } = new List<Candidature>();
+        public long? TalentAssigneId { get; set; } 
+        [ForeignKey("TalentAssigneId")]
+        public virtual UserTalent? TalentAssigne { get; set; }
     }
 }

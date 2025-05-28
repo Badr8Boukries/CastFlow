@@ -108,5 +108,64 @@ namespace CastFlow.Api.Repository
         {
             return await _context.SaveChangesAsync();
         }
+
+
+        public async Task<AdminCandidatureNote?> GetAdminNoteForCandidatureAsync(long candidatureId, long adminId)
+        {
+            _logger.LogDebug("Recherche de la note de l'Admin ID {AdminId} pour Candidature ID {CandidatureId}", adminId, candidatureId);
+            return await _context.AdminCandidatureNotes
+                .FirstOrDefaultAsync(n => n.CandidatureId == candidatureId && n.AdminId == adminId);
+        }
+
+        public async Task AddOrUpdateAdminNoteAsync(AdminCandidatureNote note)
+        {
+            if (note == null) throw new ArgumentNullException(nameof(note));
+
+            var existingNote = await _context.AdminCandidatureNotes
+                .FirstOrDefaultAsync(n => n.CandidatureId == note.CandidatureId && n.AdminId == note.AdminId);
+
+            if (existingNote != null)
+            {
+                existingNote.NoteValue = note.NoteValue;
+                existingNote.DateNote = DateTime.UtcNow;
+                _context.AdminCandidatureNotes.Update(existingNote);
+                _logger.LogInformation("Note mise à jour par Admin ID {AdminId} pour Candidature ID {CandidatureId}", note.AdminId, note.CandidatureId);
+            }
+            else
+            {
+                note.DateNote = DateTime.UtcNow; 
+                await _context.AdminCandidatureNotes.AddAsync(note);
+                _logger.LogInformation("Nouvelle note ajoutée par Admin ID {AdminId} pour Candidature ID {CandidatureId}", note.AdminId, note.CandidatureId);
+            }
+        }
+        public async Task<List<AdminCandidatureNote>> GetNotesForCandidatureAsync(long candidatureId)
+        {
+            _logger.LogDebug("Récupération de toutes les notes pour Candidature ID {CandidatureId}", candidatureId);
+            return await _context.AdminCandidatureNotes
+                                 .Where(n => n.CandidatureId == candidatureId)
+                                 .Include(n => n.Admin) 
+                                 .OrderByDescending(n => n.DateNote) 
+                                 .ToListAsync();
+        }
+
+        public async Task<Candidature?> GetByIdWithNotesAndTalentAsync(long candidatureId)
+        {
+            _logger.LogDebug("Récupération Candidature ID {CandidatureId} avec ses notes et le talent", candidatureId);
+            return await _context.Candidatures
+                                .Include(c => c.Talent) 
+                                .Include(c => c.AdminNotes) 
+                                    .ThenInclude(an => an.Admin) 
+                                .FirstOrDefaultAsync(c => c.CandidatureId == candidatureId);
+        }
+        public async Task<Candidature?> GetByIdWithTalentAndRoleAsync(long candidatureId)
+        {
+            return await _context.Candidatures
+                                .Include(c => c.Talent)
+                                .Include(c => c.Role)
+                                    .ThenInclude(r => r!.Projet)
+                                .FirstOrDefaultAsync(c => c.CandidatureId == candidatureId);
+
+        }
+
     }
 }

@@ -22,6 +22,36 @@ namespace CastFlow.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("CastFlow.Api.Models.AdminCandidatureNote", b =>
+                {
+                    b.Property<long>("NoteId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("NoteId"));
+
+                    b.Property<long>("AdminId")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("CandidatureId")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime>("DateNote")
+                        .HasColumnType("datetime2");
+
+                    b.Property<decimal>("NoteValue")
+                        .HasColumnType("decimal(2, 1)");
+
+                    b.HasKey("NoteId");
+
+                    b.HasIndex("AdminId");
+
+                    b.HasIndex("CandidatureId", "AdminId")
+                        .IsUnique();
+
+                    b.ToTable("AdminCandidatureNotes", (string)null);
+                });
+
             modelBuilder.Entity("CastFlow.Api.Models.AdminInvitationToken", b =>
                 {
                     b.Property<int>("Id")
@@ -57,12 +87,7 @@ namespace CastFlow.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ActivationToken")
-                        .IsUnique();
-
                     b.HasIndex("CreatedAdminId");
-
-                    b.HasIndex("Email");
 
                     b.HasIndex("InvitedByAdminId");
 
@@ -95,6 +120,9 @@ namespace CastFlow.Migrations
                     b.Property<DateTime?>("DispoFin")
                         .HasColumnType("datetime2");
 
+                    b.Property<decimal?>("NoteMoyenne")
+                        .HasColumnType("decimal(2, 1)");
+
                     b.Property<long>("RoleId")
                         .HasColumnType("bigint");
 
@@ -116,7 +144,7 @@ namespace CastFlow.Migrations
 
                     b.HasIndex("TalentId");
 
-                    b.ToTable("Candidatures");
+                    b.ToTable("Candidatures", (string)null);
                 });
 
             modelBuilder.Entity("CastFlow.Api.Models.EmailVerifier", b =>
@@ -173,9 +201,7 @@ namespace CastFlow.Migrations
                         .HasColumnType("bigint");
 
                     b.Property<bool>("EstLu")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValue(false);
+                        .HasColumnType("bit");
 
                     b.Property<long?>("IdEntiteLiee")
                         .HasColumnType("bigint");
@@ -303,9 +329,21 @@ namespace CastFlow.Migrations
                     b.Property<long>("ProjetId")
                         .HasColumnType("bigint");
 
+                    b.Property<string>("Statut")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasDefaultValue("OUVERT_AU_CASTING");
+
+                    b.Property<long?>("TalentAssigneId")
+                        .HasColumnType("bigint");
+
                     b.HasKey("RoleId");
 
                     b.HasIndex("ProjetId");
+
+                    b.HasIndex("TalentAssigneId");
 
                     b.ToTable("Roles", (string)null);
                 });
@@ -409,6 +447,25 @@ namespace CastFlow.Migrations
                     b.ToTable("UserTalents", (string)null);
                 });
 
+            modelBuilder.Entity("CastFlow.Api.Models.AdminCandidatureNote", b =>
+                {
+                    b.HasOne("CastFlow.Api.Models.UserAdmin", "Admin")
+                        .WithMany()
+                        .HasForeignKey("AdminId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("CastFlow.Api.Models.Candidature", "Candidature")
+                        .WithMany("AdminNotes")
+                        .HasForeignKey("CandidatureId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Admin");
+
+                    b.Navigation("Candidature");
+                });
+
             modelBuilder.Entity("CastFlow.Api.Models.AdminInvitationToken", b =>
                 {
                     b.HasOne("CastFlow.Api.Models.UserAdmin", "CreatedAdmin")
@@ -473,10 +530,22 @@ namespace CastFlow.Migrations
                     b.HasOne("CastFlow.Api.Models.Projet", "Projet")
                         .WithMany("Roles")
                         .HasForeignKey("ProjetId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
+                    b.HasOne("CastFlow.Api.Models.UserTalent", "TalentAssigne")
+                        .WithMany()
+                        .HasForeignKey("TalentAssigneId")
+                        .OnDelete(DeleteBehavior.SetNull);
+
                     b.Navigation("Projet");
+
+                    b.Navigation("TalentAssigne");
+                });
+
+            modelBuilder.Entity("CastFlow.Api.Models.Candidature", b =>
+                {
+                    b.Navigation("AdminNotes");
                 });
 
             modelBuilder.Entity("CastFlow.Api.Models.Projet", b =>

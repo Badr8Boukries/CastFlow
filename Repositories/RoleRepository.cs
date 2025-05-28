@@ -97,5 +97,13 @@ namespace CastFlow.Api.Repository
                                  .OrderByDescending(r => r.CreeLe) // Les plus récents d'abord
                                  .ToListAsync();
         }
+        public async Task<Role?> GetActiveByIdWithProjectAndAssigneeAsync(long id) // Nouveau nom plus précis
+        {
+            return await _context.Roles
+                                 .Include(r => r.Projet)
+                                 .Include(r => r.TalentAssigne)
+                                 .FirstOrDefaultAsync(r => r.RoleId == id && !r.IsDeleted);
+        }
+
     }
 }

@@ -156,5 +156,30 @@ namespace CastFlow.Api.Controllers
             var userTypeClaim = User.FindFirstValue("userType");
             return "Admin".Equals(userTypeClaim, StringComparison.OrdinalIgnoreCase);
         }
+
+        [HttpPut("{candidatureId}/note")]
+        [Authorize]
+        [ProducesResponseType(typeof(CandidatureDetailResponseDto), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> AddOrUpdateCandidatureNote(long candidatureId, [FromBody] CandidatureNoteRequestDto noteDto)
+        {
+            if (!IsAdmin()) return Forbid("Accès réservé aux administrateurs.");
+            if (!ModelState.IsValid) return BadRequest(ModelState);
+
+            var adminIdClaim = User.FindFirstValue("Id"); 
+            if (!long.TryParse(adminIdClaim, out long adminId))
+            {
+                return Unauthorized("Token admin invalide.");
+            }
+
+            try
+            {
+                var updatedCandidature = await _candidatureService.AddOrUpdateAdminNoteAsync(candidatureId, adminId, noteDto.NoteValue);
+                if (updatedCandidature == null) return NotFound($"Candidature ID {candidatureId} non trouvée ou inaccessible.");
+                return Ok(updatedCandidature);
+            }
+            catch (Exception ex) { _logger.LogError(ex, "Erreur ajout/MàJ note pour cand. {CandidatureId}", candidatureId); return StatusCode(500, "Erreur interne."); }
+        }
     }
 }
