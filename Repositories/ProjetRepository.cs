@@ -31,19 +31,31 @@ namespace CastFlow.Api.Repository
 
         public async Task<Projet?> GetByIdAsync(long id)
         {
+            // If you want to include roles and talent even for "all" (including deleted), you'd add Includes here too.
+            // For now, keeping it simple as it was.
             return await _context.Projets.IgnoreQueryFilters().FirstOrDefaultAsync(p => p.ProjetId == id);
         }
 
         public async Task<Projet?> GetActiveByIdWithRolesAsync(long id)
         {
             return await _context.Projets
-                                 .Include(p => p.Roles.Where(r => !r.IsDeleted)) 
-                                 .FirstOrDefaultAsync(p => p.ProjetId == id);
+                                 // Include only active roles related to the project
+                                 .Include(p => p.Roles.Where(r => !r.IsDeleted))
+                                     // Then, for each of those active roles, include its TalentAssigne
+                                     .ThenInclude(r => r.TalentAssigne)
+                                 .FirstOrDefaultAsync(p => p.ProjetId == id && !p.IsDeleted); // Ensure project itself is active
         }
 
         public async Task<IEnumerable<Projet>> GetAllActiveAsync()
         {
-            return await _context.Projets.OrderByDescending(p => p.CreeLe).ToListAsync(); 
+            // If GetAllActiveAsync is used by GetAllProjetsAsync in the service
+            // and that service then manually fetches roles and talent, this is fine.
+            // If AutoMapper directly maps from this to a DTO that needs nested talent info,
+            // you'd need more includes here. For now, assuming it's for simpler summaries.
+            return await _context.Projets
+                                 .Where(p => !p.IsDeleted) // Ensure we only get active projects
+                                 .OrderByDescending(p => p.CreeLe)
+                                 .ToListAsync();
         }
 
         public void Update(Projet projet)
@@ -57,14 +69,14 @@ namespace CastFlow.Api.Repository
         {
             if (projet == null) throw new ArgumentNullException(nameof(projet));
             projet.IsDeleted = true;
-            projet.Statut = "ARCHIVE"; 
+            projet.Statut = "ARCHIVE";
             projet.ModifieLe = DateTime.UtcNow;
             _context.Projets.Update(projet);
         }
 
         public async Task<bool> ActiveExistsAsync(long id)
         {
-            return await _context.Projets.AnyAsync(p => p.ProjetId == id);
+            return await _context.Projets.AnyAsync(p => p.ProjetId == id && !p.IsDeleted); // Added !p.IsDeleted for clarity
         }
 
         public async Task<int> SaveChangesAsync()
