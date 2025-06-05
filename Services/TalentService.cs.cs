@@ -36,7 +36,7 @@ namespace CastFlow.Api.Services
         public TalentService(
             IUserTalentRepository userTalentRepo,
             IUserAdminRepository userAdminRepo,
-            IRoleRepository roleRepo, // Gardé
+            IRoleRepository roleRepo, 
             ILogger<TalentService> logger,
             IConfiguration configuration,
             IMapper mapper,

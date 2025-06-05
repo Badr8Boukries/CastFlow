@@ -13,6 +13,7 @@ namespace CastFlow.Api.Repository
         void Update(Projet projet);
         void MarkAsDeleted(Projet projet);
         Task<int> SaveChangesAsync();
-        Task<bool> ActiveExistsAsync(long id); 
+        Task<bool> ActiveExistsAsync(long id);
+        Task<IEnumerable<Projet>> GetAllArchivedAsync();
     }
 }

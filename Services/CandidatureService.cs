@@ -142,9 +142,27 @@ namespace CastFlow.Api.Services
         public async Task<CandidatureSummaryResponseDto?> UpdateApplicationStatusAsync(long candidatureId, CandidatureUpdateStatusRequestDto statusDto)
         {
             _logger.LogInformation("MàJ statut Candidature ID {CandidatureId} vers {NouveauStatut} par Admin.", candidatureId, statusDto.NouveauStatut);
-            var candidature = await _candidatureRepo.GetByIdWithTalentAsync(candidatureId); // Récupère avec Talent et Role (et Projet du Role)
-            if (candidature == null || candidature.Talent == null || candidature.Talent.IsDeleted || candidature.Role == null)
-            { /* ... log et return null ... */ }
+
+            // ✅ CORRECTION: Utilise une méthode qui charge TOUTES les données nécessaires
+            var candidature = await _candidatureRepo.GetByIdForAdminDetailsAsync(candidatureId); // Cette méthode charge Talent, Role, et Projet
+
+            if (candidature == null)
+            {
+                _logger.LogWarning("Candidature ID {CandidatureId} introuvable.", candidatureId);
+                return null;
+            }
+
+            if (candidature.Talent == null || candidature.Talent.IsDeleted)
+            {
+                _logger.LogWarning("Talent manquant ou supprimé pour candidature ID {CandidatureId}.", candidatureId);
+                return null;
+            }
+
+            if (candidature.Role == null)
+            {
+                _logger.LogWarning("Rôle manquant pour candidature ID {CandidatureId}.", candidatureId);
+                return null;
+            }
 
             string nouveauStatutUpper = statusDto.NouveauStatut.ToUpperInvariant();
 
@@ -156,7 +174,7 @@ namespace CastFlow.Api.Services
                     _logger.LogWarning("Limite de 5 présélectionnés atteinte pour Role ID {RoleId}.", candidature.RoleId);
                     throw new InvalidOperationException("La limite de 5 candidats présélectionnés est atteinte.");
                 }
-                if (countPreselectionnes == 4 && candidature.Statut != "PRESELECTIONNE") // Sur le point d'atteindre 5
+                if (countPreselectionnes == 4 && candidature.Statut != "PRESELECTIONNE")
                 {
                     var rolePourFermeture = await _roleRepo.GetActiveByIdAsync(candidature.RoleId);
                     if (rolePourFermeture != null && rolePourFermeture.EstPublie)
@@ -168,49 +186,139 @@ namespace CastFlow.Api.Services
                     }
                 }
             }
-
             else if (nouveauStatutUpper == "ASSIGNE")
             {
                 bool dejaAssigne = await _candidatureRepo.IsRoleAlreadyAssignedToOtherAsync(candidature.RoleId, candidature.CandidatureId);
-                if (dejaAssigne) { throw new InvalidOperationException("Un talent est déjà assigné à ce rôle."); }
+                if (dejaAssigne)
+                {
+                    throw new InvalidOperationException("Un talent est déjà assigné à ce rôle.");
+                }
 
                 candidature.DateAssignation = DateTime.UtcNow;
-                var roleAAssigner = await _roleRepo.GetActiveByIdAsync(candidature.RoleId); // Recharger le rôle
-                if (roleAAssigner != null)
+
+                // ✅ Mise à jour du rôle avec assignation
+                var roleAAssigner = candidature.Role; // On utilise le rôle déjà chargé
+                roleAAssigner.TalentAssigneId = candidature.TalentId;
+                roleAAssigner.EstPublie = false;
+                roleAAssigner.Statut = "POURVU";
+                roleAAssigner.ModifieLe = DateTime.UtcNow;
+                _roleRepo.Update(roleAAssigner);
+
+                // ✅ ENVOI DE L'EMAIL D'ASSIGNATION
+                try
                 {
-                    roleAAssigner.TalentAssigneId = candidature.TalentId;
-                    roleAAssigner.EstPublie = false; 
-                    roleAAssigner.Statut = "POURVU"; 
-                    _roleRepo.Update(roleAAssigner);
+                    string projetTitre = candidature.Role?.Projet?.Titre ?? "Non spécifié";
+                    string roleNom = candidature.Role?.Nom ?? "Non spécifié";
+
+                    _logger.LogInformation("Préparation envoi email assignation - Talent: {TalentEmail}, Prenom: {TalentPrenom}, Role: {RoleNom}, Projet: {ProjetTitre}",
+                        candidature.Talent.Email, candidature.Talent.Prenom, roleNom, projetTitre);
+
+                    await SendRoleAssignedEmailAsync(
+                        candidature.Talent.Email,
+                        candidature.Talent.Prenom,
+                        roleNom,
+                        projetTitre
+                    );
+
+                    _logger.LogInformation("Email d'assignation envoyé avec succès pour candidature ID {CandidatureId} - Talent: {TalentEmail}, Rôle: {RoleNom}",
+                        candidature.CandidatureId, candidature.Talent.Email, roleNom);
+                }
+                catch (Exception emailEx)
+                {
+                    // On log l'erreur mais on ne fait pas échouer toute l'opération d'assignation
+                    _logger.LogError(emailEx, "Erreur lors de l'envoi de l'email d'assignation pour candidature ID {CandidatureId} - Talent: {TalentEmail}",
+                        candidature.CandidatureId, candidature.Talent.Email);
                 }
             }
 
+            // Mise à jour du statut de la candidature
             candidature.Statut = nouveauStatutUpper;
             _candidatureRepo.Update(candidature);
-            await _candidatureRepo.SaveChangesAsync(); 
-            return _mapper.Map<CandidatureSummaryResponseDto>(candidature);
-        }
-
-        private async Task SendRoleAssignedEmailAsync(string talentEmail, string talentPrenom, string roleNom, string projetTitre)
-        {
-            var smtpSettings = _configuration.GetSection("SmtpSettings");
-            string? server = smtpSettings["Server"]; string? portStr = smtpSettings["Port"]; string? senderName = smtpSettings["SenderName"];
-            string? senderEmail = smtpSettings["SenderEmail"]; string? senderPassword = smtpSettings["SenderPassword"]; string? enableSslStr = smtpSettings["EnableSsl"];
-
-            if (string.IsNullOrWhiteSpace(server) || !int.TryParse(portStr, out int port) || string.IsNullOrWhiteSpace(senderEmail) || string.IsNullOrWhiteSpace(senderPassword) || !bool.TryParse(enableSslStr, out bool enableSsl)) { _logger.LogCritical("Cfg SMTP incomplète pour email d'assignation."); return; }
-            senderName ??= "CastFlow";
-            string subject = $"Félicitations ! Vous avez été retenu(e) pour le rôle {roleNom} !";
-            string body = $"Bonjour {talentPrenom},\n\nNous avons le plaisir de vous informer que votre candidature pour le rôle '{roleNom}' dans le projet '{projetTitre}' a été retenue !\n\nL'équipe de production vous contactera prochainement.\n\nCordialement,\nL'équipe CastFlow";
 
             try
             {
-                using var client = new SmtpClient(server) { Port = port, Credentials = new NetworkCredential(senderEmail, senderPassword), EnableSsl = enableSsl };
-                var mailMessage = new MailMessage { From = new MailAddress(senderEmail, senderName), Subject = subject, Body = body, IsBodyHtml = false, };
-                mailMessage.To.Add(talentEmail);
-                await client.SendMailAsync(mailMessage);
-                _logger.LogInformation("Email d'assignation envoyé à {TalentEmail} pour rôle {RoleNom}", talentEmail, roleNom);
+                await _candidatureRepo.SaveChangesAsync();
+                _logger.LogInformation("Statut candidature ID {CandidatureId} mis à jour vers {NouveauStatut}", candidatureId, nouveauStatutUpper);
+                return _mapper.Map<CandidatureSummaryResponseDto>(candidature);
             }
-            catch (Exception ex) { _logger.LogError(ex, "Erreur envoi email d'assignation à {TalentEmail}.", talentEmail); }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Erreur lors de la sauvegarde de la mise à jour de statut pour candidature ID {CandidatureId}", candidatureId);
+                throw;
+            }
+        }
+
+        // ✅ Méthode d'envoi d'email améliorée avec plus de logs
+        private async Task SendRoleAssignedEmailAsync(string talentEmail, string talentPrenom, string roleNom, string projetTitre)
+        {
+            try
+            {
+                var smtpSettings = _configuration.GetSection("SmtpSettings");
+                string? server = smtpSettings["Server"];
+                string? portStr = smtpSettings["Port"];
+                string? senderName = smtpSettings["SenderName"];
+                string? senderEmail = smtpSettings["SenderEmail"];
+                string? senderPassword = smtpSettings["SenderPassword"];
+                string? enableSslStr = smtpSettings["EnableSsl"];
+
+                _logger.LogInformation("Configuration SMTP - Server: {Server}, Port: {Port}, SenderEmail: {SenderEmail}, EnableSsl: {EnableSsl}",
+                    server, portStr, senderEmail, enableSslStr);
+
+                if (string.IsNullOrWhiteSpace(server) ||
+                    !int.TryParse(portStr, out int port) ||
+                    string.IsNullOrWhiteSpace(senderEmail) ||
+                    string.IsNullOrWhiteSpace(senderPassword) ||
+                    !bool.TryParse(enableSslStr, out bool enableSsl))
+                {
+                    _logger.LogCritical("Configuration SMTP incomplète pour email d'assignation. Server: {Server}, Port: {Port}, SenderEmail: {SenderEmail}",
+                        server, portStr, senderEmail);
+                    return;
+                }
+
+                senderName ??= "CastFlow";
+                string subject = $"Félicitations ! Vous avez été retenu(e) pour le rôle {roleNom} !";
+                string body = $@"Bonjour {talentPrenom},
+
+Nous avons le plaisir de vous informer que votre candidature pour le rôle '{roleNom}' dans le projet '{projetTitre}' a été retenue !
+
+🎉 Félicitations pour votre sélection !
+
+L'équipe de production vous contactera prochainement avec tous les détails concernant :
+- Les dates de tournage
+- Le lieu de rendez-vous
+- Les informations pratiques
+
+Nous sommes impatients de travailler avec vous sur ce projet.
+
+Cordialement,
+L'équipe CastFlow";
+
+                using var client = new SmtpClient(server)
+                {
+                    Port = port,
+                    Credentials = new NetworkCredential(senderEmail, senderPassword),
+                    EnableSsl = enableSsl
+                };
+
+                var mailMessage = new MailMessage
+                {
+                    From = new MailAddress(senderEmail, senderName),
+                    Subject = subject,
+                    Body = body,
+                    IsBodyHtml = false,
+                };
+                mailMessage.To.Add(talentEmail);
+
+                await client.SendMailAsync(mailMessage);
+                _logger.LogInformation("Email d'assignation envoyé avec succès à {TalentEmail} pour rôle {RoleNom} dans projet {ProjetTitre}",
+                    talentEmail, roleNom, projetTitre);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Erreur critique lors de l'envoi de l'email d'assignation à {TalentEmail} pour rôle {RoleNom}",
+                    talentEmail, roleNom);
+                throw; // On peut choisir de throw ou pas selon le comportement souhaité
+            }
         }
 
         public async Task<CandidatureDetailResponseDto?> AddOrUpdateAdminNoteAsync(long candidatureId, long adminId, decimal noteValue)

@@ -86,5 +86,20 @@ namespace CastFlow.Api.Services
             _logger.LogInformation("Projet ID {ProjetId} marqué comme supprimé/archivé.", projetId);
             return true;
         }
+
+        public async Task<IEnumerable<ProjetSummaryResponseDto>> GetAllArchivedProjetsAsync()
+        {
+            _logger.LogInformation("Récupération de tous les projets archivés");
+            var projets = await _projetRepo.GetAllArchivedAsync();
+            var projetDtos = _mapper.Map<List<ProjetSummaryResponseDto>>(projets);
+
+           
+            foreach (var dto in projetDtos)
+            {
+                dto.NombreRoles = await _roleRepo.CountActiveRolesForProjectAsync(dto.ProjetId);
+               
+            }
+            return projetDtos;
+        }
     }
 }

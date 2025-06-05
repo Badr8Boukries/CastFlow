@@ -13,5 +13,7 @@ namespace CastFlow.Api.Services.Interfaces
         Task<IEnumerable<ProjetSummaryResponseDto>> GetAllProjetsAsync();
         Task<ProjetDetailResponseDto?> UpdateProjetAsync(long projetId, ProjetUpdateRequestDto updateDto);
         Task<bool> DeleteProjetAsync(long projetId);
+        Task<IEnumerable<ProjetSummaryResponseDto>> GetAllArchivedProjetsAsync();
+
     }
 }

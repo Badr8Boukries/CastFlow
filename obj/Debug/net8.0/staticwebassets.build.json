@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "vS5dpW8iaPgIBvPE82yu8zymWaRMUKi7IH85NIioUjA=",
+  "Hash": "lgbNU3cFrC0hzkIg09hZBlfRw8H0IsVAIjaVkjRDNiE=",
   "Source": "CastFlow",
   "BasePath": "_content/CastFlow",
   "Mode": "Default",
@@ -16,6 +16,195 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\audition-videos\\talent_22_role_10027_audition_0a49f30d-3d20-452d-ba3d-32f9c458f4d89d60ec30-e234-404b-8515-c5d8a1748e01.mp4",
+      "SourceId": "CastFlow",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\",
+      "BasePath": "_content/CastFlow",
+      "RelativePath": "uploads/audition-videos/talent_22_role_10027_audition_0a49f30d-3d20-452d-ba3d-32f9c458f4d89d60ec30-e234-404b-8515-c5d8a1748e01#[.{fingerprint}]?.mp4",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "tihkgim1j4",
+      "Integrity": "tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\audition-videos\\talent_22_role_10027_audition_0a49f30d-3d20-452d-ba3d-32f9c458f4d89d60ec30-e234-404b-8515-c5d8a1748e01.mp4"
+    },
+    {
+      "Identity": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\audition-videos\\talent_22_role_10027_audition_ab40b33b-980a-4daa-a667-dd2d3c524f54ca05ca43-4b1f-471d-87e4-1333a70986d2.mp4",
+      "SourceId": "CastFlow",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\",
+      "BasePath": "_content/CastFlow",
+      "RelativePath": "uploads/audition-videos/talent_22_role_10027_audition_ab40b33b-980a-4daa-a667-dd2d3c524f54ca05ca43-4b1f-471d-87e4-1333a70986d2#[.{fingerprint}]?.mp4",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "tihkgim1j4",
+      "Integrity": "tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\audition-videos\\talent_22_role_10027_audition_ab40b33b-980a-4daa-a667-dd2d3c524f54ca05ca43-4b1f-471d-87e4-1333a70986d2.mp4"
+    },
+    {
+      "Identity": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\audition-videos\\talent_22_role_10028_audition_389dbf32-2abb-45f8-9c87-d374d547bc6a55a97e57-b14c-401c-9f04-bb8967417143.mp4",
+      "SourceId": "CastFlow",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\",
+      "BasePath": "_content/CastFlow",
+      "RelativePath": "uploads/audition-videos/talent_22_role_10028_audition_389dbf32-2abb-45f8-9c87-d374d547bc6a55a97e57-b14c-401c-9f04-bb8967417143#[.{fingerprint}]?.mp4",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "tihkgim1j4",
+      "Integrity": "tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\audition-videos\\talent_22_role_10028_audition_389dbf32-2abb-45f8-9c87-d374d547bc6a55a97e57-b14c-401c-9f04-bb8967417143.mp4"
+    },
+    {
+      "Identity": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\audition-videos\\talent_22_role_10029_audition_37f9fb36-8755-4696-a138-3c8a2a034c1fc13b07dc-5b6b-4361-939f-e86c28d6f4bb.mp4",
+      "SourceId": "CastFlow",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\",
+      "BasePath": "_content/CastFlow",
+      "RelativePath": "uploads/audition-videos/talent_22_role_10029_audition_37f9fb36-8755-4696-a138-3c8a2a034c1fc13b07dc-5b6b-4361-939f-e86c28d6f4bb#[.{fingerprint}]?.mp4",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "tihkgim1j4",
+      "Integrity": "tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\audition-videos\\talent_22_role_10029_audition_37f9fb36-8755-4696-a138-3c8a2a034c1fc13b07dc-5b6b-4361-939f-e86c28d6f4bb.mp4"
+    },
+    {
+      "Identity": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\audition-videos\\talent_22_role_10032_audition_80a19e72-d837-4dee-b5fb-07e2f6bd298213778cda-162c-4221-9f85-f04d14b7475b.mp4",
+      "SourceId": "CastFlow",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\",
+      "BasePath": "_content/CastFlow",
+      "RelativePath": "uploads/audition-videos/talent_22_role_10032_audition_80a19e72-d837-4dee-b5fb-07e2f6bd298213778cda-162c-4221-9f85-f04d14b7475b#[.{fingerprint}]?.mp4",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "tihkgim1j4",
+      "Integrity": "tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\audition-videos\\talent_22_role_10032_audition_80a19e72-d837-4dee-b5fb-07e2f6bd298213778cda-162c-4221-9f85-f04d14b7475b.mp4"
+    },
+    {
+      "Identity": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\audition-videos\\talent_22_role_10033_audition_45041f5a-f825-4120-b022-4d537de7dbb595643643-6065-409e-b9b5-56911bbc22f6.mp4",
+      "SourceId": "CastFlow",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\",
+      "BasePath": "_content/CastFlow",
+      "RelativePath": "uploads/audition-videos/talent_22_role_10033_audition_45041f5a-f825-4120-b022-4d537de7dbb595643643-6065-409e-b9b5-56911bbc22f6#[.{fingerprint}]?.mp4",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "tihkgim1j4",
+      "Integrity": "tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\audition-videos\\talent_22_role_10033_audition_45041f5a-f825-4120-b022-4d537de7dbb595643643-6065-409e-b9b5-56911bbc22f6.mp4"
+    },
+    {
+      "Identity": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\audition-videos\\talent_22_role_10034_audition_ba83d4a0-8864-40ab-b0f1-8ae8c00a4c19f26249b7-32f8-4773-bdf5-578d4ccf90da.mp4",
+      "SourceId": "CastFlow",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\",
+      "BasePath": "_content/CastFlow",
+      "RelativePath": "uploads/audition-videos/talent_22_role_10034_audition_ba83d4a0-8864-40ab-b0f1-8ae8c00a4c19f26249b7-32f8-4773-bdf5-578d4ccf90da#[.{fingerprint}]?.mp4",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "tihkgim1j4",
+      "Integrity": "tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\audition-videos\\talent_22_role_10034_audition_ba83d4a0-8864-40ab-b0f1-8ae8c00a4c19f26249b7-32f8-4773-bdf5-578d4ccf90da.mp4"
+    },
+    {
+      "Identity": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\audition-videos\\talent_22_role_10035_audition_c13baa6e-aef2-4ecb-9acf-212dbf249d960b5c7068-4bc4-4cbb-a331-cb5d978794bc.mp4",
+      "SourceId": "CastFlow",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\",
+      "BasePath": "_content/CastFlow",
+      "RelativePath": "uploads/audition-videos/talent_22_role_10035_audition_c13baa6e-aef2-4ecb-9acf-212dbf249d960b5c7068-4bc4-4cbb-a331-cb5d978794bc#[.{fingerprint}]?.mp4",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "tihkgim1j4",
+      "Integrity": "tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\audition-videos\\talent_22_role_10035_audition_c13baa6e-aef2-4ecb-9acf-212dbf249d960b5c7068-4bc4-4cbb-a331-cb5d978794bc.mp4"
+    },
+    {
+      "Identity": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\audition-videos\\talent_22_role_10036_audition_54b67d99-67e5-4826-8508-0e3669036cb806b8fa52-68e4-4826-a54c-cf0ac1db22e0.mp4",
+      "SourceId": "CastFlow",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\",
+      "BasePath": "_content/CastFlow",
+      "RelativePath": "uploads/audition-videos/talent_22_role_10036_audition_54b67d99-67e5-4826-8508-0e3669036cb806b8fa52-68e4-4826-a54c-cf0ac1db22e0#[.{fingerprint}]?.mp4",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "tihkgim1j4",
+      "Integrity": "tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\audition-videos\\talent_22_role_10036_audition_54b67d99-67e5-4826-8508-0e3669036cb806b8fa52-68e4-4826-a54c-cf0ac1db22e0.mp4"
+    },
     {
       "Identity": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\audition-videos\\talent_22_role_18_audition_91a6e2be-6780-4d31-92ab-9023d22c5af8981880a5-f3bf-40cb-a00c-0de41a631633.mp4",
       "SourceId": "CastFlow",
@@ -101,6 +290,27 @@
       "OriginalItemSpec": "wwwroot\\uploads\\audition-videos\\talent_23_role_10022_audition_870bad8c-4d70-402e-b57f-8f6da4d0b7d0d4081cc0-df5c-4c68-a6fb-7a4864d3fcac.mp4"
     },
     {
+      "Identity": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\audition-videos\\talent_23_role_10023_audition_a3e537ec-90b7-4c7e-b19f-f19bca68eded642ab53c-9cae-43d0-86f3-a076381ac39e.mp4",
+      "SourceId": "CastFlow",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\",
+      "BasePath": "_content/CastFlow",
+      "RelativePath": "uploads/audition-videos/talent_23_role_10023_audition_a3e537ec-90b7-4c7e-b19f-f19bca68eded642ab53c-9cae-43d0-86f3-a076381ac39e#[.{fingerprint}]?.mp4",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "tihkgim1j4",
+      "Integrity": "tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\audition-videos\\talent_23_role_10023_audition_a3e537ec-90b7-4c7e-b19f-f19bca68eded642ab53c-9cae-43d0-86f3-a076381ac39e.mp4"
+    },
+    {
       "Identity": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\audition-videos\\talent_23_role_10024_audition_a4b2a897-f965-4f3f-af86-1ac0dc025a41c7116355-b90b-4353-bd61-3972769cb14e.mp4",
       "SourceId": "CastFlow",
       "SourceType": "Discovered",
@@ -120,6 +330,174 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\audition-videos\\talent_23_role_10024_audition_a4b2a897-f965-4f3f-af86-1ac0dc025a41c7116355-b90b-4353-bd61-3972769cb14e.mp4"
+    },
+    {
+      "Identity": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\audition-videos\\talent_23_role_10029_audition_ca24815f-02db-4a7d-bc9f-0b5b3d235cc6007acbe7-49a7-454c-8b3f-22ebdb56bf00.mp4",
+      "SourceId": "CastFlow",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\",
+      "BasePath": "_content/CastFlow",
+      "RelativePath": "uploads/audition-videos/talent_23_role_10029_audition_ca24815f-02db-4a7d-bc9f-0b5b3d235cc6007acbe7-49a7-454c-8b3f-22ebdb56bf00#[.{fingerprint}]?.mp4",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "tihkgim1j4",
+      "Integrity": "tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\audition-videos\\talent_23_role_10029_audition_ca24815f-02db-4a7d-bc9f-0b5b3d235cc6007acbe7-49a7-454c-8b3f-22ebdb56bf00.mp4"
+    },
+    {
+      "Identity": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\audition-videos\\talent_23_role_10030_audition_ee602d51-49e8-42de-a4b8-6d77174b2ad5c47f093e-43be-4c29-b800-4d5b59ab5cc6.mp4",
+      "SourceId": "CastFlow",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\",
+      "BasePath": "_content/CastFlow",
+      "RelativePath": "uploads/audition-videos/talent_23_role_10030_audition_ee602d51-49e8-42de-a4b8-6d77174b2ad5c47f093e-43be-4c29-b800-4d5b59ab5cc6#[.{fingerprint}]?.mp4",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "tihkgim1j4",
+      "Integrity": "tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\audition-videos\\talent_23_role_10030_audition_ee602d51-49e8-42de-a4b8-6d77174b2ad5c47f093e-43be-4c29-b800-4d5b59ab5cc6.mp4"
+    },
+    {
+      "Identity": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\audition-videos\\talent_23_role_10031_audition_50417790-027c-4ce8-bc61-a908ffb70262d596d177-0f0a-44a2-8a9e-0a60b01b652b.mp4",
+      "SourceId": "CastFlow",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\",
+      "BasePath": "_content/CastFlow",
+      "RelativePath": "uploads/audition-videos/talent_23_role_10031_audition_50417790-027c-4ce8-bc61-a908ffb70262d596d177-0f0a-44a2-8a9e-0a60b01b652b#[.{fingerprint}]?.mp4",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "tihkgim1j4",
+      "Integrity": "tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\audition-videos\\talent_23_role_10031_audition_50417790-027c-4ce8-bc61-a908ffb70262d596d177-0f0a-44a2-8a9e-0a60b01b652b.mp4"
+    },
+    {
+      "Identity": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\audition-videos\\talent_23_role_10032_audition_90fc5412-a380-42d9-956d-ea9c757628551141dd64-ce68-4caa-8b05-a27b67f4d9ad.mp4",
+      "SourceId": "CastFlow",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\",
+      "BasePath": "_content/CastFlow",
+      "RelativePath": "uploads/audition-videos/talent_23_role_10032_audition_90fc5412-a380-42d9-956d-ea9c757628551141dd64-ce68-4caa-8b05-a27b67f4d9ad#[.{fingerprint}]?.mp4",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "tihkgim1j4",
+      "Integrity": "tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\audition-videos\\talent_23_role_10032_audition_90fc5412-a380-42d9-956d-ea9c757628551141dd64-ce68-4caa-8b05-a27b67f4d9ad.mp4"
+    },
+    {
+      "Identity": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\audition-videos\\talent_23_role_10033_audition_67ce6777-18d6-4288-b1f6-2b2630ec787c797cb8df-4fe5-4968-bc1c-acae67bfce45.mp4",
+      "SourceId": "CastFlow",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\",
+      "BasePath": "_content/CastFlow",
+      "RelativePath": "uploads/audition-videos/talent_23_role_10033_audition_67ce6777-18d6-4288-b1f6-2b2630ec787c797cb8df-4fe5-4968-bc1c-acae67bfce45#[.{fingerprint}]?.mp4",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "tihkgim1j4",
+      "Integrity": "tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\audition-videos\\talent_23_role_10033_audition_67ce6777-18d6-4288-b1f6-2b2630ec787c797cb8df-4fe5-4968-bc1c-acae67bfce45.mp4"
+    },
+    {
+      "Identity": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\audition-videos\\talent_23_role_10034_audition_2a86a5ce-5dbb-458d-a426-c99db61daabf314c8370-2fae-4b4a-a5e3-2e05a7907c21.mp4",
+      "SourceId": "CastFlow",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\",
+      "BasePath": "_content/CastFlow",
+      "RelativePath": "uploads/audition-videos/talent_23_role_10034_audition_2a86a5ce-5dbb-458d-a426-c99db61daabf314c8370-2fae-4b4a-a5e3-2e05a7907c21#[.{fingerprint}]?.mp4",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "tihkgim1j4",
+      "Integrity": "tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\audition-videos\\talent_23_role_10034_audition_2a86a5ce-5dbb-458d-a426-c99db61daabf314c8370-2fae-4b4a-a5e3-2e05a7907c21.mp4"
+    },
+    {
+      "Identity": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\audition-videos\\talent_23_role_10035_audition_a759e609-00d7-4eb4-ba44-5c9d156aa73106221447-5ad5-4f57-89a3-44751d07a899.mp4",
+      "SourceId": "CastFlow",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\",
+      "BasePath": "_content/CastFlow",
+      "RelativePath": "uploads/audition-videos/talent_23_role_10035_audition_a759e609-00d7-4eb4-ba44-5c9d156aa73106221447-5ad5-4f57-89a3-44751d07a899#[.{fingerprint}]?.mp4",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "tihkgim1j4",
+      "Integrity": "tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\audition-videos\\talent_23_role_10035_audition_a759e609-00d7-4eb4-ba44-5c9d156aa73106221447-5ad5-4f57-89a3-44751d07a899.mp4"
+    },
+    {
+      "Identity": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\audition-videos\\talent_23_role_10036_audition_c54c33cf-7cb2-452c-83a4-4c99168810800e53c96c-f76d-4352-8ac2-680af756105e.mp4",
+      "SourceId": "CastFlow",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\",
+      "BasePath": "_content/CastFlow",
+      "RelativePath": "uploads/audition-videos/talent_23_role_10036_audition_c54c33cf-7cb2-452c-83a4-4c99168810800e53c96c-f76d-4352-8ac2-680af756105e#[.{fingerprint}]?.mp4",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "tihkgim1j4",
+      "Integrity": "tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\audition-videos\\talent_23_role_10036_audition_c54c33cf-7cb2-452c-83a4-4c99168810800e53c96c-f76d-4352-8ac2-680af756105e.mp4"
     },
     {
       "Identity": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\cvs\\talent_22_cv99ffed8b-de28-4587-aeb6-49a8dc88b2c4.pdf",
@@ -206,12 +584,12 @@
       "OriginalItemSpec": "wwwroot\\uploads\\cvs\\talent_temp_5ad4692c-17cd-4472-bb40-8b2f3c77faa5_cv45756a3d-30ba-4d76-8c9b-a1fcd4964d06.pdf"
     },
     {
-      "Identity": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\profile-photos\\talent_22_photocd386736-8db8-4efa-aead-544103ba3a1e.jpg",
+      "Identity": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\profile-photos\\talent_22_photobc9f5a46-035c-4d15-a420-3a30b6a3eafd.jpg",
       "SourceId": "CastFlow",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\",
       "BasePath": "_content/CastFlow",
-      "RelativePath": "uploads/profile-photos/talent_22_photocd386736-8db8-4efa-aead-544103ba3a1e#[.{fingerprint}]?.jpg",
+      "RelativePath": "uploads/profile-photos/talent_22_photobc9f5a46-035c-4d15-a420-3a30b6a3eafd#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -220,11 +598,11 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "9givpn9unn",
-      "Integrity": "KfTh3p4eGD1jwQnP9d/DsD63WGV+ddl4KnwYx/6Hsp0=",
+      "Fingerprint": "hvpp22di5a",
+      "Integrity": "w9bjEkX00B2XVVTRIuIlhTYcvn3+ald0p5XAfoyv7/g=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\uploads\\profile-photos\\talent_22_photocd386736-8db8-4efa-aead-544103ba3a1e.jpg"
+      "OriginalItemSpec": "wwwroot\\uploads\\profile-photos\\talent_22_photobc9f5a46-035c-4d15-a420-3a30b6a3eafd.jpg"
     },
     {
       "Identity": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\profile-photos\\talent_23_photo8f97f4d3-f758-412a-9679-4ec7494158f5.jpg",
@@ -375,6 +753,744 @@
     }
   ],
   "Endpoints": [
+    {
+      "Route": "uploads/audition-videos/talent_22_role_10027_audition_0a49f30d-3d20-452d-ba3d-32f9c458f4d89d60ec30-e234-404b-8515-c5d8a1748e01.mp4",
+      "AssetFile": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\audition-videos\\talent_22_role_10027_audition_0a49f30d-3d20-452d-ba3d-32f9c458f4d89d60ec30-e234-404b-8515-c5d8a1748e01.mp4",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6779534"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "video/mp4"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 30 May 2025 13:32:12 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/audition-videos/talent_22_role_10027_audition_0a49f30d-3d20-452d-ba3d-32f9c458f4d89d60ec30-e234-404b-8515-c5d8a1748e01.tihkgim1j4.mp4",
+      "AssetFile": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\audition-videos\\talent_22_role_10027_audition_0a49f30d-3d20-452d-ba3d-32f9c458f4d89d60ec30-e234-404b-8515-c5d8a1748e01.mp4",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6779534"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "video/mp4"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 30 May 2025 13:32:12 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "tihkgim1j4"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/audition-videos/talent_22_role_10027_audition_0a49f30d-3d20-452d-ba3d-32f9c458f4d89d60ec30-e234-404b-8515-c5d8a1748e01.mp4"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/audition-videos/talent_22_role_10027_audition_ab40b33b-980a-4daa-a667-dd2d3c524f54ca05ca43-4b1f-471d-87e4-1333a70986d2.mp4",
+      "AssetFile": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\audition-videos\\talent_22_role_10027_audition_ab40b33b-980a-4daa-a667-dd2d3c524f54ca05ca43-4b1f-471d-87e4-1333a70986d2.mp4",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6779534"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "video/mp4"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 29 May 2025 16:43:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/audition-videos/talent_22_role_10027_audition_ab40b33b-980a-4daa-a667-dd2d3c524f54ca05ca43-4b1f-471d-87e4-1333a70986d2.tihkgim1j4.mp4",
+      "AssetFile": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\audition-videos\\talent_22_role_10027_audition_ab40b33b-980a-4daa-a667-dd2d3c524f54ca05ca43-4b1f-471d-87e4-1333a70986d2.mp4",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6779534"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "video/mp4"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 29 May 2025 16:43:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "tihkgim1j4"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/audition-videos/talent_22_role_10027_audition_ab40b33b-980a-4daa-a667-dd2d3c524f54ca05ca43-4b1f-471d-87e4-1333a70986d2.mp4"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/audition-videos/talent_22_role_10028_audition_389dbf32-2abb-45f8-9c87-d374d547bc6a55a97e57-b14c-401c-9f04-bb8967417143.mp4",
+      "AssetFile": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\audition-videos\\talent_22_role_10028_audition_389dbf32-2abb-45f8-9c87-d374d547bc6a55a97e57-b14c-401c-9f04-bb8967417143.mp4",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6779534"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "video/mp4"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 30 May 2025 15:34:42 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/audition-videos/talent_22_role_10028_audition_389dbf32-2abb-45f8-9c87-d374d547bc6a55a97e57-b14c-401c-9f04-bb8967417143.tihkgim1j4.mp4",
+      "AssetFile": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\audition-videos\\talent_22_role_10028_audition_389dbf32-2abb-45f8-9c87-d374d547bc6a55a97e57-b14c-401c-9f04-bb8967417143.mp4",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6779534"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "video/mp4"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 30 May 2025 15:34:42 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "tihkgim1j4"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/audition-videos/talent_22_role_10028_audition_389dbf32-2abb-45f8-9c87-d374d547bc6a55a97e57-b14c-401c-9f04-bb8967417143.mp4"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/audition-videos/talent_22_role_10029_audition_37f9fb36-8755-4696-a138-3c8a2a034c1fc13b07dc-5b6b-4361-939f-e86c28d6f4bb.mp4",
+      "AssetFile": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\audition-videos\\talent_22_role_10029_audition_37f9fb36-8755-4696-a138-3c8a2a034c1fc13b07dc-5b6b-4361-939f-e86c28d6f4bb.mp4",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6779534"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "video/mp4"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 31 May 2025 12:43:52 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/audition-videos/talent_22_role_10029_audition_37f9fb36-8755-4696-a138-3c8a2a034c1fc13b07dc-5b6b-4361-939f-e86c28d6f4bb.tihkgim1j4.mp4",
+      "AssetFile": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\audition-videos\\talent_22_role_10029_audition_37f9fb36-8755-4696-a138-3c8a2a034c1fc13b07dc-5b6b-4361-939f-e86c28d6f4bb.mp4",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6779534"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "video/mp4"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 31 May 2025 12:43:52 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "tihkgim1j4"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/audition-videos/talent_22_role_10029_audition_37f9fb36-8755-4696-a138-3c8a2a034c1fc13b07dc-5b6b-4361-939f-e86c28d6f4bb.mp4"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/audition-videos/talent_22_role_10032_audition_80a19e72-d837-4dee-b5fb-07e2f6bd298213778cda-162c-4221-9f85-f04d14b7475b.mp4",
+      "AssetFile": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\audition-videos\\talent_22_role_10032_audition_80a19e72-d837-4dee-b5fb-07e2f6bd298213778cda-162c-4221-9f85-f04d14b7475b.mp4",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6779534"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "video/mp4"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 31 May 2025 13:24:06 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/audition-videos/talent_22_role_10032_audition_80a19e72-d837-4dee-b5fb-07e2f6bd298213778cda-162c-4221-9f85-f04d14b7475b.tihkgim1j4.mp4",
+      "AssetFile": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\audition-videos\\talent_22_role_10032_audition_80a19e72-d837-4dee-b5fb-07e2f6bd298213778cda-162c-4221-9f85-f04d14b7475b.mp4",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6779534"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "video/mp4"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 31 May 2025 13:24:06 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "tihkgim1j4"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/audition-videos/talent_22_role_10032_audition_80a19e72-d837-4dee-b5fb-07e2f6bd298213778cda-162c-4221-9f85-f04d14b7475b.mp4"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/audition-videos/talent_22_role_10033_audition_45041f5a-f825-4120-b022-4d537de7dbb595643643-6065-409e-b9b5-56911bbc22f6.mp4",
+      "AssetFile": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\audition-videos\\talent_22_role_10033_audition_45041f5a-f825-4120-b022-4d537de7dbb595643643-6065-409e-b9b5-56911bbc22f6.mp4",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6779534"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "video/mp4"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 31 May 2025 13:57:00 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/audition-videos/talent_22_role_10033_audition_45041f5a-f825-4120-b022-4d537de7dbb595643643-6065-409e-b9b5-56911bbc22f6.tihkgim1j4.mp4",
+      "AssetFile": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\audition-videos\\talent_22_role_10033_audition_45041f5a-f825-4120-b022-4d537de7dbb595643643-6065-409e-b9b5-56911bbc22f6.mp4",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6779534"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "video/mp4"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 31 May 2025 13:57:00 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "tihkgim1j4"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/audition-videos/talent_22_role_10033_audition_45041f5a-f825-4120-b022-4d537de7dbb595643643-6065-409e-b9b5-56911bbc22f6.mp4"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/audition-videos/talent_22_role_10034_audition_ba83d4a0-8864-40ab-b0f1-8ae8c00a4c19f26249b7-32f8-4773-bdf5-578d4ccf90da.mp4",
+      "AssetFile": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\audition-videos\\talent_22_role_10034_audition_ba83d4a0-8864-40ab-b0f1-8ae8c00a4c19f26249b7-32f8-4773-bdf5-578d4ccf90da.mp4",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6779534"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "video/mp4"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 11:49:10 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/audition-videos/talent_22_role_10034_audition_ba83d4a0-8864-40ab-b0f1-8ae8c00a4c19f26249b7-32f8-4773-bdf5-578d4ccf90da.tihkgim1j4.mp4",
+      "AssetFile": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\audition-videos\\talent_22_role_10034_audition_ba83d4a0-8864-40ab-b0f1-8ae8c00a4c19f26249b7-32f8-4773-bdf5-578d4ccf90da.mp4",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6779534"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "video/mp4"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 11:49:10 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "tihkgim1j4"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/audition-videos/talent_22_role_10034_audition_ba83d4a0-8864-40ab-b0f1-8ae8c00a4c19f26249b7-32f8-4773-bdf5-578d4ccf90da.mp4"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/audition-videos/talent_22_role_10035_audition_c13baa6e-aef2-4ecb-9acf-212dbf249d960b5c7068-4bc4-4cbb-a331-cb5d978794bc.mp4",
+      "AssetFile": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\audition-videos\\talent_22_role_10035_audition_c13baa6e-aef2-4ecb-9acf-212dbf249d960b5c7068-4bc4-4cbb-a331-cb5d978794bc.mp4",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6779534"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "video/mp4"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 01 Jun 2025 13:10:53 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/audition-videos/talent_22_role_10035_audition_c13baa6e-aef2-4ecb-9acf-212dbf249d960b5c7068-4bc4-4cbb-a331-cb5d978794bc.tihkgim1j4.mp4",
+      "AssetFile": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\audition-videos\\talent_22_role_10035_audition_c13baa6e-aef2-4ecb-9acf-212dbf249d960b5c7068-4bc4-4cbb-a331-cb5d978794bc.mp4",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6779534"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "video/mp4"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 01 Jun 2025 13:10:53 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "tihkgim1j4"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/audition-videos/talent_22_role_10035_audition_c13baa6e-aef2-4ecb-9acf-212dbf249d960b5c7068-4bc4-4cbb-a331-cb5d978794bc.mp4"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/audition-videos/talent_22_role_10036_audition_54b67d99-67e5-4826-8508-0e3669036cb806b8fa52-68e4-4826-a54c-cf0ac1db22e0.mp4",
+      "AssetFile": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\audition-videos\\talent_22_role_10036_audition_54b67d99-67e5-4826-8508-0e3669036cb806b8fa52-68e4-4826-a54c-cf0ac1db22e0.mp4",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6779534"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "video/mp4"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 11:10:57 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/audition-videos/talent_22_role_10036_audition_54b67d99-67e5-4826-8508-0e3669036cb806b8fa52-68e4-4826-a54c-cf0ac1db22e0.tihkgim1j4.mp4",
+      "AssetFile": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\audition-videos\\talent_22_role_10036_audition_54b67d99-67e5-4826-8508-0e3669036cb806b8fa52-68e4-4826-a54c-cf0ac1db22e0.mp4",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6779534"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "video/mp4"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 11:10:57 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "tihkgim1j4"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/audition-videos/talent_22_role_10036_audition_54b67d99-67e5-4826-8508-0e3669036cb806b8fa52-68e4-4826-a54c-cf0ac1db22e0.mp4"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14="
+        }
+      ]
+    },
     {
       "Route": "uploads/audition-videos/talent_22_role_18_audition_91a6e2be-6780-4d31-92ab-9023d22c5af8981880a5-f3bf-40cb-a00c-0de41a631633.mp4",
       "AssetFile": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\audition-videos\\talent_22_role_18_audition_91a6e2be-6780-4d31-92ab-9023d22c5af8981880a5-f3bf-40cb-a00c-0de41a631633.mp4",
@@ -704,6 +1820,88 @@
       ]
     },
     {
+      "Route": "uploads/audition-videos/talent_23_role_10023_audition_a3e537ec-90b7-4c7e-b19f-f19bca68eded642ab53c-9cae-43d0-86f3-a076381ac39e.mp4",
+      "AssetFile": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\audition-videos\\talent_23_role_10023_audition_a3e537ec-90b7-4c7e-b19f-f19bca68eded642ab53c-9cae-43d0-86f3-a076381ac39e.mp4",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6779534"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "video/mp4"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 28 May 2025 08:39:57 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/audition-videos/talent_23_role_10023_audition_a3e537ec-90b7-4c7e-b19f-f19bca68eded642ab53c-9cae-43d0-86f3-a076381ac39e.tihkgim1j4.mp4",
+      "AssetFile": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\audition-videos\\talent_23_role_10023_audition_a3e537ec-90b7-4c7e-b19f-f19bca68eded642ab53c-9cae-43d0-86f3-a076381ac39e.mp4",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6779534"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "video/mp4"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 28 May 2025 08:39:57 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "tihkgim1j4"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/audition-videos/talent_23_role_10023_audition_a3e537ec-90b7-4c7e-b19f-f19bca68eded642ab53c-9cae-43d0-86f3-a076381ac39e.mp4"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14="
+        }
+      ]
+    },
+    {
       "Route": "uploads/audition-videos/talent_23_role_10024_audition_a4b2a897-f965-4f3f-af86-1ac0dc025a41c7116355-b90b-4353-bd61-3972769cb14e.mp4",
       "AssetFile": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\audition-videos\\talent_23_role_10024_audition_a4b2a897-f965-4f3f-af86-1ac0dc025a41c7116355-b90b-4353-bd61-3972769cb14e.mp4",
       "Selectors": [],
@@ -782,6 +1980,662 @@
         {
           "Name": "integrity",
           "Value": "sha256-en90vdRm6W8wRg5yQzX8jCkJmAXOhLEnDCiLg5GRm4w="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/audition-videos/talent_23_role_10029_audition_ca24815f-02db-4a7d-bc9f-0b5b3d235cc6007acbe7-49a7-454c-8b3f-22ebdb56bf00.mp4",
+      "AssetFile": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\audition-videos\\talent_23_role_10029_audition_ca24815f-02db-4a7d-bc9f-0b5b3d235cc6007acbe7-49a7-454c-8b3f-22ebdb56bf00.mp4",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6779534"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "video/mp4"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 31 May 2025 12:42:19 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/audition-videos/talent_23_role_10029_audition_ca24815f-02db-4a7d-bc9f-0b5b3d235cc6007acbe7-49a7-454c-8b3f-22ebdb56bf00.tihkgim1j4.mp4",
+      "AssetFile": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\audition-videos\\talent_23_role_10029_audition_ca24815f-02db-4a7d-bc9f-0b5b3d235cc6007acbe7-49a7-454c-8b3f-22ebdb56bf00.mp4",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6779534"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "video/mp4"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 31 May 2025 12:42:19 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "tihkgim1j4"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/audition-videos/talent_23_role_10029_audition_ca24815f-02db-4a7d-bc9f-0b5b3d235cc6007acbe7-49a7-454c-8b3f-22ebdb56bf00.mp4"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/audition-videos/talent_23_role_10030_audition_ee602d51-49e8-42de-a4b8-6d77174b2ad5c47f093e-43be-4c29-b800-4d5b59ab5cc6.mp4",
+      "AssetFile": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\audition-videos\\talent_23_role_10030_audition_ee602d51-49e8-42de-a4b8-6d77174b2ad5c47f093e-43be-4c29-b800-4d5b59ab5cc6.mp4",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6779534"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "video/mp4"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 31 May 2025 12:47:01 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/audition-videos/talent_23_role_10030_audition_ee602d51-49e8-42de-a4b8-6d77174b2ad5c47f093e-43be-4c29-b800-4d5b59ab5cc6.tihkgim1j4.mp4",
+      "AssetFile": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\audition-videos\\talent_23_role_10030_audition_ee602d51-49e8-42de-a4b8-6d77174b2ad5c47f093e-43be-4c29-b800-4d5b59ab5cc6.mp4",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6779534"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "video/mp4"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 31 May 2025 12:47:01 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "tihkgim1j4"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/audition-videos/talent_23_role_10030_audition_ee602d51-49e8-42de-a4b8-6d77174b2ad5c47f093e-43be-4c29-b800-4d5b59ab5cc6.mp4"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/audition-videos/talent_23_role_10031_audition_50417790-027c-4ce8-bc61-a908ffb70262d596d177-0f0a-44a2-8a9e-0a60b01b652b.mp4",
+      "AssetFile": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\audition-videos\\talent_23_role_10031_audition_50417790-027c-4ce8-bc61-a908ffb70262d596d177-0f0a-44a2-8a9e-0a60b01b652b.mp4",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6779534"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "video/mp4"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 31 May 2025 12:49:27 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/audition-videos/talent_23_role_10031_audition_50417790-027c-4ce8-bc61-a908ffb70262d596d177-0f0a-44a2-8a9e-0a60b01b652b.tihkgim1j4.mp4",
+      "AssetFile": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\audition-videos\\talent_23_role_10031_audition_50417790-027c-4ce8-bc61-a908ffb70262d596d177-0f0a-44a2-8a9e-0a60b01b652b.mp4",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6779534"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "video/mp4"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 31 May 2025 12:49:27 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "tihkgim1j4"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/audition-videos/talent_23_role_10031_audition_50417790-027c-4ce8-bc61-a908ffb70262d596d177-0f0a-44a2-8a9e-0a60b01b652b.mp4"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/audition-videos/talent_23_role_10032_audition_90fc5412-a380-42d9-956d-ea9c757628551141dd64-ce68-4caa-8b05-a27b67f4d9ad.mp4",
+      "AssetFile": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\audition-videos\\talent_23_role_10032_audition_90fc5412-a380-42d9-956d-ea9c757628551141dd64-ce68-4caa-8b05-a27b67f4d9ad.mp4",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6779534"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "video/mp4"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 31 May 2025 13:23:42 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/audition-videos/talent_23_role_10032_audition_90fc5412-a380-42d9-956d-ea9c757628551141dd64-ce68-4caa-8b05-a27b67f4d9ad.tihkgim1j4.mp4",
+      "AssetFile": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\audition-videos\\talent_23_role_10032_audition_90fc5412-a380-42d9-956d-ea9c757628551141dd64-ce68-4caa-8b05-a27b67f4d9ad.mp4",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6779534"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "video/mp4"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 31 May 2025 13:23:42 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "tihkgim1j4"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/audition-videos/talent_23_role_10032_audition_90fc5412-a380-42d9-956d-ea9c757628551141dd64-ce68-4caa-8b05-a27b67f4d9ad.mp4"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/audition-videos/talent_23_role_10033_audition_67ce6777-18d6-4288-b1f6-2b2630ec787c797cb8df-4fe5-4968-bc1c-acae67bfce45.mp4",
+      "AssetFile": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\audition-videos\\talent_23_role_10033_audition_67ce6777-18d6-4288-b1f6-2b2630ec787c797cb8df-4fe5-4968-bc1c-acae67bfce45.mp4",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6779534"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "video/mp4"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 31 May 2025 13:56:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/audition-videos/talent_23_role_10033_audition_67ce6777-18d6-4288-b1f6-2b2630ec787c797cb8df-4fe5-4968-bc1c-acae67bfce45.tihkgim1j4.mp4",
+      "AssetFile": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\audition-videos\\talent_23_role_10033_audition_67ce6777-18d6-4288-b1f6-2b2630ec787c797cb8df-4fe5-4968-bc1c-acae67bfce45.mp4",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6779534"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "video/mp4"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 31 May 2025 13:56:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "tihkgim1j4"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/audition-videos/talent_23_role_10033_audition_67ce6777-18d6-4288-b1f6-2b2630ec787c797cb8df-4fe5-4968-bc1c-acae67bfce45.mp4"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/audition-videos/talent_23_role_10034_audition_2a86a5ce-5dbb-458d-a426-c99db61daabf314c8370-2fae-4b4a-a5e3-2e05a7907c21.mp4",
+      "AssetFile": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\audition-videos\\talent_23_role_10034_audition_2a86a5ce-5dbb-458d-a426-c99db61daabf314c8370-2fae-4b4a-a5e3-2e05a7907c21.mp4",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6779534"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "video/mp4"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 11:49:32 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/audition-videos/talent_23_role_10034_audition_2a86a5ce-5dbb-458d-a426-c99db61daabf314c8370-2fae-4b4a-a5e3-2e05a7907c21.tihkgim1j4.mp4",
+      "AssetFile": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\audition-videos\\talent_23_role_10034_audition_2a86a5ce-5dbb-458d-a426-c99db61daabf314c8370-2fae-4b4a-a5e3-2e05a7907c21.mp4",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6779534"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "video/mp4"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 11:49:32 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "tihkgim1j4"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/audition-videos/talent_23_role_10034_audition_2a86a5ce-5dbb-458d-a426-c99db61daabf314c8370-2fae-4b4a-a5e3-2e05a7907c21.mp4"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/audition-videos/talent_23_role_10035_audition_a759e609-00d7-4eb4-ba44-5c9d156aa73106221447-5ad5-4f57-89a3-44751d07a899.mp4",
+      "AssetFile": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\audition-videos\\talent_23_role_10035_audition_a759e609-00d7-4eb4-ba44-5c9d156aa73106221447-5ad5-4f57-89a3-44751d07a899.mp4",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6779534"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "video/mp4"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 01 Jun 2025 13:11:27 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/audition-videos/talent_23_role_10035_audition_a759e609-00d7-4eb4-ba44-5c9d156aa73106221447-5ad5-4f57-89a3-44751d07a899.tihkgim1j4.mp4",
+      "AssetFile": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\audition-videos\\talent_23_role_10035_audition_a759e609-00d7-4eb4-ba44-5c9d156aa73106221447-5ad5-4f57-89a3-44751d07a899.mp4",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6779534"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "video/mp4"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 01 Jun 2025 13:11:27 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "tihkgim1j4"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/audition-videos/talent_23_role_10035_audition_a759e609-00d7-4eb4-ba44-5c9d156aa73106221447-5ad5-4f57-89a3-44751d07a899.mp4"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/audition-videos/talent_23_role_10036_audition_c54c33cf-7cb2-452c-83a4-4c99168810800e53c96c-f76d-4352-8ac2-680af756105e.mp4",
+      "AssetFile": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\audition-videos\\talent_23_role_10036_audition_c54c33cf-7cb2-452c-83a4-4c99168810800e53c96c-f76d-4352-8ac2-680af756105e.mp4",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6779534"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "video/mp4"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 11:10:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/audition-videos/talent_23_role_10036_audition_c54c33cf-7cb2-452c-83a4-4c99168810800e53c96c-f76d-4352-8ac2-680af756105e.tihkgim1j4.mp4",
+      "AssetFile": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\audition-videos\\talent_23_role_10036_audition_c54c33cf-7cb2-452c-83a4-4c99168810800e53c96c-f76d-4352-8ac2-680af756105e.mp4",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6779534"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "video/mp4"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 11:10:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "tihkgim1j4"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/audition-videos/talent_23_role_10036_audition_c54c33cf-7cb2-452c-83a4-4c99168810800e53c96c-f76d-4352-8ac2-680af756105e.mp4"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14="
         }
       ]
     },
@@ -1114,8 +2968,8 @@
       ]
     },
     {
-      "Route": "uploads/profile-photos/talent_22_photocd386736-8db8-4efa-aead-544103ba3a1e.9givpn9unn.jpg",
-      "AssetFile": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\profile-photos\\talent_22_photocd386736-8db8-4efa-aead-544103ba3a1e.jpg",
+      "Route": "uploads/profile-photos/talent_22_photobc9f5a46-035c-4d15-a420-3a30b6a3eafd.hvpp22di5a.jpg",
+      "AssetFile": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\profile-photos\\talent_22_photobc9f5a46-035c-4d15-a420-3a30b6a3eafd.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1124,7 +2978,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "172955"
+          "Value": "272932"
         },
         {
           "Name": "Content-Type",
@@ -1132,11 +2986,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"KfTh3p4eGD1jwQnP9d/DsD63WGV+ddl4KnwYx/6Hsp0=\""
+          "Value": "\"w9bjEkX00B2XVVTRIuIlhTYcvn3+ald0p5XAfoyv7/g=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 14 May 2025 13:50:09 GMT"
+          "Value": "Wed, 04 Jun 2025 11:48:55 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1146,21 +3000,21 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "9givpn9unn"
+          "Value": "hvpp22di5a"
         },
         {
           "Name": "label",
-          "Value": "uploads/profile-photos/talent_22_photocd386736-8db8-4efa-aead-544103ba3a1e.jpg"
+          "Value": "uploads/profile-photos/talent_22_photobc9f5a46-035c-4d15-a420-3a30b6a3eafd.jpg"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-KfTh3p4eGD1jwQnP9d/DsD63WGV+ddl4KnwYx/6Hsp0="
+          "Value": "sha256-w9bjEkX00B2XVVTRIuIlhTYcvn3+ald0p5XAfoyv7/g="
         }
       ]
     },
     {
-      "Route": "uploads/profile-photos/talent_22_photocd386736-8db8-4efa-aead-544103ba3a1e.jpg",
-      "AssetFile": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\profile-photos\\talent_22_photocd386736-8db8-4efa-aead-544103ba3a1e.jpg",
+      "Route": "uploads/profile-photos/talent_22_photobc9f5a46-035c-4d15-a420-3a30b6a3eafd.jpg",
+      "AssetFile": "C:\\Users\\badr4\\OneDrive\\Bureau\\projet fin année\\CastFlow\\CastFlow\\wwwroot\\uploads\\profile-photos\\talent_22_photobc9f5a46-035c-4d15-a420-3a30b6a3eafd.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1169,7 +3023,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "172955"
+          "Value": "272932"
         },
         {
           "Name": "Content-Type",
@@ -1177,11 +3031,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"KfTh3p4eGD1jwQnP9d/DsD63WGV+ddl4KnwYx/6Hsp0=\""
+          "Value": "\"w9bjEkX00B2XVVTRIuIlhTYcvn3+ald0p5XAfoyv7/g=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 14 May 2025 13:50:09 GMT"
+          "Value": "Wed, 04 Jun 2025 11:48:55 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1191,7 +3045,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-KfTh3p4eGD1jwQnP9d/DsD63WGV+ddl4KnwYx/6Hsp0="
+          "Value": "sha256-w9bjEkX00B2XVVTRIuIlhTYcvn3+ald0p5XAfoyv7/g="
         }
       ]
     },

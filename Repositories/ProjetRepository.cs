@@ -83,5 +83,15 @@ namespace CastFlow.Api.Repository
         {
             return await _context.SaveChangesAsync();
         }
+
+        public async Task<IEnumerable<Projet>> GetAllArchivedAsync()
+        {
+            _logger.LogDebug("Récupération de tous les Projets ARCHIVÉS");
+            return await _context.Projets
+                                 .IgnoreQueryFilters() 
+                                 .Where(p => p.IsDeleted)
+                                 .OrderByDescending(p => p.ModifieLe) 
+                                 .ToListAsync();
+        }
     }
 }

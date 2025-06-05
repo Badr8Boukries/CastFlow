@@ -95,5 +95,27 @@ namespace CastFlow.Api.Controllers
         }
 
         private bool IsAdmin() { var userTypeClaim = User.FindFirstValue("userType"); return "Admin".Equals(userTypeClaim, StringComparison.OrdinalIgnoreCase); }
-    }
+
+
+        [HttpGet("archived")] 
+        [ProducesResponseType(typeof(IEnumerable<ProjetSummaryResponseDto>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
+        public async Task<IActionResult> GetAllArchivedProjets()
+        {
+            if (!IsAdmin()) return Forbid("Accès réservé aux administrateurs.");
+            try
+            {
+                var projets = await _projetService.GetAllArchivedProjetsAsync();
+                return Ok(projets);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Erreur récupération des projets archivés.");
+                return StatusCode(500, "Erreur interne serveur.");
+            }
+        }
+      
+    
+}
 }
