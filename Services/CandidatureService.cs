@@ -141,39 +141,44 @@ namespace CastFlow.Api.Services
 
         public async Task<CandidatureSummaryResponseDto?> UpdateApplicationStatusAsync(long candidatureId, CandidatureUpdateStatusRequestDto statusDto)
         {
-            _logger.LogInformation("MàJ statut Candidature ID {CandidatureId} vers {NouveauStatut} par Admin.", candidatureId, statusDto.NouveauStatut);
+            _logger.LogInformation("🔍 DEBUT UpdateApplicationStatusAsync - CandidatureId: {CandidatureId}, NouveauStatut: {NouveauStatut}",
+                candidatureId, statusDto.NouveauStatut);
 
             // ✅ CORRECTION: Utilise une méthode qui charge TOUTES les données nécessaires
             var candidature = await _candidatureRepo.GetByIdForAdminDetailsAsync(candidatureId); // Cette méthode charge Talent, Role, et Projet
 
             if (candidature == null)
             {
-                _logger.LogWarning("Candidature ID {CandidatureId} introuvable.", candidatureId);
+                _logger.LogWarning("❌ Candidature ID {CandidatureId} introuvable.", candidatureId);
                 return null;
             }
 
             if (candidature.Talent == null || candidature.Talent.IsDeleted)
             {
-                _logger.LogWarning("Talent manquant ou supprimé pour candidature ID {CandidatureId}.", candidatureId);
+                _logger.LogWarning("❌ Talent manquant ou supprimé pour candidature ID {CandidatureId}.", candidatureId);
                 return null;
             }
 
             if (candidature.Role == null)
             {
-                _logger.LogWarning("Rôle manquant pour candidature ID {CandidatureId}.", candidatureId);
+                _logger.LogWarning("❌ Rôle manquant pour candidature ID {CandidatureId}.", candidatureId);
                 return null;
             }
 
             string nouveauStatutUpper = statusDto.NouveauStatut.ToUpperInvariant();
+            _logger.LogInformation("🔍 Changement de statut: {AncienStatut} → {NouveauStatut} pour candidature {CandidatureId}",
+                candidature.Statut, nouveauStatutUpper, candidatureId);
 
+            // ===== GESTION PRESELECTION =====
             if (nouveauStatutUpper == "PRESELECTIONNE")
             {
                 int countPreselectionnes = await _candidatureRepo.CountActiveByStatusForRoleAsync(candidature.RoleId, "PRESELECTIONNE");
                 if (countPreselectionnes >= 5 && candidature.Statut != "PRESELECTIONNE")
                 {
-                    _logger.LogWarning("Limite de 5 présélectionnés atteinte pour Role ID {RoleId}.", candidature.RoleId);
+                    _logger.LogWarning("❌ Limite de 5 présélectionnés atteinte pour Role ID {RoleId}.", candidature.RoleId);
                     throw new InvalidOperationException("La limite de 5 candidats présélectionnés est atteinte.");
                 }
+
                 if (countPreselectionnes == 4 && candidature.Statut != "PRESELECTIONNE")
                 {
                     var rolePourFermeture = await _roleRepo.GetActiveByIdAsync(candidature.RoleId);
@@ -182,15 +187,40 @@ namespace CastFlow.Api.Services
                         rolePourFermeture.EstPublie = false;
                         rolePourFermeture.ModifieLe = DateTime.UtcNow;
                         _roleRepo.Update(rolePourFermeture);
-                        _logger.LogInformation("Casting pour Rôle ID {RoleId} fermé automatiquement (5 présélections atteintes).", candidature.RoleId);
+                        _logger.LogInformation("🔒 Casting pour Rôle ID {RoleId} fermé automatiquement (5 présélections atteintes).", candidature.RoleId);
                     }
                 }
+
+                // 🆕 NOTIFICATION POUR PRESELECTION
+                try
+                {
+                    string roleNom = candidature.Role?.Nom ?? "Non spécifié";
+                    string projetTitre = candidature.Role?.Projet?.Titre ?? "Non spécifié";
+                    string messagePreselection = $"Félicitations ! Vous avez été présélectionné(e) pour le rôle '{roleNom}' dans le projet '{projetTitre}'. Nous vous tiendrons informé(e) de la suite.";
+
+                    _logger.LogInformation("🔔 Envoi notification de présélection pour Talent ID {TalentId}", candidature.TalentId);
+                    await _notificationService.CreateNotificationForTalentAsync(
+                        candidature.TalentId,
+                        messagePreselection,
+                        "CANDIDATURE",
+                        candidature.CandidatureId,
+                        $"/mes-candidatures/{candidature.CandidatureId}"
+                    );
+                    _logger.LogInformation("✅ Notification de présélection envoyée pour Talent ID {TalentId}", candidature.TalentId);
+                }
+                catch (Exception notifEx)
+                {
+                    _logger.LogError(notifEx, "❌ Erreur lors de l'envoi de la notification de présélection pour candidature ID {CandidatureId}", candidatureId);
+                    // On continue sans faire échouer l'opération
+                }
             }
+            // ===== GESTION ASSIGNATION =====
             else if (nouveauStatutUpper == "ASSIGNE")
             {
                 bool dejaAssigne = await _candidatureRepo.IsRoleAlreadyAssignedToOtherAsync(candidature.RoleId, candidature.CandidatureId);
                 if (dejaAssigne)
                 {
+                    _logger.LogWarning("❌ Un talent est déjà assigné au rôle ID {RoleId}", candidature.RoleId);
                     throw new InvalidOperationException("Un talent est déjà assigné à ce rôle.");
                 }
 
@@ -204,13 +234,34 @@ namespace CastFlow.Api.Services
                 roleAAssigner.ModifieLe = DateTime.UtcNow;
                 _roleRepo.Update(roleAAssigner);
 
-                // ✅ ENVOI DE L'EMAIL D'ASSIGNATION
+                string projetTitre = candidature.Role?.Projet?.Titre ?? "Non spécifié";
+                string roleNom = candidature.Role?.Nom ?? "Non spécifié";
+
+                // 🆕 NOTIFICATION POUR ASSIGNATION (AJOUT PRINCIPAL)
                 try
                 {
-                    string projetTitre = candidature.Role?.Projet?.Titre ?? "Non spécifié";
-                    string roleNom = candidature.Role?.Nom ?? "Non spécifié";
+                    string messageAssignation = $"🎉 FÉLICITATIONS ! Vous avez été sélectionné(e) pour le rôle '{roleNom}' dans le projet '{projetTitre}' ! L'équipe de production vous contactera prochainement avec tous les détails.";
 
-                    _logger.LogInformation("Préparation envoi email assignation - Talent: {TalentEmail}, Prenom: {TalentPrenom}, Role: {RoleNom}, Projet: {ProjetTitre}",
+                    _logger.LogInformation("🔔 Envoi notification d'assignation pour Talent ID {TalentId}", candidature.TalentId);
+                    await _notificationService.CreateNotificationForTalentAsync(
+                        candidature.TalentId,
+                        messageAssignation,
+                        "ASSIGNATION",
+                        candidature.CandidatureId,
+                        $"/mes-candidatures/{candidature.CandidatureId}"
+                    );
+                    _logger.LogInformation("✅ Notification d'assignation envoyée pour Talent ID {TalentId}", candidature.TalentId);
+                }
+                catch (Exception notifEx)
+                {
+                    _logger.LogError(notifEx, "❌ Erreur lors de l'envoi de la notification d'assignation pour candidature ID {CandidatureId}", candidatureId);
+                    // On continue sans faire échouer l'opération
+                }
+
+                // ✅ ENVOI DE L'EMAIL D'ASSIGNATION (code existant)
+                try
+                {
+                    _logger.LogInformation("📧 Préparation envoi email assignation - Talent: {TalentEmail}, Prenom: {TalentPrenom}, Role: {RoleNom}, Projet: {ProjetTitre}",
                         candidature.Talent.Email, candidature.Talent.Prenom, roleNom, projetTitre);
 
                     await SendRoleAssignedEmailAsync(
@@ -220,30 +271,60 @@ namespace CastFlow.Api.Services
                         projetTitre
                     );
 
-                    _logger.LogInformation("Email d'assignation envoyé avec succès pour candidature ID {CandidatureId} - Talent: {TalentEmail}, Rôle: {RoleNom}",
+                    _logger.LogInformation("✅ Email d'assignation envoyé avec succès pour candidature ID {CandidatureId} - Talent: {TalentEmail}, Rôle: {RoleNom}",
                         candidature.CandidatureId, candidature.Talent.Email, roleNom);
                 }
                 catch (Exception emailEx)
                 {
                     // On log l'erreur mais on ne fait pas échouer toute l'opération d'assignation
-                    _logger.LogError(emailEx, "Erreur lors de l'envoi de l'email d'assignation pour candidature ID {CandidatureId} - Talent: {TalentEmail}",
+                    _logger.LogError(emailEx, "❌ Erreur lors de l'envoi de l'email d'assignation pour candidature ID {CandidatureId} - Talent: {TalentEmail}",
                         candidature.CandidatureId, candidature.Talent.Email);
+                }
+            }
+            // ===== GESTION REJET =====
+            else if (nouveauStatutUpper == "REJETEE")
+            {
+                // 🆕 NOTIFICATION POUR REJET
+                try
+                {
+                    string roleNom = candidature.Role?.Nom ?? "Non spécifié";
+                    string projetTitre = candidature.Role?.Projet?.Titre ?? "Non spécifié";
+                    string messageRejet = $"Nous vous remercions pour votre candidature au rôle '{roleNom}' dans le projet '{projetTitre}'. Malheureusement, votre profil ne correspond pas aux critères recherchés pour ce rôle.";
+
+                    _logger.LogInformation("🔔 Envoi notification de rejet pour Talent ID {TalentId}", candidature.TalentId);
+                    await _notificationService.CreateNotificationForTalentAsync(
+                        candidature.TalentId,
+                        messageRejet,
+                        "CANDIDATURE",
+                        candidature.CandidatureId,
+                        $"/mes-candidatures/{candidature.CandidatureId}"
+                    );
+                    _logger.LogInformation("✅ Notification de rejet envoyée pour Talent ID {TalentId}", candidature.TalentId);
+                }
+                catch (Exception notifEx)
+                {
+                    _logger.LogError(notifEx, "❌ Erreur lors de l'envoi de la notification de rejet pour candidature ID {CandidatureId}", candidatureId);
+                    // On continue sans faire échouer l'opération
                 }
             }
 
             // Mise à jour du statut de la candidature
+            string ancienStatut = candidature.Statut;
             candidature.Statut = nouveauStatutUpper;
             _candidatureRepo.Update(candidature);
 
             try
             {
+                _logger.LogInformation("💾 Sauvegarde des changements en cours...");
                 await _candidatureRepo.SaveChangesAsync();
-                _logger.LogInformation("Statut candidature ID {CandidatureId} mis à jour vers {NouveauStatut}", candidatureId, nouveauStatutUpper);
+                _logger.LogInformation("✅ Statut candidature ID {CandidatureId} mis à jour: {AncienStatut} → {NouveauStatut}",
+                    candidatureId, ancienStatut, nouveauStatutUpper);
+
                 return _mapper.Map<CandidatureSummaryResponseDto>(candidature);
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Erreur lors de la sauvegarde de la mise à jour de statut pour candidature ID {CandidatureId}", candidatureId);
+                _logger.LogError(ex, "❌ Erreur lors de la sauvegarde de la mise à jour de statut pour candidature ID {CandidatureId}", candidatureId);
                 throw;
             }
         }

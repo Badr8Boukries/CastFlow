@@ -162,6 +162,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\audition-videos\talent_22_role_10036_audition_54b67d99-67e5-4826-8508-0e3669036cb806b8fa52-68e4-4826-a54c-cf0ac1db22e0.mp4'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\audition-videos\talent_22_role_10044_audition_c5fa9d08-416d-49f4-9935-029b5596f24bc44dba28-7319-488d-82a6-ad7756c696e8.mp4'))">
+      <SourceType>Package</SourceType>
+      <SourceId>CastFlow</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/CastFlow</BasePath>
+      <RelativePath>uploads/audition-videos/talent_22_role_10044_audition_c5fa9d08-416d-49f4-9935-029b5596f24bc44dba28-7319-488d-82a6-ad7756c696e8.mp4</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>tihkgim1j4</Fingerprint>
+      <Integrity>tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\audition-videos\talent_22_role_10044_audition_c5fa9d08-416d-49f4-9935-029b5596f24bc44dba28-7319-488d-82a6-ad7756c696e8.mp4'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\audition-videos\talent_22_role_18_audition_91a6e2be-6780-4d31-92ab-9023d22c5af8981880a5-f3bf-40cb-a00c-0de41a631633.mp4'))">
       <SourceType>Package</SourceType>
       <SourceId>CastFlow</SourceId>
@@ -413,6 +431,114 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\audition-videos\talent_23_role_10036_audition_c54c33cf-7cb2-452c-83a4-4c99168810800e53c96c-f76d-4352-8ac2-680af756105e.mp4'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\audition-videos\talent_23_role_10039_audition_2576163f-565d-4590-94d9-0667f644624686d11f58-1acf-4c44-9ea2-0c45bc394234.mp4'))">
+      <SourceType>Package</SourceType>
+      <SourceId>CastFlow</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/CastFlow</BasePath>
+      <RelativePath>uploads/audition-videos/talent_23_role_10039_audition_2576163f-565d-4590-94d9-0667f644624686d11f58-1acf-4c44-9ea2-0c45bc394234.mp4</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>tihkgim1j4</Fingerprint>
+      <Integrity>tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\audition-videos\talent_23_role_10039_audition_2576163f-565d-4590-94d9-0667f644624686d11f58-1acf-4c44-9ea2-0c45bc394234.mp4'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\audition-videos\talent_23_role_10040_audition_94e62779-8f5e-455b-bc07-ba1cf1092c2b649f7ece-b3fd-4822-90cb-1e843d465717.mp4'))">
+      <SourceType>Package</SourceType>
+      <SourceId>CastFlow</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/CastFlow</BasePath>
+      <RelativePath>uploads/audition-videos/talent_23_role_10040_audition_94e62779-8f5e-455b-bc07-ba1cf1092c2b649f7ece-b3fd-4822-90cb-1e843d465717.mp4</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>tihkgim1j4</Fingerprint>
+      <Integrity>tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\audition-videos\talent_23_role_10040_audition_94e62779-8f5e-455b-bc07-ba1cf1092c2b649f7ece-b3fd-4822-90cb-1e843d465717.mp4'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\audition-videos\talent_23_role_10041_audition_312339b3-074c-4009-85ae-00e192862e1c23aff4ed-7369-46a6-8287-0c22f71caabb.mp4'))">
+      <SourceType>Package</SourceType>
+      <SourceId>CastFlow</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/CastFlow</BasePath>
+      <RelativePath>uploads/audition-videos/talent_23_role_10041_audition_312339b3-074c-4009-85ae-00e192862e1c23aff4ed-7369-46a6-8287-0c22f71caabb.mp4</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>tihkgim1j4</Fingerprint>
+      <Integrity>tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\audition-videos\talent_23_role_10041_audition_312339b3-074c-4009-85ae-00e192862e1c23aff4ed-7369-46a6-8287-0c22f71caabb.mp4'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\audition-videos\talent_23_role_10042_audition_4f65cf93-fda7-4581-a0f0-41e6a5ca982df6d6cbd1-89ab-4f44-a36d-2901601b4dec.mp4'))">
+      <SourceType>Package</SourceType>
+      <SourceId>CastFlow</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/CastFlow</BasePath>
+      <RelativePath>uploads/audition-videos/talent_23_role_10042_audition_4f65cf93-fda7-4581-a0f0-41e6a5ca982df6d6cbd1-89ab-4f44-a36d-2901601b4dec.mp4</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>tihkgim1j4</Fingerprint>
+      <Integrity>tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\audition-videos\talent_23_role_10042_audition_4f65cf93-fda7-4581-a0f0-41e6a5ca982df6d6cbd1-89ab-4f44-a36d-2901601b4dec.mp4'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\audition-videos\talent_23_role_10043_audition_a9a408cc-2b95-48f0-9f90-b841c837719f8225e1f3-1ea3-4a07-af35-7557ce008a50.mp4'))">
+      <SourceType>Package</SourceType>
+      <SourceId>CastFlow</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/CastFlow</BasePath>
+      <RelativePath>uploads/audition-videos/talent_23_role_10043_audition_a9a408cc-2b95-48f0-9f90-b841c837719f8225e1f3-1ea3-4a07-af35-7557ce008a50.mp4</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>tihkgim1j4</Fingerprint>
+      <Integrity>tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\audition-videos\talent_23_role_10043_audition_a9a408cc-2b95-48f0-9f90-b841c837719f8225e1f3-1ea3-4a07-af35-7557ce008a50.mp4'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\audition-videos\talent_23_role_10044_audition_7ff18ec1-0cba-4e63-b551-5d6d55e0be697978052b-62a0-4cbd-981e-09f54375ae84.mp4'))">
+      <SourceType>Package</SourceType>
+      <SourceId>CastFlow</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/CastFlow</BasePath>
+      <RelativePath>uploads/audition-videos/talent_23_role_10044_audition_7ff18ec1-0cba-4e63-b551-5d6d55e0be697978052b-62a0-4cbd-981e-09f54375ae84.mp4</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>tihkgim1j4</Fingerprint>
+      <Integrity>tc30GqqM59E5UOwDKCWtIEDA80q44s6TPCELr84UA14=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\audition-videos\talent_23_role_10044_audition_7ff18ec1-0cba-4e63-b551-5d6d55e0be697978052b-62a0-4cbd-981e-09f54375ae84.mp4'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\cvs\talent_22_cv99ffed8b-de28-4587-aeb6-49a8dc88b2c4.pdf'))">
       <SourceType>Package</SourceType>
